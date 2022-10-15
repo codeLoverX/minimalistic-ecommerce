@@ -22,7 +22,7 @@ class CardItemComponent extends Component {
                         // {...this.generateLinkIfOutOfStock(cardValue.inStock)} 
                         to={`../product/${cardValue.id}`} replace>
                         <Card.Image src={cardValue.gallery[0]} />
-                        <Card.Title>
+                        <Card.Title inStock= {cardValue.inStock}>
                             {cardValue.brand} {cardValue.name}
                         </Card.Title>
                         {cardValue.inStock ? <></> : <Card.OutOfStock>Out of Stock</Card.OutOfStock>}

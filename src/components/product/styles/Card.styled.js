@@ -24,12 +24,19 @@ Card.Image = styled.img`
 Card.Title = styled.div`
   margin-top: 25px;
   font-weight: 300;
+  color: #1D1F22;
+  font-size: 18px;
+  line-height: 160%;
+  ${({ inStock }) => !inStock && `
+    color: #8D8F9A;
+`}
 `
 
-Card.Subtitle = styled.div`
+Card.Subtitle = styled(Card.Title)`
   margin-top: 10px;
-  ${({ inStock }) => inStock && `
-    font-weight: bolder;
+  font-weight: 500;
+  ${({ inStock }) => !inStock && `
+    color: #8D8F9A;
   `}
   ${({ isOverlay }) => isOverlay && `
     font-weight: lighter;
@@ -42,7 +49,7 @@ Card.OutOfStock = styled.div`
   top: 40%;
   left: 20%;
   text-transform: uppercase;
-  font-size: 30px;
+  font-size: 24px;
   text-decoration: none;
 `
 
