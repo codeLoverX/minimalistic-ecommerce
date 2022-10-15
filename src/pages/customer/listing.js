@@ -1,7 +1,7 @@
 import { Component } from 'react'
 import { withRouterHOC } from '../../utils/withRouterHOC'
 import Navigation from '../../components/layouts/Navigation/Navigation'
-import Footer from '../../components/layouts/Footer'
+import Footer from '../../components/layouts/Footer/Footer'
 import CardList from '../../components/product/CardList'
 
 class ListingPage extends Component {

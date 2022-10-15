@@ -59,7 +59,7 @@ class ProductDescription extends Component {
 
         return (
             <>
-                <Description.Text>
+                <Description.TextSection>
                     <Product.Brand fontSize={"35px"}>
                         {description.brand}
                     </Product.Brand>
@@ -122,10 +122,10 @@ class ProductDescription extends Component {
                     }
                     <Description.AddToCart onClick={(event) => this.submitForm(event)}> ADD TO CART </Description.AddToCart>
                     <br/>
-                    <span style={{fontSize: "medium", fontWeight: "600", paddingTop: "15px"}}>
+                    <Description.DescriptionText>
                         {parse(description.description)}
-                    </span>
-                </Description.Text>
+                    </Description.DescriptionText>
+                </Description.TextSection>
             </>
         )
     }

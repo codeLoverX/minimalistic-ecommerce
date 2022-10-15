@@ -1,5 +1,4 @@
 import { createReducer } from "@reduxjs/toolkit"
-import { PAUSE } from "reduxjs-toolkit-persist"
 import { changeCurrencyAction, fetchAllCurrenciesAndCategoriesAction } from "./products-action"
 
 export const productState = {

@@ -1,7 +1,9 @@
+import SimpleFooter from "./Footer.styled"
+
 export default function Footer() {
   return (
-    <div style={{padding: "10px 0", textAlign: "center"}}>
+    <SimpleFooter>
       <p>@ 2021 Ridwan Bin Monjur. All rights reserved</p>
-    </div>
+    </SimpleFooter>
   )
 }

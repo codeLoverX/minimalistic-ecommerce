@@ -41,8 +41,7 @@ Description.ControlPreview = styled.span`
     }
 `
 
-
-Description.Text = styled.span`
+Description.TextSection = styled.span`
     flex-basis: 40%;   
     @media (max-width: ${({ theme }) => theme.mobile}) {
         flex-basis: 100%; 
@@ -72,6 +71,12 @@ Description.AddToCartError = styled.div`
     color: red;
     margin-top: 5px;
     font-size: 12px;
+`
+
+Description.DescriptionText = styled.span`
+    font-size: medium; 
+    font-weight: 600; 
+    padding-top: 15px;
 `
 
 export default Description

@@ -71,7 +71,7 @@ class OverlayCartItemComponent extends Component {
                     }
 
                 </div>
-                <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <OverlayCartItem.ColumnTwo>
                     <OverlayCartItem.QuantitySizebox>
                         <OverlayCartItem.Sizebox
                             onClick={() => this.props.dispatchIncrementValueToCartAction({ index: cartIndex, incrementQuantity: 1 })}
@@ -79,7 +79,7 @@ class OverlayCartItemComponent extends Component {
                             paddingY={"3px"}>
                                 +
                         </OverlayCartItem.Sizebox>
-                        <span style={{ margin: "auto" }}>{cart.quantity}</span>
+                        <span>{cart.quantity}</span>
                         <OverlayCartItem.Sizebox
                             onClick={() => this.props.dispatchIncrementValueToCartAction({ index: cartIndex, incrementQuantity: -1 })}
                             paddingX={"3px"}
@@ -87,8 +87,8 @@ class OverlayCartItemComponent extends Component {
                                 -
                         </OverlayCartItem.Sizebox>
                     </OverlayCartItem.QuantitySizebox>
-                    <OverlayCartItem.PreviewImg src={cart.gallery[0]} />
-                </div>
+                    <OverlayCartItem.PreviewImg src={cart.gallery[0]}/>
+                </OverlayCartItem.ColumnTwo>
             </OverlayCartItem>
 
         )
