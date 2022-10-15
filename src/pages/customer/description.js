@@ -5,7 +5,7 @@ import { Description } from '../../components/product/styles'
 import { withRouterHOC } from '../../utils/withRouterHOC'
 import { catchError, fetchProducById } from '../../services/gqlApi'
 import Navigation from '../../components/layouts/Navigation/Navigation'
-import Footer from '../../components/layouts/Footer'
+import Footer from '../../components/layouts/Footer/Footer'
 import ErrorNotification from '../../components/notification/error'
 import Loading from '../../components/notification/loading'
 

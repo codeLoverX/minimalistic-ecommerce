@@ -41,6 +41,9 @@ OverlayCartItem.Container = styled.div`
    overflow-x: visible;
 `
 
+OverlayCartItem.ColumnTwo= styled(CartItem.ColumnTwo)`
+`
+
 OverlayCartItem.Colorbox = styled(CartItem.Colorbox)`
     font-size: 8px;
     margin-bottom: 0px;
@@ -54,9 +57,15 @@ OverlayCartItem.Sizebox = styled(CartItem.Sizebox)`
 
 OverlayCartItem.QuantitySizebox = styled(CartItem.QuantitySizebox)`
     max-width: 50px;
-    height: 60px !important;
-       
+    height: 60px !important;       
 `
+
+OverlayCartItem.TotalQuantity = styled.div`
+    margin: 5px; 
+    display: flex; 
+    justify-content: space-around;
+`
+
 
 OverlayCartItem.PreviewImg = styled(CartItem.PreviewImg)`
     max-width: 100px;

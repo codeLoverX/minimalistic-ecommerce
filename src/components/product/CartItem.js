@@ -71,15 +71,15 @@ class CartItemComponent extends Component {
                     }
 
                 </div>
-                <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <CartItem.ColumnTwo>
                     <CartItem.QuantitySizebox>
                         <CartItem.Sizebox onClick={() => this.props.dispatchIncrementValueToCartAction({ index: cartIndex, incrementQuantity: 1 })} paddingX={"3px"} paddingY={"3px"}>+</CartItem.Sizebox>
-                        <span style={{ margin: "auto" }}>{cart.quantity}</span>
+                        <span>{cart.quantity}</span>
                         <CartItem.Sizebox onClick={() => this.props.dispatchIncrementValueToCartAction({ index: cartIndex, incrementQuantity: -1 })} paddingX={"3px"} paddingY={"3px"}>-</CartItem.Sizebox>
                     </CartItem.QuantitySizebox>
                     <CartImagePreviewTab images={cart.gallery} />
 
-                </div>
+                </CartItem.ColumnTwo>
             </CartItem>
 
         )

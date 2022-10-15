@@ -22,7 +22,7 @@ class OverLayCart extends Component {
                             )
                         })
                     }
-                    <div style={{ margin: "5px", display: "flex", justifyContent: "space-around" }}>
+                    <OverlayCartItem.TotalQuantity>
                         {!this.props.totalQuantity ?
                             <h3>No items to display! </h3>
                             :
@@ -35,7 +35,7 @@ class OverLayCart extends Component {
                                 </span>
                             </>
                         }
-                    </div>
+                    </OverlayCartItem.TotalQuantity>
                     <OverlayCartItem.ButtonContainer>
                         <OverlayCartItem.ButtonViewCart onClick={()=> this.props.routerDirectToCartPage()}>
                             View bag

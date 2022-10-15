@@ -27,15 +27,15 @@ class ProductPreview extends Component {
             <>
                 <Description.ControlPreview>
                     {images.map((value, index) => {
-                        return <img src={value} key={`${value}${index}`} onClick={() => this.changeCurrentImage(index)} />
+                        return <img src={value} key={`${value}${index}`} alt="" onClick={() => this.changeCurrentImage(index)} />
                     })}
                 </Description.ControlPreview>
                 <Description.Preview>
                     {
                         this.state.currentImage === null ?
-                            <img src={this.props.images[0]} />
+                            <img src={this.props.images[0]} alt="" />
                             :
-                            <img src={this.state.currentImage} />
+                            <img src={this.state.currentImage} alt=""/>
                     }
                 </Description.Preview>
             </>

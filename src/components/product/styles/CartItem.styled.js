@@ -31,6 +31,12 @@ CartItem.Colorbox = styled.label`
     }
 `
 
+CartItem.ColumnTwo= styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
+
 CartItem.Sizebox = styled.label`
     cursor: pointer;
     display: inline-block;
@@ -51,13 +57,13 @@ CartItem.Sizebox = styled.label`
     }
 `
 
-
 CartItem.QuantitySizebox = styled.div`
     cursor: pointer;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     height: 80%;
+    text-align: center;
 `
 
 

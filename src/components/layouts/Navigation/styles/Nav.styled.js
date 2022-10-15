@@ -17,7 +17,12 @@ Nav.Icon = styled.img`
 `
 
 Nav.Link = styled.span`
-  display: inline;
+  width: 65px;
+  height: 20px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 120%;
   padding: 5px 60px 60px 0px;
   text-transform: uppercase;
   margin-right: 10px;
