@@ -22,6 +22,7 @@
 
 +++++++++++++++++++++++++++++++++
     Wrong design for out of stock labels
+    --- not fixed opacity
 
 +++++++++++++++++++++++++++++++++++++++++++
     Currency switcher should close on click outside

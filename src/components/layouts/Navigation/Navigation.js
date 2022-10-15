@@ -8,6 +8,7 @@ import DropdownIcon from './styles/DropdownIcon.styled'
 import { changeCurrencyAction } from '../../../redux/products/products-action'
 import OverlayCart from '../../product/OverlayCart'
 import Currency from '../../product/Currency'
+import ReactDOM from 'react-dom';
 
 const initialState = {
     cartDropdown: true, currencyDropdown: true
@@ -18,6 +19,7 @@ class Navigation extends Component {
         dropDownClose: { ...initialState }
     }
 
+    // utility1
     changeOpacity(opacity) {
         let currentElement = document.querySelector('#nav')
 
@@ -43,12 +45,15 @@ class Navigation extends Component {
                 this.changeOpacity(0.3)
 
                 currentStyle.zIndex = "999"
+
+                this.addClickEventListener()
             }
             else {
                 this.changeOpacity(1)
 
                 currentStyle.zIndex = "1"
 
+                document.removeEventListener('click', this.handleClickOutside, true);
             }
 
             return {
@@ -57,6 +62,34 @@ class Navigation extends Component {
             }
         })
     }
+
+    addClickEventListener() {
+        document.addEventListener('click', this.handleClickOutside, true);
+    }
+    
+    componentWillUnmount() {
+        // if eventListener exists, remove eventListener.
+        if (document.getAttribute('listener') !== 'true') {
+            document.removeEventListener('click', this.handleClickOutside, true);
+        }
+    }
+    
+    handleClickOutside = event => {
+        const domNode = ReactDOM.findDOMNode(this);
+
+        let currentStyle = this.myRef.current.style
+    
+        if (!domNode || !domNode.contains(event.target)) {
+            this.changeOpacity(1)
+
+            currentStyle.zIndex = "1"
+
+            this.setState({ dropDownClose: { ...initialState } })
+
+            document.removeEventListener('click', this.handleClickOutside, true);
+        }
+    }
+    
 
     changeCurrency(currentCurrency) {
         this.props.dispatchChangeCurrencyAction(currentCurrency)
@@ -76,6 +109,8 @@ class Navigation extends Component {
         this.routerDirectToCartPage = this.routerDirectToCartPage.bind(this)
 
         this.changeCurrency = this.changeCurrency.bind(this)
+
+        this.addClickEventListener = this.addClickEventListener.bind(this)
     }
 
     routerDirectToCartPage() {
@@ -111,7 +146,8 @@ class Navigation extends Component {
                 <div>
                     <Dropdown>
                         <Dropdown.MenuButton onClick={() => this.toggleDropDownState('currencyDropdown')}>
-                            <DropdownIcon>$
+                            <DropdownIcon>
+                                {this.props.currencies[this.props.currentCurrency].symbol}
                                 <DropdownIcon.Arrow>⌄</DropdownIcon.Arrow></DropdownIcon>
                         </Dropdown.MenuButton>
                         <Dropdown.ItemContainer isInvisible={this.state.dropDownClose['currencyDropdown']}>
