@@ -4,11 +4,11 @@ import { Card } from './styles'
 import { connect } from 'react-redux'
 
 class CardItemComponent extends Component {
-    generateLinkIfOutOfStock(inStock) {
-        return inStock ?
-            null
-            : { style: { pointerEvents: "none" } }
-    }
+    // generateLinkIfOutOfStock(inStock) {
+    //     return inStock ?
+    //         null
+    //         : { style: { pointerEvents: "none" } }
+    // }
 
     render() {
 
@@ -18,8 +18,9 @@ class CardItemComponent extends Component {
         return (
             <>
                 <Card>
-                    <Link  {...this.generateLinkIfOutOfStock(cardValue.inStock)} to={`../product/${cardValue.id}`} replace>
-
+                    <Link  
+                        // {...this.generateLinkIfOutOfStock(cardValue.inStock)} 
+                        to={`../product/${cardValue.id}`} replace>
                         <Card.Image src={cardValue.gallery[0]} />
                         <Card.Title>
                             {cardValue.brand} {cardValue.name}

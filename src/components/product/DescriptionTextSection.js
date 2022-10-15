@@ -9,7 +9,6 @@ const initialState = { attributes: {}, missingAttributes: [], quantity: 1 }
 class ProductDescription extends Component {
     state = { ...initialState }
 
-
     addForm(attribute, { id, value }) {
         this.setState((prev) => {
             return { attributes: { ...prev.attributes, [attribute]: { id, value } } }
@@ -18,6 +17,8 @@ class ProductDescription extends Component {
 
     submitForm(event) {
         event.preventDefault()
+
+        if (!this.props.description.inStock) return
 
         let currentAtttributes = Object.keys(this.state.attributes)
 
@@ -47,7 +48,7 @@ class ProductDescription extends Component {
                 ...this.props.description, selectedAttributes: { ...this.state.attributes }, quantity: this.state.quantity
             })
 
-            this.setState({ ...initialState })
+            this.setState((prev)=> { return {...prev, missingAttributes: []} })
         }
 
         else this.setState((prev) => { return { ...prev, missingAttributes } })
@@ -56,6 +57,8 @@ class ProductDescription extends Component {
     render() {
 
         let { description, currentCurrency } = this.props
+
+        console.log ( { description })
 
         return (
             <>
@@ -120,7 +123,13 @@ class ProductDescription extends Component {
                                 </Fragment>)}
                         </Description.AddToCartError>
                     }
+                     {description.inStock === false
+                        && <Description.AddToCartError>
+                            You can't add out of stock item to cart
+                        </Description.AddToCartError>
+                    }
                     <Description.AddToCart onClick={(event) => this.submitForm(event)}> ADD TO CART </Description.AddToCart>
+                    <br/>
                     <br/>
                     <Description.DescriptionText>
                         {parse(description.description)}

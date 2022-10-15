@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import ProductPreview from '../../components/product/DescriptionImagePreviewTab'
-import ProductDescription from '../../components/product/DescriptionItem'
+import ProductDescription from '../../components/product/DescriptionTextSection'
 import { Description } from '../../components/product/styles'
 import { withRouterHOC } from '../../utils/withRouterHOC'
 import { catchError, fetchProducById } from '../../services/gqlApi'

@@ -34,7 +34,7 @@ class CartImagePreviewTab extends Component {
                         })
                     }
                     {
-                        this.props.images && this.props.images[1] &&
+                        this.props.images && this.props.images[1]!== undefined &&
                         <>
                             <CartItem.PreviewTabControllerLeft onClick={() => this.changeImage(buttonStates.BACKWARD)} >
                                 {"<"}
