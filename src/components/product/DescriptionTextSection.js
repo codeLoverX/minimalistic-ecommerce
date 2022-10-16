@@ -58,8 +58,6 @@ class ProductDescription extends Component {
 
         let { description, currentCurrency } = this.props
 
-        console.log ( { description })
-
         return (
             <>
                 <Description.TextSection>

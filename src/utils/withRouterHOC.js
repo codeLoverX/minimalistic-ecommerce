@@ -4,15 +4,15 @@ import {
   useParams
 } from "react-router-dom"
 
-export const withRouterHOC = (Component) =>  {
-
-  function ComponentWithRouterProp(props) {
+export const withRouterHOC = (Component) => (props) => {
     let location = useLocation()
 
     let navigate = useNavigate()
     
     let params = useParams()
     
+    console.log("lets see")
+
     return (
       <Component
         {...props}
@@ -20,5 +20,3 @@ export const withRouterHOC = (Component) =>  {
       />
     )
   }
-  return ComponentWithRouterProp
-}

@@ -23,8 +23,6 @@ class CartImagePreviewTab extends Component {
                 <CartItem.PreviewTabContainer>
                     {
                         this.props.images && this.props.images.map((value, index) => {
-                            console.log({value})
-
                             return (
                                 <CartItem.PreviewImg
                                     hidden={this.state.currentImageIndex !== index}

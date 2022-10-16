@@ -5,14 +5,14 @@ export const productState = {
   currentCurrency: {symbol: '$', label: 'USD', index: 0},
   currencies: [],
   categories: [],
-  loading: false,
+  loading: true,
   error: false
 }
 
 const currencyReducer = createReducer(productState, (builder) => {
   builder.addCase(changeCurrencyAction, (state, { payload }) => {
     let {index, symbol, label} = payload
-
+   
     return {
       ...state,
       currentCurrency: {
@@ -40,6 +40,8 @@ const currencyReducer = createReducer(productState, (builder) => {
   })
 
   builder.addCase(fetchAllCurrenciesAndCategoriesAction.pending, (state, { payload }) => {
+    console.log({state: {...state } }) 
+
     return {
       ...state,
       loading: true,

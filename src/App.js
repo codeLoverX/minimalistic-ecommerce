@@ -20,29 +20,16 @@ const theme = {
 }
 
 class App extends Component {
-  componentDidMount() {
-    this.props.dispatchFetchAllCurrenciesAndCategories()
-  }
-
-  render() {
-    return (
-      <ThemeProvider theme={theme}>
-        <GlobalStyles />
-        <RoutesApp />
-      </ThemeProvider>
-    )
-  }
+  
+  render() {    
+      return (
+        <ThemeProvider theme={theme}>
+          <GlobalStyles />
+          <RoutesApp />
+        </ThemeProvider>
+      )
+    }
 }
 
-
-function mapDispatchToProps(dispatch) {
-  return {
-    dispatchFetchAllCurrenciesAndCategories: () => dispatch(fetchAllCurrenciesAndCategoriesAction())
-  }
-}
-
-export default connect(
-  null,
-  mapDispatchToProps
-)(App)
+export default App
 

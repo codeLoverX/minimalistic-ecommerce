@@ -10,33 +10,58 @@ import ErrorNotification from '../../components/notification/error'
 import Loading from '../../components/notification/loading'
 
 class DescriptionPage extends Component {
-    state = {
-        data: null,
-        isLoading: false,
-        isError: false
+    constructor(){
+        super()
+
+        console.log('fetch once')
+
+        this.state = {
+            data: null,
+            isLoading: true,
+            isError: false
+        }
     }
 
-    async componentDidMount() {
+    componentDidMount() {
+        console.log("maincomponent")
+         
         let { productId } = this.props.router.params
 
-        this.setState((prev) => { return { ...prev, isLoading: true } })
-
-        let { data, error } = await catchError(
+        // if (!this.state.isLoading) return
+        
+        console.log({state: this.state})
+        catchError(
             fetchProducById(productId)
-                .then((data) => {
-                    return data.product
-                })
+            .then((data) => {
+                return data.product
+            })
         )
-
-        this.setState({
-            data,
-            isLoading: false,
-            isError: error
+        .then(( { data, error } ) => {
+            this.setState({
+                data,
+                isLoading: false,                
+                isError: error
+            })
         })
+
+
+        // let { data, error } = await catchError(
+        //     fetchProducById(productId)
+        //         .then((data) => {
+        //             return data.product
+        //         })
+        // )
+
+        // console.log( { state: this.state } )
+
+        // await this.setState({
+        //     data,
+        //     isLoading: false,                
+        //     isError: error
+        // })
     }
 
     render() {
-        console.log({ data: this.state })
         return (
             <>
                 <Navigation currentCategory={this.state.data?.category}  />

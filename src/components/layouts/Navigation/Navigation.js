@@ -5,10 +5,11 @@ import CompanyLogo from '../../../images/company.png'
 import { connect } from 'react-redux'
 import { withRouterHOC } from '../../../utils/withRouterHOC'
 import DropdownIcon from './styles/DropdownIcon.styled'
-import { changeCurrencyAction } from '../../../redux/products/products-action'
+import { changeCurrencyAction, fetchAllCurrenciesAndCategoriesAction } from '../../../redux/products/products-action'
 import OverlayCart from '../../product/OverlayCart'
 import Currency from '../../product/Currency'
 import ReactDOM from 'react-dom';
+import Loading from '../../notification/loading'
 
 const initialState = {
     cartDropdown: true, currencyDropdown: true
@@ -18,6 +19,13 @@ class Navigation extends Component {
     state = {
         dropDownClose: { ...initialState }
     }
+
+    componentDidMount() {
+        console.log({props: this.props.loading})
+        
+        this.props.dispatchFetchAllCurrenciesAndCategories()
+      }
+    
 
     // utility1
     changeOpacity(opacity) {
@@ -69,9 +77,9 @@ class Navigation extends Component {
     
     componentWillUnmount() {
         // if eventListener exists, remove eventListener.
-        if (document.getAttribute('listener') !== 'true') {
+        // if (document.getAttribute('listener') !== 'true') {
             document.removeEventListener('click', this.handleClickOutside, true);
-        }
+        // }
     }
     
     handleClickOutside = event => {
@@ -119,8 +127,8 @@ class Navigation extends Component {
     }
 
     render() {
+        if (this.props.loading) return <Loading />
         // delete this
-        console.log({ navProps: this.props.router })
         return (
             <Nav ref={this.myRef} id='nav'>
                 <div>
@@ -182,13 +190,15 @@ function mapStateToProps(state) {
         totalQuantity: state.cartReducer.totalQuantity,
         total: state.cartReducer.total,
         tax: state.cartReducer.tax,
-        currentCurrency: state.productReducer.currentCurrency.index
+        currentCurrency: state.productReducer.currentCurrency.index,
+        loading: state.productReducer.loading
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return {
         dispatchChangeCurrencyAction: (currentCurrency) => dispatch(changeCurrencyAction(currentCurrency)),
+        dispatchFetchAllCurrenciesAndCategories: () => dispatch(fetchAllCurrenciesAndCategoriesAction())
     }
 }
 

@@ -11,7 +11,6 @@ class Currency extends Component {
             <>
                 {
                     this.props.currencies && this.props.currencies.map((value, index) => {
-                        console.log( { ...value, index } )
                         return (
                             <Dropdown.ItemDiv
                                 onClick={() => this.props.changeCurrency({ ...value, index })}

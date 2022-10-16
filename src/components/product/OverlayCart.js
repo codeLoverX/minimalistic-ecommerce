@@ -8,7 +8,6 @@ import { roundOffTwoDP } from '../../redux/cart/cart-utils'
 class OverLayCart extends Component {
    
     render() {
-        console.log({props: this.props})
         return (
             <>
                 <OverlayCartItem.Container>

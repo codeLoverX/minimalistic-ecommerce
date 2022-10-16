@@ -45,7 +45,6 @@ class CardList extends Component {
     }
 
     render() {
-        console.log({ state: this.state.data })
         // props defined here but not in constructor: console.log({props: this.props})
         return (
             <>
