@@ -3,6 +3,7 @@ import { Component } from 'react'
 import { connect } from 'react-redux'
 import EmptyNotification from '../notification/empty'
 import CartItem from './CartItem'
+import React from 'react'
 
 class CartPage extends Component {
 

@@ -1,4 +1,4 @@
-import { Component } from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Footer from '../../components/layouts/Footer/Footer'
 import Navigation from '../../components/layouts/Navigation/Navigation'

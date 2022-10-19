@@ -1,9 +1,9 @@
-import { Component, createRef } from 'react'
+import React, { Component, createRef } from 'react'
 import { Link } from 'react-router-dom'
 import { Nav, Dropdown } from './styles'
 import CompanyLogo from '../../../images/company.png'
 import { connect } from 'react-redux'
-import { withRouterHOC } from '../../../utils/withRouterHOC'
+import { withRouter } from 'react-router-dom'
 import DropdownIcon from './styles/DropdownIcon.styled'
 import { changeCurrencyAction, fetchAllCurrenciesAndCategoriesAction } from '../../../redux/products/products-action'
 import OverlayCart from '../../product/OverlayCart'
@@ -123,7 +123,7 @@ class Navigation extends Component {
 
     routerDirectToCartPage() {
         // need to bind this
-        this.props.router.navigate("../cart")
+        this.props.history.push("../cart")
     }
 
     render() {
@@ -137,7 +137,7 @@ class Navigation extends Component {
                         this.props.categories.map((value, index) => {
                             return (
                                 <Nav.Link
-                                    active={this.props.router.params?.category === value.name || this.props.currentCategory === value.name}
+                                    active={this.props.match.params?.category === value.name || this.props.currentCategory === value.name}
                                     key={`${index} ${value.name}`}>
                                     <Link to={`../category/${value.name}`} replace>
                                         {value.name}
@@ -205,6 +205,6 @@ function mapDispatchToProps(dispatch) {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(withRouterHOC(Navigation))
+)(withRouter(Navigation))
 
 

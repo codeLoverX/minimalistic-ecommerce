@@ -1,8 +1,8 @@
-import { Component } from 'react'
+import React, { Component } from 'react'
 import ProductPreview from '../../components/product/DescriptionImagePreviewTab'
 import ProductDescription from '../../components/product/DescriptionTextSection'
 import { Description } from '../../components/product/styles'
-import { withRouterHOC } from '../../utils/withRouterHOC'
+import { withRouter } from 'react-router-dom'
 import { catchError, fetchProducById } from '../../services/gqlApi'
 import Navigation from '../../components/layouts/Navigation/Navigation'
 import Footer from '../../components/layouts/Footer/Footer'
@@ -25,7 +25,7 @@ class DescriptionPage extends Component {
     componentDidMount() {
         console.log("maincomponent")
          
-        let { productId } = this.props.router.params
+        let { productId } = this.props.match.params
 
         // if (!this.state.isLoading) return
         
@@ -92,4 +92,4 @@ class DescriptionPage extends Component {
     }
 }
 
-export default withRouterHOC(DescriptionPage)
+export default withRouter(DescriptionPage)

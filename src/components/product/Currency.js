@@ -2,7 +2,7 @@ import { Component } from 'react'
 import { connect } from 'react-redux'
 import { nanoid } from '@reduxjs/toolkit'
 import { Dropdown } from '../layouts/Navigation/styles'
-
+import React from 'react'
 
 class Currency extends Component {
 

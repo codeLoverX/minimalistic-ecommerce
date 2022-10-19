@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { OverlayCartItem } from './styles'
 import { nanoid } from '@reduxjs/toolkit'
 import { roundOffTwoDP } from '../../redux/cart/cart-utils'
+import React from 'react'
 
 class OverLayCart extends Component {
    

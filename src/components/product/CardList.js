@@ -1,3 +1,4 @@
+import React from 'react'
 import { nanoid } from '@reduxjs/toolkit'
 import { Component } from 'react'
 import { catchError, fetchAllProductsByCategory } from '../../services/gqlApi'

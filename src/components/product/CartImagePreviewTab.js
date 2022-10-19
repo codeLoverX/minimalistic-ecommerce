@@ -1,4 +1,4 @@
-import { Component, Fragment } from 'react'
+import React, { Component, Fragment } from 'react'
 import { CartItem } from './styles'
 
 const buttonStates = { FORWARD: 1, BACKWARD: -1 }

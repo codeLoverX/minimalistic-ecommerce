@@ -1,23 +1,30 @@
-import { Routes, Route, Navigate } from "react-router-dom"
+import React from 'react'
+import {   BrowserRouter as Router, Route, Redirect } from "react-router-dom"
 import CartPage from "./pages/customer/cart"
 import DescriptionPage from "./pages/customer/description"
 import ListingPage from "./pages/customer/listing"
 
 function RoutesApp() {
     return (
-        <Routes>
+        <Router>
             <Route path="/">
-                <Route index element={<Navigate to='category/tech' />} />
-                <Route path="category" element={<ListingPage />} />
+                <Route exact path="/">
+                    <Redirect to='category/tech' />
+                </Route> 
                 <Route
-                    path="category/:category"
-                    element={<ListingPage  />}
-                />
-                <Route path="product/:productId" element={<DescriptionPage />} />
-                <Route path="cart" element={<CartPage />} />
+                    path="/category/:category"
+                >
+                    <ListingPage/>
+                </Route>
+                <Route path="/product/:productId">
+                    <DescriptionPage />
+                </Route> 
+                <Route path="/cart">
+                    <CartPage />
+                </Route> 
                 {/* <Route path="*" element={<ListingPage />}/> */}
             </Route>
-        </Routes>
+        </Router>
     )
 }
 

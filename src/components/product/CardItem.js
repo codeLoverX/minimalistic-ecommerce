@@ -2,6 +2,7 @@ import { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { Card } from './styles'
 import { connect } from 'react-redux'
+import React from 'react'
 
 class CardItemComponent extends Component {
     // generateLinkIfOutOfStock(inStock) {

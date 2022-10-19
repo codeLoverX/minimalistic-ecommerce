@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { addProductToCartAction } from '../../redux/cart/cart-action'
 import { CartItem, Description, Product } from './styles'
 import parse from 'html-react-parser';
+import React from 'react'
 
 const initialState = { attributes: {}, missingAttributes: [], quantity: 1 }
 

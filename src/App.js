@@ -2,7 +2,7 @@ import './App.css'
 import { ThemeProvider } from 'styled-components'
 import GlobalStyles from './components/global'
 import RoutesApp from './routes'
-import { Component } from 'react'
+import React, { Component } from 'react'
 
 const theme = {
   colors: {

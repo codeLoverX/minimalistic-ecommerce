@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import Logo from '../../images/company.png';
 import {NotificationContainer, NotificationMessage} from './Container.styled';
