@@ -3,8 +3,6 @@ import { ThemeProvider } from 'styled-components'
 import GlobalStyles from './components/global'
 import RoutesApp from './routes'
 import { Component } from 'react'
-import { connect } from 'react-redux'
-import { fetchAllCurrenciesAndCategoriesAction } from './redux/products/products-action'
 
 const theme = {
   colors: {
