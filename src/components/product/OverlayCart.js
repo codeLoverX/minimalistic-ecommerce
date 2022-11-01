@@ -29,8 +29,11 @@ class OverLayCart extends Component {
                             <>
                                 <span>Total: </span>
                                 <span>
+                                    {
+                                        this.props.currentCurrency.symbol
+                                    }
                                     {roundOffTwoDP(
-                                        Number(this.props.total[this.props.currentCurrency]) + Number(this.props.total[this.props.currentCurrency]) * this.props.tax)
+                                        Number(this.props.total[this.props.currentCurrency.index]) + Number(this.props.total[this.props.currentCurrency.index]) * this.props.tax)
                                     }
                                 </span>
                             </>
@@ -58,7 +61,7 @@ function mapStateToProps(state) {
         totalQuantity: state.cartReducer.totalQuantity,
         total: state.cartReducer.total,
         tax: state.cartReducer.tax,
-        currentCurrency: state.productReducer.currentCurrency.index
+        currentCurrency: state.productReducer.currentCurrency
     }
 }
 

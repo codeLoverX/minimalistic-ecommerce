@@ -1,5 +1,5 @@
 import React from 'react'
-import {   BrowserRouter as Router, Route, Redirect } from "react-router-dom"
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom"
 import CartPage from "./pages/customer/cart"
 import DescriptionPage from "./pages/customer/description"
 import ListingPage from "./pages/customer/listing"

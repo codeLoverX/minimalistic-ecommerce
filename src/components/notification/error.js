@@ -12,7 +12,9 @@ class ErrorNotification extends Component {
         return (
             <NotificationContainer>
                 <div>
-                    <ErrorImg>⚠️</ErrorImg>
+                    <ErrorImg>
+                    <span role="img" aria-label='error'> ⚠️ </span>
+                    </ErrorImg>
                     <NotificationMessage>{this.props.message}</NotificationMessage>
                 </div>
             </NotificationContainer>

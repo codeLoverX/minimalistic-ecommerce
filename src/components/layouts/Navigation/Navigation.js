@@ -5,11 +5,10 @@ import CompanyLogo from '../../../images/company.png'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import DropdownIcon from './styles/DropdownIcon.styled'
-import { changeCurrencyAction, fetchAllCurrenciesAndCategoriesAction } from '../../../redux/products/products-action'
+import { changeCurrencyAction } from '../../../redux/products/products-action'
 import OverlayCart from '../../product/OverlayCart'
 import Currency from '../../product/Currency'
 import ReactDOM from 'react-dom';
-import Loading from '../../notification/loading'
 
 const initialState = {
     cartDropdown: true, currencyDropdown: true
@@ -19,14 +18,7 @@ class Navigation extends Component {
     state = {
         dropDownClose: { ...initialState }
     }
-
-    componentDidMount() {
-        console.log({props: this.props.loading})
-        
-        this.props.dispatchFetchAllCurrenciesAndCategories()
-      }
-    
-
+ 
     // utility1
     changeOpacity(opacity) {
         let currentElement = document.querySelector('#nav')
@@ -127,8 +119,7 @@ class Navigation extends Component {
     }
 
     render() {
-        if (this.props.loading) return <Loading />
-        // delete this
+        
         return (
             <Nav ref={this.myRef} id='nav'>
                 <div>
@@ -165,7 +156,7 @@ class Navigation extends Component {
                     <Dropdown>
                         <Dropdown.MenuButton onClick={() => this.toggleDropDownState('cartDropdown')}>
                             <DropdownIcon>
-                                🛒
+                                <span role="img" aria-label='cart'>🛒 </span>
                                 <DropdownIcon.Badge>
                                     {this.props.totalQuantity}
                                 </DropdownIcon.Badge>
@@ -198,7 +189,6 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return {
         dispatchChangeCurrencyAction: (currentCurrency) => dispatch(changeCurrencyAction(currentCurrency)),
-        dispatchFetchAllCurrenciesAndCategories: () => dispatch(fetchAllCurrenciesAndCategoriesAction())
     }
 }
 

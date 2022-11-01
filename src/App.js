@@ -3,6 +3,10 @@ import { ThemeProvider } from 'styled-components'
 import GlobalStyles from './components/global'
 import RoutesApp from './routes'
 import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom'
+import Loading from './components/notification/loading'
+import { connect } from 'react-redux'
+import { fetchAllCurrenciesAndCategoriesAction } from './redux/products/products-action'
 
 const theme = {
   colors: {
@@ -18,8 +22,15 @@ const theme = {
 }
 
 class App extends Component {
-  
-  render() {    
+
+  componentDidMount() {
+    console.log({props: this.props.loading})
+    
+    this.props.dispatchFetchAllCurrenciesAndCategories()
+  }
+  render() {  
+      if (this.props.loading) return <Loading />
+        // delete this  
       return (
         <ThemeProvider theme={theme}>
           <GlobalStyles />
@@ -29,5 +40,20 @@ class App extends Component {
     }
 }
 
-export default App
+function mapStateToProps(state) {
+  return {
+      loading: state.productReducer.loading
+  }
+}
 
+
+function mapDispatchToProps(dispatch) {
+  return {
+      dispatchFetchAllCurrenciesAndCategories: () => dispatch(fetchAllCurrenciesAndCategoriesAction())
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withRouter(App))
