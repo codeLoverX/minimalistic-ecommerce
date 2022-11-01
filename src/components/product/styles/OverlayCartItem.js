@@ -8,6 +8,8 @@ let OverlayCartItem = styled(CartItem)`
     gap: 50px;
     width: 350px;
     padding: 10px;
+    max-height: 50vh;
+    overflow: auto;
 `
 OverlayCartItem.Heading = styled.h1`
     padding: 10px;
@@ -34,8 +36,7 @@ OverlayCartItem.Subtitle = styled(Product.Subtitle)`
 `
 
 OverlayCartItem.Container = styled.div`
-   height: min-content;
-   max-height: 100vh;
+    max-height: 50vh;
    padding-bottom: 20px;
    overflow-y: auto; 
    overflow-x: visible;

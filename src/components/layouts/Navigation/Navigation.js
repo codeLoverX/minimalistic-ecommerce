@@ -39,14 +39,14 @@ class Navigation extends Component {
 
             newDropDownClose[key] = !prevState.dropDownClose[key]
 
-            let currentStyle = this.myRef.current.style
+            let currentStyle = this.navBarRef.current.style
 
             if ((newDropDownClose[key] === false)) {
                 this.changeOpacity(0.3)
 
                 currentStyle.zIndex = "999"
 
-                this.addClickEventListener()
+                this.addClickEventListener('click', this.handleClickOutside, true)
             }
             else {
                 this.changeOpacity(1)
@@ -75,11 +75,9 @@ class Navigation extends Component {
     }
     
     handleClickOutside = event => {
-        const domNode = ReactDOM.findDOMNode(this);
 
-        let currentStyle = this.myRef.current.style
-    
-        if (!domNode || !domNode.contains(event.target)) {
+        let currentStyle = this.navBarRef.current.style
+        if (this.wrapperRef && !this.wrapperRef.current.contains(event.target)) {
             this.changeOpacity(1)
 
             currentStyle.zIndex = "1"
@@ -100,7 +98,9 @@ class Navigation extends Component {
     constructor() {
         super()
 
-        this.myRef = createRef()
+        this.navBarRef = createRef()
+
+        this.wrapperRef = createRef()
 
         this.toggleDropDownState = this.toggleDropDownState.bind(this)
 
@@ -121,7 +121,7 @@ class Navigation extends Component {
     render() {
         
         return (
-            <Nav ref={this.myRef} id='nav'>
+            <Nav ref={this.navBarRef} id='nav'>
                 <div>
                     {
                         this.props.categories &&
@@ -142,7 +142,7 @@ class Navigation extends Component {
                 <div>
                     <Nav.Icon src={CompanyLogo} />
                 </div>
-                <div>
+                <div ref={this.wrapperRef}>
                     <Dropdown>
                         <Dropdown.MenuButton onClick={() => this.toggleDropDownState('currencyDropdown')}>
                             <DropdownIcon>

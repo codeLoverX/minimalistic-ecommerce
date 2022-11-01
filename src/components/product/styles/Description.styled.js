@@ -10,23 +10,23 @@ let Description = styled.div`
 `
 
 Description.Preview = styled.span`
-    flex-basis: 50%;
+    flex-basis: 100%; 
     text-align: center;
     position: reative;
     & img {
         object-fit: cover;
         margin: auto
         max-width: 80%;
-        max-height: 80vh;
+        max-height: 90%;
     }
-    @media (max-width: ${({ theme }) => theme.tablet}) {
-        flex-basis: 100%; 
+    @media (min-width: ${({ theme }) => theme.tablet}) {
+        flex-basis: 50%;
+        max-height: 70vh;
     }
 
 `
 Description.ControlPreview = styled.span`
     flex-basis: 10%;
-    max-height: 80vh;
     text-align: center;
     overflow-y: auto;
     ::-webkit-scrollbar {
@@ -52,7 +52,8 @@ Description.ControlPreview = styled.span`
 `
 
 Description.TextSection = styled.span`
-    flex-basis: 40%;   
+    flex-basis: 40%;  
+    max-height: min-content; 
     @media (max-width: ${({ theme }) => theme.tablet}) {
         flex-basis: 100%; 
         text-align: center;
