@@ -1,13 +1,10 @@
 import styled from 'styled-components'
 
 
-let Card = styled.div`
+let CardItem = styled.div`
   cursor: pointer;
   // text-align: center;
   position: relative;
-  top: 0;
-  left: 0;
-  margin: 0 auto;
   padding: 40px 0;
   & a {
     color: black;
@@ -15,13 +12,13 @@ let Card = styled.div`
   }
 `
 
-Card.Image = styled.img`
-  display: block;
+CardItem.Image = styled.img`  
+  object-fit: cover;
   height: 300px;
   width: 300px;
 `
 
-Card.Title = styled.div`
+CardItem.Title = styled.div`
   margin-top: 25px;
   font-weight: 300;
   color: #1D1F22;
@@ -32,7 +29,7 @@ Card.Title = styled.div`
 `}
 `
 
-Card.Subtitle = styled(Card.Title)`
+CardItem.Subtitle = styled(CardItem.Title)`
   margin-top: 10px;
   font-weight: 500;
   ${({ inStock }) => !inStock && `
@@ -43,7 +40,7 @@ Card.Subtitle = styled(Card.Title)`
   `}
 `
 
-Card.OutOfStock = styled.div`
+CardItem.OutOfStock = styled.div`
   position: absolute;
   color: grey;
   top: 40%;
@@ -53,4 +50,4 @@ Card.OutOfStock = styled.div`
   text-decoration: none;
 `
 
-export default Card
+export default CardItem

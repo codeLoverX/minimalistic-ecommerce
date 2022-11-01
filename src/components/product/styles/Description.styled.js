@@ -4,7 +4,7 @@ let Description = styled.div`
     display: flex; 
     flex-wrap: wrap;
     max-height: 80vh;
-    @media (max-width: ${({ theme }) => theme.mobile}) {
+    @media (max-width: ${({ theme }) => theme.tablet}) {
         max-height: min-content;
     }
 `
@@ -12,11 +12,14 @@ let Description = styled.div`
 Description.Preview = styled.span`
     flex-basis: 50%;
     text-align: center;
+    position: reative;
     & img {
+        object-fit: cover;
+        margin: auto
         max-width: 80%;
         max-height: 80vh;
     }
-    @media (max-width: ${({ theme }) => theme.mobile}) {
+    @media (max-width: ${({ theme }) => theme.tablet}) {
         flex-basis: 100%; 
     }
 
@@ -26,12 +29,19 @@ Description.ControlPreview = styled.span`
     max-height: 80vh;
     text-align: center;
     overflow-y: auto;
+    ::-webkit-scrollbar {
+        width: 5px;
+        background: ${({ theme }) => `${theme.colors.hoverBg}`}; 
+    }
     cursor-pointer;
+    position: reative;
     & img {
+        object-fit: cover;
         max-width: 80%;
         margin: auto; 
+        cursor: pointer;
     }
-    @media (max-width: ${({ theme }) => theme.mobile}) {
+    @media (max-width: ${({ theme }) => theme.tablet}) {
         flex-basis: 100%; 
         oveflow-x: scroll;
         margin: 0 10%; 
@@ -43,7 +53,7 @@ Description.ControlPreview = styled.span`
 
 Description.TextSection = styled.span`
     flex-basis: 40%;   
-    @media (max-width: ${({ theme }) => theme.mobile}) {
+    @media (max-width: ${({ theme }) => theme.tablet}) {
         flex-basis: 100%; 
         text-align: center;
     }

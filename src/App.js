@@ -18,7 +18,10 @@ const theme = {
     activeBg: 'rgb(217, 215, 215)',
     hoverBg: 'rgb(200, 200, 200, 0.3)',
   },
-  mobile: '768px',
+  mobile: '578px',
+  tablet: '768px',
+  desktop: '992px',
+  xl: '1300px'
 }
 
 class App extends Component {

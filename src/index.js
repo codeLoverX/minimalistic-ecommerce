@@ -8,9 +8,9 @@ import { PersistGate } from "reduxjs-toolkit-persist/integration/react"
 import store, { persistor } from "./redux/store"
 import Loading from './components/notification/loading'
 
-persistor.flush().then(() => {
-  return persistor.purge();
-});
+// persistor.flush().then(() => {
+//   return persistor.purge();
+// });
 
 render(
   <React.StrictMode>

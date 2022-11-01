@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { Card } from './styles'
+import { CardItem } from './styles'
 import { connect } from 'react-redux'
 import React from 'react'
 
@@ -18,22 +18,20 @@ class CardItemComponent extends Component {
         
         return (
             <>
-                <Card>
+                <CardItem>
                     <Link  
                         // {...this.generateLinkIfOutOfStock(cardValue.inStock)} 
                         to={`../product/${cardValue.id}`} replace>
-                        <Card.Image src={cardValue.gallery[0]} />
-                        <Card.Title inStock= {cardValue.inStock}>
+                        <CardItem.Image src={cardValue.gallery[0]} />
+                        <CardItem.Title inStock= {cardValue.inStock}>
                             {cardValue.brand} {cardValue.name}
-                        </Card.Title>
-                        {cardValue.inStock ? <></> : <Card.OutOfStock>Out of Stock</Card.OutOfStock>}
-
-                        <Card.Subtitle inStock={cardValue.inStock}>
+                        </CardItem.Title>
+                        {cardValue.inStock ? <></> : <CardItem.OutOfStock>Out of Stock</CardItem.OutOfStock>}
+                        <CardItem.Subtitle inStock={cardValue.inStock}>
                             {currentCurrency.symbol} {cardValue.prices[currentCurrency.index].amount}
-                        </Card.Subtitle>
+                        </CardItem.Subtitle>
                     </Link>
-
-                </Card>
+                </CardItem>
 
             </>
         )

@@ -39,10 +39,10 @@ class CartItemComponent extends Component {
                                             attribute.items.map((attributeItem) => {
                                                 return (
                                                     <CartItem.Sizebox
-                                                        onClick={() => this.editForm({
-                                                            attribute: attribute.name,
-                                                            index: cartIndex, id: attributeItem.id, value: attributeItem.value
-                                                        })}
+                                                        // onClick={() => this.editForm({
+                                                        //     attribute: attribute.name,
+                                                        //     index: cartIndex, id: attributeItem.id, value: attributeItem.value
+                                                        // })}
                                                         key={`cart${attributeItem.id}`}
                                                         active={attributeItem.id === cart.selectedAttributes[attribute.name]?.id}
                                                         paddingX={"3px"}
@@ -56,10 +56,10 @@ class CartItemComponent extends Component {
                                                 return (
                                                     <CartItem.Colorbox
                                                         active={attributeItem.id === cart.selectedAttributes[attribute.name]?.id}
-                                                        onClick={() => this.editForm({
-                                                            attribute: attribute.name,
-                                                            index: cartIndex, id: attributeItem.id, value: attributeItem.value
-                                                        })}
+                                                        // onClick={() => this.editForm({
+                                                        //     attribute: attribute.name,
+                                                        //     index: cartIndex, id: attributeItem.id, value: attributeItem.value
+                                                        // })}
                                                         key={`cart${attributeItem.id}`}
                                                         backgroundColor={attributeItem.displayValue}
                                                     />

@@ -37,11 +37,11 @@ class OverlayCartItemComponent extends Component {
                                             attribute.items.map((attributeItem) => {
                                                 return (
                                                     <OverlayCartItem.Sizebox
-                                                        onClick={() => this.editForm({
-                                                            attribute: attribute.name,
-                                                            index: cartIndex, id: attributeItem.id, value: attributeItem.value
-                                                        })}
-                                                        key={`cart${attributeItem.id}`}
+                                                        // onClick={() => this.editForm({
+                                                        //     attribute: attribute.name,
+                                                        //     index: cartIndex, id: attributeItem.id, value: attributeItem.value
+                                                        // })}
+                                                        key={`overlayCart${attributeItem.id}`}
                                                         active={attributeItem.id === cart.selectedAttributes[attribute.name]?.id}
                                                         paddingX={"3px"}
                                                         paddingY={"6px"}
@@ -56,11 +56,11 @@ class OverlayCartItemComponent extends Component {
                                                 return (
                                                     <OverlayCartItem.Colorbox
                                                         active={attributeItem.id === cart.selectedAttributes[attribute.name]?.id}
-                                                        onClick={() => this.editForm({
-                                                            attribute: attribute.name,
-                                                            index: cartIndex, id: attributeItem.id, value: attributeItem.value
-                                                        })}
-                                                        key={`cart${attributeItem.id}`}
+                                                        // onClick={() => this.editForm({
+                                                        //     attribute: attribute.name,
+                                                        //     index: cartIndex, id: attributeItem.id, value: attributeItem.value
+                                                        // })}
+                                                        key={`overlayCart${attributeItem.id}`}
                                                         backgroundColor={attributeItem.displayValue}
                                                     />
                                                 )

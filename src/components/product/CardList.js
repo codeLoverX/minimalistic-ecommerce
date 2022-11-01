@@ -6,10 +6,10 @@ import EmptyNotification from '../notification/empty'
 import ErrorNotification from '../notification/error'
 import Loading from '../notification/loading'
 import CardItem from './CardItem'
-import { GridCard } from './styles'
+import { CardList } from './styles'
 
 
-class CardList extends Component {
+class CardListComponent extends Component {
     state = {
         data: [],
         isLoading: false,
@@ -49,7 +49,7 @@ class CardList extends Component {
         // props defined here but not in constructor: console.log({props: this.props})
         return (
             <>
-                <GridCard>
+                <CardList>
                     {
                         this.state.data !== null &&
                         <>
@@ -79,11 +79,11 @@ class CardList extends Component {
                             <Loading />
                         </>
                     }
-                </GridCard>
+                </CardList>
 
             </>
         )
     }
 }
 
-export default CardList
+export default CardListComponent

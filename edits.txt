@@ -2,7 +2,8 @@
     Missing quickshop functionality, that means on hover on product card should appear green cart icon as per design, and by click on that product should be added to cart from PLP. If product has different attributes small popup should be shown for selecting attribute to add
     Max height of minicart should be aprox half of the screen
     Please fix overall design to match figma design as much as possible
-      
++++++++++++++++++++++++++++++++++
+
     Shouldn’t be possible to switch attributes in cart/minicart
     Please display products in a grid so that if two products are in a row there still should be empty space for third one
 
