@@ -1,8 +1,6 @@
 import { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import { addProductToCartAction } from '../../redux/cart/cart-action'
-import { sizeToDisplayMapper } from '../../utils/sizeToDisplayMapper'
-
 import { CartItem, Description, Product } from './styles'
 import parse from 'html-react-parser';
 import React from 'react'
@@ -18,9 +16,7 @@ class ProductDescription extends Component {
             return { attributes: { ...prev.attributes, [attribute]: { id, value } } }
         })
     }
-
    
-
     submitForm(event) {
         event.preventDefault()
 
@@ -82,7 +78,6 @@ class ProductDescription extends Component {
                                         {attribute.name}
                                     </Product.Subtitle>
                                     {
-                                       
                                         attribute.items.map((attributeItem) => {
                                             return (
                                                 <AttributeItem 

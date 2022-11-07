@@ -128,4 +128,10 @@ CardItem.QuickShopSizebox = styled(CartItem.Sizebox)`
     }
 `
 
+CardItem.QuickShopAddToCartError = styled.div`
+  color: red;
+  margin-top: 5px;
+  font-size: 12px;
+`
+
 export default CardItem
