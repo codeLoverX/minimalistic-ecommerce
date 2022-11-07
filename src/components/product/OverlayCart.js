@@ -54,20 +54,14 @@ class OverLayCart extends Component {
     }
 }
 
-
-function mapStateToProps(state) {
-    return {
+export default connect(
+    (state)=> ({
         cart: state.cartReducer.cart,
         totalQuantity: state.cartReducer.totalQuantity,
         total: state.cartReducer.total,
         tax: state.cartReducer.tax,
         currentCurrency: state.productReducer.currentCurrency
-    }
-}
-
-
-export default connect(
-    mapStateToProps,
+    })
 )(OverLayCart)
 
 

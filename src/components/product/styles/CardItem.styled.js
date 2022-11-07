@@ -74,12 +74,12 @@ CardItem.QuickShopIcon = styled.button`
 // QuickShop
 
 CardItem.QuickShopContainer = styled.div`
-  background: white;
+  padding: 15px 10px;
+  background: rgba(255, 255, 255, 0.5);
   border: 0px solid white;  
   position: absolute;
-  top: 0;
+  bottom: -10px;
   width: 100%;
-  height: 100%;
   z-index: 2;
 `
 
@@ -88,8 +88,9 @@ CardItem.QuickShopContainerExit = styled.div`
   color: white;
   cursor: pointer;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: -10px;
+  right: 10px;
+  padding: 2px 5px;
 `
 
 CardItem.QuickShopColorbox = styled(CartItem.Colorbox)`
@@ -126,6 +127,23 @@ CardItem.QuickShopSizebox = styled(CartItem.Sizebox)`
     &:hover{
         background-color:  ${({ theme }) => `${theme.colors.hoverBg}`};
     }
+`
+CardItem.QuickShopAddToCart = styled.button`
+  display: inline-block;
+  cursor: pointer;
+  padding: 5px;
+  width: 50%;
+  text-align: center;
+  font-size: 15px;
+  margin-right: 5px;
+  margin-top: 5px;
+  border: 0px solid black;
+  background-color: ${({ theme }) => `${theme.colors.primary}`};
+  color: ${({ theme }) => `${theme.colors.light}`};
+  &:hover{
+      background-color:  ${({ theme }) => `${theme.colors.hoverBg}`};
+      color: black;
+  }  
 `
 
 CardItem.QuickShopAddToCartError = styled.div`

@@ -15,17 +15,17 @@ class CartPage extends Component {
                 <main>
                     <CartList />
                     {
-                        this.props.totalQuantity!==0 && 
+                        this.props.totalQuantity !== 0 &&
                         <CartSummary>
-                            <p>Tax 21%: 
-                                &nbsp; 
-                                { this.props.currentCurrency.symbol  }
+                            <p>Tax 21%:
+                                &nbsp;
+                                {this.props.currentCurrency.symbol}
                                 {roundOffTwoDP(Number(this.props.total[this.props.currentCurrency.index]) * this.props.tax)}</p>
                             <p>Quantity: &nbsp;{this.props.totalQuantity}</p>
                             <p>Total: &nbsp;
-                                {   this.props.currentCurrency.symbol   }
+                                {this.props.currentCurrency.symbol}
                                 {
-                                    
+
                                     roundOffTwoDP(Number(this.props.total[this.props.currentCurrency.index]) + Number(this.props.total[this.props.currentCurrency.index]) * this.props.tax)
                                 }
                             </p>
@@ -38,16 +38,12 @@ class CartPage extends Component {
     }
 }
 
-function mapStateToProps(state) {
-    return {
+export default connect(
+    (state) => ({
         currentCurrency: state.productReducer.currentCurrency,
         total: state.cartReducer.total,
         totalQuantity: state.cartReducer.totalQuantity,
         tax: state.cartReducer.tax
-    }
-}
-
-export default connect(
-    mapStateToProps
+    })
 )(CartPage)
 

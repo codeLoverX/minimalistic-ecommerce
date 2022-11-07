@@ -162,7 +162,7 @@ class CardItemComponent extends Component {
                                             You can't add out of stock item to cart
                                         </CardItem.QuickShopAddToCartError>
                                     }
-                                    <CartItem.Sizebox  onClick={(event) => this.submitForm(event)}> ADD TO CART </CartItem.Sizebox>
+                                    <CardItem.QuickShopAddToCart onClick={(event) => this.submitForm(event)}> ADD TO CART </CardItem.QuickShopAddToCart>
                                 </CardItem.QuickShopContainer>
                             </Fragment>
                         }
@@ -194,20 +194,8 @@ class CardItemComponent extends Component {
     }
 }
 
-function mapStateToProps(state) {
-    return {
-        currentCurrency: state.productReducer.currentCurrency,
-    }
-}
-
-function mapDispatchToProps(dispatch) {
-    return {
-        dispatchAddProductToCartAction: (cart) => dispatch(addProductToCartAction(cart)),
-    }
-}
-
 export default connect(
-    mapStateToProps,
-    mapDispatchToProps
+    (state) => ({ currentCurrency: state.productReducer.currentCurrency }),
+    (dispatch) => ({ dispatchAddProductToCartAction: (cart) => dispatch(addProductToCartAction(cart)) })
 )(CardItemComponent)
 

@@ -16,7 +16,7 @@ class ProductDescription extends Component {
             return { attributes: { ...prev.attributes, [attribute]: { id, value } } }
         })
     }
-   
+
     submitForm(event) {
         event.preventDefault()
 
@@ -50,7 +50,7 @@ class ProductDescription extends Component {
                 ...this.props.description, selectedAttributes: { ...this.state.attributes }, quantity: this.state.quantity
             })
 
-            this.setState((prev)=> { return {...prev, missingAttributes: []} })
+            this.setState((prev) => { return { ...prev, missingAttributes: [] } })
         }
 
         else this.setState((prev) => { return { ...prev, missingAttributes } })
@@ -80,16 +80,16 @@ class ProductDescription extends Component {
                                     {
                                         attribute.items.map((attributeItem) => {
                                             return (
-                                                <AttributeItem 
-                                                colorBoxCloned={<CartItem.Colorbox />}
-                                                sizeBoxCloned={<CartItem.Sizebox />}
-                                                attributeName={attribute.name}
-                                                onClick={() => this.addForm(attribute.name,
-                                                                { id: attributeItem.id, value: attributeItem.value })}
-                                                displayValue={attributeItem.displayValue}
-                                                key={`cart${attributeItem.id}`} 
-                                                active={attributeItem.id === this.state.attributes[attribute.name]?.id} 
-                                            />
+                                                <AttributeItem
+                                                    colorBoxCloned={<CartItem.Colorbox />}
+                                                    sizeBoxCloned={<CartItem.Sizebox />}
+                                                    attributeName={attribute.name}
+                                                    onClick={() => this.addForm(attribute.name,
+                                                        { id: attributeItem.id, value: attributeItem.value })}
+                                                    displayValue={attributeItem.displayValue}
+                                                    key={`cart${attributeItem.id}`}
+                                                    active={attributeItem.id === this.state.attributes[attribute.name]?.id}
+                                                />
                                             )
                                         })
                                     }
@@ -111,14 +111,14 @@ class ProductDescription extends Component {
                                 </Fragment>)}
                         </Description.AddToCartError>
                     }
-                     {description.inStock === false
+                    {description.inStock === false
                         && <Description.AddToCartError>
                             You can't add out of stock item to cart
                         </Description.AddToCartError>
                     }
                     <Description.AddToCart onClick={(event) => this.submitForm(event)}> ADD TO CART </Description.AddToCart>
-                    <br/>
-                    <br/>
+                    <br />
+                    <br />
                     <Description.DescriptionText>
                         {parse(description.description)}
                     </Description.DescriptionText>
@@ -128,21 +128,7 @@ class ProductDescription extends Component {
     }
 }
 
-
-
-function mapStateToProps(state) {
-    return {
-        currentCurrency: state.productReducer.currentCurrency,
-    }
-}
-
-function mapDispatchToProps(dispatch) {
-    return {
-        dispatchAddProductToCartAction: (cart) => dispatch(addProductToCartAction(cart)),
-    }
-}
-
 export default connect(
-    mapStateToProps,
-    mapDispatchToProps
+    (state) => ({ currentCurrency: state.productReducer.currentCurrency }),
+    (dispatch) => ({ dispatchAddProductToCartAction: (cart) => dispatch(addProductToCartAction(cart)) })
 )(ProductDescription)

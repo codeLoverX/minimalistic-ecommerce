@@ -27,16 +27,8 @@ class Currency extends Component {
     }
 }
 
-
-function mapStateToProps(state) {
-    return {
-        currencies: state.productReducer.currencies,
-    }
-}
-
-
 export default connect(
-    mapStateToProps
+    (state) => ({ currencies: state.productReducer.currencies, })
 )(Currency)
 
 

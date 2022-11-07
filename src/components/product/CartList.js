@@ -24,14 +24,7 @@ class CartPage extends Component {
         )
     }
 }
-
-function mapStateToProps(state) {
-    return {
-        cart: state.cartReducer.cart,
-    }
-}
-
 export default connect(
-    mapStateToProps
+    (state) => ({ cart: state.cartReducer.cart })
 )(CartPage)
 

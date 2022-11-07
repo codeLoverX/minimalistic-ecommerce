@@ -3,7 +3,6 @@ import { CartItem, Product } from './styles'
 import { connect } from 'react-redux'
 import { editCartAttributeAction, incrementValueToCartAction } from '../../redux/cart/cart-action'
 import CartImagePreviewTab from './CartImagePreviewTab'
-import { sizeToDisplayMapper } from '../../utils/sizeToDisplayMapper'
 import AttributeItem from './AttributeItem'
 
 class CartItemComponent extends Component {
@@ -73,21 +72,10 @@ class CartItemComponent extends Component {
     }
 }
 
-
-function mapStateToProps(state) {
-    return {
-        currentCurrency: state.productReducer.currentCurrency,
-    }
-}
-
-function mapDispatchToProps(dispatch) {
-    return {
-        dispatchAddProductToCartAction: (newAttribute) => dispatch(editCartAttributeAction(newAttribute)),
-        dispatchIncrementValueToCartAction: (change) => dispatch(incrementValueToCartAction(change)),
-    }
-}
-
 export default connect(
-    mapStateToProps,
-    mapDispatchToProps
+    (state) => ({ currentCurrency: state.productReducer.currentCurrency }),
+    (dispatch) => ({
+        dispatchAddProductToCartAction: (newAttribute) => dispatch(editCartAttributeAction(newAttribute)),
+        dispatchIncrementValueToCartAction: (change) => dispatch(incrementValueToCartAction(change))
+    })
 )(CartItemComponent)

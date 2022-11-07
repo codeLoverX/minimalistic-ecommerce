@@ -2,18 +2,17 @@ import React, { Component, Fragment } from 'react'
 import { OverlayCartItem } from './styles'
 import { connect } from 'react-redux'
 import { editCartAttributeAction, incrementValueToCartAction } from '../../redux/cart/cart-action'
-import { sizeToDisplayMapper } from '../../utils/sizeToDisplayMapper'
 import AttributeItem from './AttributeItem'
 
 class OverlayCartItemComponent extends Component {
-    
+
     editForm({ attribute, index, id, value }) {
         this.props.dispatchAddProductToCartAction({ attribute, index, id, value })
     }
 
     render() {
         let { cart, currentCurrency, cartIndex } = this.props
-       
+
         return (
             <OverlayCartItem>
                 <div>
@@ -34,20 +33,20 @@ class OverlayCartItemComponent extends Component {
                                         {attribute.name}
                                     </OverlayCartItem.Subtitle>
                                     {
-                                       attribute?.items.map((attributeItem) => {
+                                        attribute?.items.map((attributeItem) => {
                                             return (
-                                                <AttributeItem 
-                                                colorBoxCloned={<OverlayCartItem.Colorbox />}
-                                                sizeBoxCloned={<OverlayCartItem.Sizebox />}
-                                                attributeName={attribute.name}
-                                                // onClick={() => this.editForm({
-                                                //             attribute: attribute.name,
-                                                //              index: cartIndex, id: attributeItem.id, value: attributeItem.value
-                                                //          })}
-                                                displayValue={attributeItem.displayValue}
-                                                key={`cart${attributeItem.id}`} 
-                                                active={attributeItem.id === cart.selectedAttributes[attribute.name]?.id }
-                                            />
+                                                <AttributeItem
+                                                    colorBoxCloned={<OverlayCartItem.Colorbox />}
+                                                    sizeBoxCloned={<OverlayCartItem.Sizebox />}
+                                                    attributeName={attribute.name}
+                                                    // onClick={() => this.editForm({
+                                                    //             attribute: attribute.name,
+                                                    //              index: cartIndex, id: attributeItem.id, value: attributeItem.value
+                                                    //          })}
+                                                    displayValue={attributeItem.displayValue}
+                                                    key={`cart${attributeItem.id}`}
+                                                    active={attributeItem.id === cart.selectedAttributes[attribute.name]?.id}
+                                                />
                                             )
                                         })
                                     }
@@ -62,17 +61,17 @@ class OverlayCartItemComponent extends Component {
                             onClick={() => this.props.dispatchIncrementValueToCartAction({ index: cartIndex, incrementQuantity: 1 })}
                             paddingX={"3px"}
                             paddingY={"3px"}>
-                                +
+                            +
                         </OverlayCartItem.Sizebox>
                         <span>{cart.quantity}</span>
                         <OverlayCartItem.Sizebox
                             onClick={() => this.props.dispatchIncrementValueToCartAction({ index: cartIndex, incrementQuantity: -1 })}
                             paddingX={"3px"}
                             paddingY={"3px"}>
-                                -
+                            -
                         </OverlayCartItem.Sizebox>
                     </OverlayCartItem.QuantitySizebox>
-                    <OverlayCartItem.PreviewImg src={cart.gallery[0]}/>
+                    <OverlayCartItem.PreviewImg src={cart.gallery[0]} />
                 </OverlayCartItem.ColumnTwo>
             </OverlayCartItem>
 
@@ -80,21 +79,10 @@ class OverlayCartItemComponent extends Component {
     }
 }
 
-
-function mapStateToProps(state) {
-    return {
-        currentCurrency: state.productReducer.currentCurrency,
-    }
-}
-
-function mapDispatchToProps(dispatch) {
-    return {
-        dispatchAddProductToCartAction: (newAttribute) => dispatch(editCartAttributeAction(newAttribute)),
-        dispatchIncrementValueToCartAction: (change) => dispatch(incrementValueToCartAction(change)),
-    }
-}
-
 export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(OverlayCartItemComponent)
+    (state) => ({ currentCurrency: state.productReducer.currentCurrency }),
+    (dispatch) => ({
+        dispatchAddProductToCartAction: (newAttribute) => dispatch(editCartAttributeAction(newAttribute)),
+        dispatchIncrementValueToCartAction: (change) => dispatch(incrementValueToCartAction(change))
+    })
+) (OverlayCartItemComponent)
