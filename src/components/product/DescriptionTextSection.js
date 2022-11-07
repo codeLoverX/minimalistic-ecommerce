@@ -6,6 +6,7 @@ import { sizeToDisplayMapper } from '../../utils/sizeToDisplayMapper'
 import { CartItem, Description, Product } from './styles'
 import parse from 'html-react-parser';
 import React from 'react'
+import AttributeItem from './AttributeItem'
 
 const initialState = { attributes: {}, missingAttributes: [], quantity: 1 }
 
@@ -83,41 +84,17 @@ class ProductDescription extends Component {
                                     {
                                        
                                         attribute.items.map((attributeItem) => {
-                                            if (attribute.name.toLowerCase() === 'size')
                                             return (
-                                                <CartItem.Sizebox
-                                                    onClick={() => this.addForm(attribute.name,
-                                                        { id: attributeItem.id, value: attributeItem.value })}
-                                                    key={attributeItem.id}
-                                                    active={attributeItem.id === this.state.attributes[attribute.name]?.id}
-                                                    paddingX={"3px"}
-                                                    paddingY={"6px"}>
-                                                        {
-                                                            sizeToDisplayMapper[attributeItem.displayValue] ?  
-                                                            sizeToDisplayMapper[attributeItem.displayValue] :
-                                                            attributeItem.displayValue
-                                                         }
-                                                </CartItem.Sizebox>
-                                            )
-                                            if (attribute.name.toLowerCase() === 'color')
-                                            return (
-                                                <CartItem.Colorbox
-                                                    active={attributeItem.id === this.state.attributes[attribute.name]?.id}
-                                                    onClick={() => this.addForm(attribute.name,
-                                                        { id: attributeItem.id, value: attributeItem.value })}
-                                                    key={attributeItem.id}
-                                                    backgroundColor={attributeItem.displayValue} />
-                                            )
-                                            return (
-                                                <CartItem.Sizebox
-                                                    onClick={() => this.addForm(attribute.name,
-                                                        { id: attributeItem.id, value: attributeItem.value })}
-                                                    key={attributeItem.id}
-                                                    active={attributeItem.id === this.state.attributes[attribute.name]?.id}
-                                                    paddingX={"3px"}
-                                                    paddingY={"6px"}>
-                                                    {attributeItem.displayValue}
-                                                </CartItem.Sizebox>
+                                                <AttributeItem 
+                                                colorBoxCloned={<CartItem.Colorbox />}
+                                                sizeBoxCloned={<CartItem.Sizebox />}
+                                                attributeName={attribute.name}
+                                                onClick={() => this.addForm(attribute.name,
+                                                                { id: attributeItem.id, value: attributeItem.value })}
+                                                displayValue={attributeItem.displayValue}
+                                                key={`cart${attributeItem.id}`} 
+                                                active={attributeItem.id === this.state.attributes[attribute.name]?.id} 
+                                            />
                                             )
                                         })
                                     }
