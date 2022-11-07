@@ -10,26 +10,30 @@ import ErrorNotification from '../../components/notification/error'
 import Loading from '../../components/notification/loading'
 
 class DescriptionPage extends Component {
+    
     constructor(){
         super()
-
-        console.log('fetch once')
 
         this.state = {
             data: null,
             isLoading: true,
             isError: false
         }
+
+        this.mounted = true
+    }
+
+    componentWillUnmount() {
+        this.mounted = false;
     }
 
     componentDidMount() {
-        console.log("maincomponent")
-         
+
+        if (!this.mounted) return
+
         let { productId } = this.props.match.params
 
-        // if (!this.state.isLoading) return
-        
-        console.log({state: this.state})
+        // if (!this.state.isLoading) return        
         catchError(
             fetchProducById(productId)
             .then((data) => {

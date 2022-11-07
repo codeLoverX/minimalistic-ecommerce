@@ -10,37 +10,48 @@ import { CardList } from './styles'
 
 
 class CardListComponent extends Component {
+    constructor(){
+        super()
+
+        this.mounted = true
+    }
+    
     state = {
         data: [],
         isLoading: false,
         isError: false
     }
 
-    async fetchAndSetComponentData() {
+    fetchAndSetComponentData() {
         let { category } = this.props
 
         this.setState((prev) => {
             return { ...prev, loading: true }
         })
 
-        let { data, error } = await catchError(
+        catchError(
             fetchAllProductsByCategory(category)
                 .then(data => data.category.products))
-
-        this.setState({
-            data,
-            isLoading: false,
-            isError: error
-        })
+                .then(({data, error})=> {
+                    this.setState({
+                        data,
+                        isLoading: false,
+                        isError: error
+                    })
+                })
     }
 
     componentDidMount() {
-        this.fetchAndSetComponentData()
+        if (this.mounted) this.fetchAndSetComponentData()
+    }
+
+    componentWillUnmount() {
+        this.mounted = false
     }
 
     componentDidUpdate(prevProps) {
         // if (this.props.router.params.category !== prevProps.router.params.category) {
-        if (this.props.category !== prevProps.category) {
+        if (this.props.category !== prevProps.category && this.mounted) {
             this.fetchAndSetComponentData()
         }
     }

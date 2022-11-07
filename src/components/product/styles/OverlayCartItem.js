@@ -36,7 +36,7 @@ OverlayCartItem.Subtitle = styled(Product.Subtitle)`
 `
 
 OverlayCartItem.Container = styled.div`
-    max-height: 50vh;
+   max-height: 50vh;
    padding-bottom: 20px;
    overflow-y: auto; 
    overflow-x: visible;
@@ -69,7 +69,8 @@ OverlayCartItem.TotalQuantity = styled.div`
 
 
 OverlayCartItem.PreviewImg = styled(CartItem.PreviewImg)`
-    max-width: 100px;
+    width: 100px;
+    height: 100px;
     margin-bottom: 0;
 `
 

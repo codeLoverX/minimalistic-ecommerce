@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react'
 import { OverlayCartItem } from './styles'
 import { connect } from 'react-redux'
 import { editCartAttributeAction, incrementValueToCartAction } from '../../redux/cart/cart-action'
+import { sizeToDisplayMapper } from '../../utils/sizeToDisplayMapper'
 
 class OverlayCartItemComponent extends Component {
     
@@ -32,39 +33,50 @@ class OverlayCartItemComponent extends Component {
                                         {attribute.name}
                                     </OverlayCartItem.Subtitle>
                                     {
-                                        attribute.name.toLowerCase() !== 'color'
-                                            ?
-                                            attribute.items.map((attributeItem) => {
-                                                return (
-                                                    <OverlayCartItem.Sizebox
-                                                        // onClick={() => this.editForm({
-                                                        //     attribute: attribute.name,
-                                                        //     index: cartIndex, id: attributeItem.id, value: attributeItem.value
-                                                        // })}
-                                                        key={`overlayCart${attributeItem.id}`}
-                                                        active={attributeItem.id === cart.selectedAttributes[attribute.name]?.id}
-                                                        paddingX={"3px"}
-                                                        paddingY={"6px"}
-                                                    >
-                                                        {attributeItem.displayValue}
-                                                    </OverlayCartItem.Sizebox>
-                                                )
-                                            })
-                                            :
-                                            attribute.items.map((attributeItem) => {
-
-                                                return (
-                                                    <OverlayCartItem.Colorbox
-                                                        active={attributeItem.id === cart.selectedAttributes[attribute.name]?.id}
-                                                        // onClick={() => this.editForm({
-                                                        //     attribute: attribute.name,
-                                                        //     index: cartIndex, id: attributeItem.id, value: attributeItem.value
-                                                        // })}
-                                                        key={`overlayCart${attributeItem.id}`}
-                                                        backgroundColor={attributeItem.displayValue}
-                                                    />
-                                                )
-                                            })
+                                       attribute?.items.map((attributeItem) => {
+                                            if (attribute.name.toLowerCase() === 'size')
+                                            return (
+                                                <OverlayCartItem.Sizebox
+                                                    onClick={() => this.addForm(attribute.name,
+                                                        { id: attributeItem.id, value: attributeItem.value })}
+                                                    key={attributeItem.id}
+                                                    active={attributeItem.id === cart.attributes[attribute.name]?.id}
+                                                    paddingX={"3px"}
+                                                    paddingY={"6px"}>
+                                                        {
+                                                            sizeToDisplayMapper[attributeItem.displayValue] ?  
+                                                            sizeToDisplayMapper[attributeItem.displayValue] :
+                                                            attributeItem.displayValue
+                                                        }
+                                                </OverlayCartItem.Sizebox>
+                                            )
+                                            if (attribute.name.toLowerCase() === 'color')
+                                            return (
+                                                <OverlayCartItem.Colorbox
+                                                    active={attributeItem.id === cart.selectedAttributes[attribute.name]?.id}
+                                                    // onClick={() => this.editForm({
+                                                    //     attribute: attribute.name,
+                                                    //     index: cartIndex, id: attributeItem.id, value: attributeItem.value
+                                                    // })}
+                                                    key={`overlayCart${attributeItem.id}`}
+                                                    backgroundColor={attributeItem.displayValue}
+                                                />
+                                            )
+                                            return (
+                                                <OverlayCartItem.Sizebox
+                                                    // onClick={() => this.editForm({
+                                                    //     attribute: attribute.name,
+                                                    //     index: cartIndex, id: attributeItem.id, value: attributeItem.value
+                                                    // })}
+                                                    key={`overlayCart${attributeItem.id}`}
+                                                    active={attributeItem.id === cart.selectedAttributes[attribute.name]?.id}
+                                                    paddingX={"3px"}
+                                                    paddingY={"6px"}
+                                                >                                                           
+                                                    {attributeItem.displayValue}
+                                                </OverlayCartItem.Sizebox>
+                                            )
+                                        })
                                     }
                                 </Fragment>)
                         })

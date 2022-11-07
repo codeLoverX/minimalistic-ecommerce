@@ -3,6 +3,7 @@ import { CartItem, Product } from './styles'
 import { connect } from 'react-redux'
 import { editCartAttributeAction, incrementValueToCartAction } from '../../redux/cart/cart-action'
 import CartImagePreviewTab from './CartImagePreviewTab'
+import { sizeToDisplayMapper } from '../../utils/sizeToDisplayMapper'
 
 class CartItemComponent extends Component {
     editForm({ attribute, index, id, value }) {
@@ -34,9 +35,37 @@ class CartItemComponent extends Component {
                                         {attribute.name}
                                     </Product.Subtitle>
                                     {
-                                        attribute.name.toLowerCase() !== 'color'
-                                            ?
-                                            attribute.items.map((attributeItem) => {
+                                           attribute.items.map((attributeItem) => {
+                                                if (attribute.name.toLowerCase() === 'size')  
+                                                return (
+                                                    <CartItem.Sizebox
+                                                        // onClick={() => this.editForm({
+                                                        //     attribute: attribute.name,
+                                                        //     index: cartIndex, id: attributeItem.id, value: attributeItem.value
+                                                        // })}
+                                                        key={`cart${attributeItem.id}`}
+                                                        active={attributeItem.id === cart.selectedAttributes[attribute.name]?.id}
+                                                        paddingX={"3px"}
+                                                        paddingY={"6px"}>
+                                                            {
+                                                                sizeToDisplayMapper[attributeItem.displayValue] ?  
+                                                                sizeToDisplayMapper[attributeItem.displayValue] :
+                                                                attributeItem.displayValue
+                                                            }
+                                                    </CartItem.Sizebox>
+                                                )
+                                                if (attribute.name.toLowerCase() === 'color')  
+                                                return (
+                                                    <CartItem.Colorbox
+                                                        active={attributeItem.id === cart.selectedAttributes[attribute.name]?.id}
+                                                        // onClick={() => this.editForm({
+                                                        //     attribute: attribute.name,
+                                                        //     index: cartIndex, id: attributeItem.id, value: attributeItem.value
+                                                        // })}
+                                                        key={`cart${attributeItem.id}`}
+                                                        backgroundColor={attributeItem.displayValue}
+                                                    />
+                                                )
                                                 return (
                                                     <CartItem.Sizebox
                                                         // onClick={() => this.editForm({
@@ -49,20 +78,6 @@ class CartItemComponent extends Component {
                                                         paddingY={"6px"}>
                                                         {attributeItem.displayValue}
                                                     </CartItem.Sizebox>
-                                                )
-                                            })
-                                            :
-                                            attribute.items.map((attributeItem) => {
-                                                return (
-                                                    <CartItem.Colorbox
-                                                        active={attributeItem.id === cart.selectedAttributes[attribute.name]?.id}
-                                                        // onClick={() => this.editForm({
-                                                        //     attribute: attribute.name,
-                                                        //     index: cartIndex, id: attributeItem.id, value: attributeItem.value
-                                                        // })}
-                                                        key={`cart${attributeItem.id}`}
-                                                        backgroundColor={attributeItem.displayValue}
-                                                    />
                                                 )
                                             })
                                     }

@@ -95,9 +95,10 @@ CartItem.PreviewTabControllerRight = styled(CartItem.PreviewTabController)`
 `
 
 CartItem.PreviewImg = styled.img`
-    max-width: 250px;
+    object-fit: cover;
     width: 350px;
-    max-height: 350px;
+    width: 250px;
+    height: 250px;
     margin-bottom: 10px;
 `
 

@@ -26,11 +26,16 @@ const theme = {
 
 class App extends Component {
 
-  componentDidMount() {
-    console.log({props: this.props.loading})
-    
-    this.props.dispatchFetchAllCurrenciesAndCategories()
+  mounted = true
+
+  componentWillUnmount(){
+    this.mounted = false
   }
+  
+  componentDidMount() {
+    if (this.mounted) this.props.dispatchFetchAllCurrenciesAndCategories()
+  }
+  
   render() {  
       if (this.props.loading) return <Loading />
         // delete this  

@@ -14,6 +14,14 @@ gql`query {
             label
           }
         }
+        attributes {
+          name
+          items {
+            id
+            value
+            displayValue
+          }
+        }
         name
         inStock
         gallery

@@ -8,7 +8,6 @@ import DropdownIcon from './styles/DropdownIcon.styled'
 import { changeCurrencyAction } from '../../../redux/products/products-action'
 import OverlayCart from '../../product/OverlayCart'
 import Currency from '../../product/Currency'
-import ReactDOM from 'react-dom';
 
 const initialState = {
     cartDropdown: true, currencyDropdown: true
@@ -70,13 +69,14 @@ class Navigation extends Component {
     componentWillUnmount() {
         // if eventListener exists, remove eventListener.
         // if (document.getAttribute('listener') !== 'true') {
-            document.removeEventListener('click', this.handleClickOutside, true);
+        document.removeEventListener('click', this.handleClickOutside, true);
         // }
     }
     
     handleClickOutside = event => {
 
         let currentStyle = this.navBarRef.current.style
+        
         if (this.wrapperRef && !this.wrapperRef.current.contains(event.target)) {
             this.changeOpacity(1)
 

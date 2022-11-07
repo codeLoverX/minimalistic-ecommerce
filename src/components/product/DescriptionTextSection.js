@@ -1,6 +1,8 @@
 import { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import { addProductToCartAction } from '../../redux/cart/cart-action'
+import { sizeToDisplayMapper } from '../../utils/sizeToDisplayMapper'
+
 import { CartItem, Description, Product } from './styles'
 import parse from 'html-react-parser';
 import React from 'react'
@@ -15,6 +17,8 @@ class ProductDescription extends Component {
             return { attributes: { ...prev.attributes, [attribute]: { id, value } } }
         })
     }
+
+   
 
     submitForm(event) {
         event.preventDefault()
@@ -77,32 +81,45 @@ class ProductDescription extends Component {
                                         {attribute.name}
                                     </Product.Subtitle>
                                     {
-                                        attribute.name.toLowerCase() !== 'color'
-                                            ?
-                                            attribute.items.map((attributeItem) => {
-                                                return (
-                                                    <CartItem.Sizebox
-                                                        onClick={() => this.addForm(attribute.name,
-                                                            { id: attributeItem.id, value: attributeItem.value })}
-                                                        key={attributeItem.id}
-                                                        active={attributeItem.id === this.state.attributes[attribute.name]?.id}
-                                                        paddingX={"3px"}
-                                                        paddingY={"6px"}>
-                                                        {attributeItem.displayValue}
-                                                    </CartItem.Sizebox>
-                                                )
-                                            })
-                                            :
-                                            attribute.items.map((attributeItem) => {
-                                                return (
-                                                    <CartItem.Colorbox
-                                                        active={attributeItem.id === this.state.attributes[attribute.name]?.id}
-                                                        onClick={() => this.addForm(attribute.name,
-                                                            { id: attributeItem.id, value: attributeItem.value })}
-                                                        key={attributeItem.id}
-                                                        backgroundColor={attributeItem.displayValue} />
-                                                )
-                                            })
+                                       
+                                        attribute.items.map((attributeItem) => {
+                                            if (attribute.name.toLowerCase() === 'size')
+                                            return (
+                                                <CartItem.Sizebox
+                                                    onClick={() => this.addForm(attribute.name,
+                                                        { id: attributeItem.id, value: attributeItem.value })}
+                                                    key={attributeItem.id}
+                                                    active={attributeItem.id === this.state.attributes[attribute.name]?.id}
+                                                    paddingX={"3px"}
+                                                    paddingY={"6px"}>
+                                                        {
+                                                            sizeToDisplayMapper[attributeItem.displayValue] ?  
+                                                            sizeToDisplayMapper[attributeItem.displayValue] :
+                                                            attributeItem.displayValue
+                                                         }
+                                                </CartItem.Sizebox>
+                                            )
+                                            if (attribute.name.toLowerCase() === 'color')
+                                            return (
+                                                <CartItem.Colorbox
+                                                    active={attributeItem.id === this.state.attributes[attribute.name]?.id}
+                                                    onClick={() => this.addForm(attribute.name,
+                                                        { id: attributeItem.id, value: attributeItem.value })}
+                                                    key={attributeItem.id}
+                                                    backgroundColor={attributeItem.displayValue} />
+                                            )
+                                            return (
+                                                <CartItem.Sizebox
+                                                    onClick={() => this.addForm(attribute.name,
+                                                        { id: attributeItem.id, value: attributeItem.value })}
+                                                    key={attributeItem.id}
+                                                    active={attributeItem.id === this.state.attributes[attribute.name]?.id}
+                                                    paddingX={"3px"}
+                                                    paddingY={"6px"}>
+                                                    {attributeItem.displayValue}
+                                                </CartItem.Sizebox>
+                                            )
+                                        })
                                     }
                                     <br />
                                 </Fragment>)
