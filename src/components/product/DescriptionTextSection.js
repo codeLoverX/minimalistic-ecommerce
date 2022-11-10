@@ -60,6 +60,8 @@ class ProductDescription extends Component {
 
         let { description, currentCurrency } = this.props
 
+        console.log({ description: description.description, parsed: parse(description.description) })
+
         return (
             <>
                 <Description.TextSection>
@@ -120,7 +122,9 @@ class ProductDescription extends Component {
                     <br />
                     <br />
                     <Description.DescriptionText>
-                        {parse(description.description)}
+                        {
+                            (this.props.exeededWordLimit) ? <>{this.props.begin}</> : <> {parse(description.description)} </>
+                        }
                     </Description.DescriptionText>
                 </Description.TextSection>
             </>
