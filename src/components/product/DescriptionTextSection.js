@@ -5,6 +5,7 @@ import { CartItem, Description, Product } from './styles'
 import parse from 'html-react-parser';
 import React from 'react'
 import AttributeItem from './AttributeItem'
+import ReadMoreComponent from '../readMoreLess/ReadMore';
 
 const initialState = { attributes: {}, missingAttributes: [], quantity: 1 }
 
@@ -123,7 +124,12 @@ class ProductDescription extends Component {
                     <br />
                     <Description.DescriptionText>
                         {
-                            (this.props.exeededWordLimit) ? <>{this.props.begin}</> : <> {parse(description.description)} </>
+                            (this.props.exeededWordLimit) ?
+                                <ReadMoreComponent>
+                                    {this.props.begin}
+                                </ReadMoreComponent> 
+                                :
+                                <> {parse(description.description)} </>
                         }
                     </Description.DescriptionText>
                 </Description.TextSection>

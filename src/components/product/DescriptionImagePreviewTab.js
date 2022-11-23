@@ -1,8 +1,8 @@
-import { Component } from 'react'
+import { PureComponent } from 'react'
 import { Description } from './styles'
 import React from 'react'
 
-class ProductPreview extends Component {
+class ProductPreview extends PureComponent {
     state = {
         currentImage: null
     }
