@@ -1,10 +1,10 @@
 import { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { CardItem, CartItem, Product } from './styles'
+import { CardItem, CartItem, Product } from '../styles'
 import { connect } from 'react-redux'
 import React from 'react'
 import { Fragment } from 'react'
-import AttributeItem from './AttributeItem'
+import AttributeItem from '../description/AttributeItem'
 import { addProductToCartAction } from '../../redux/cart/cart-action'
 
 const controlQuickShop = {

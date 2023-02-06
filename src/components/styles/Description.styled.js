@@ -13,20 +13,26 @@ Description.Preview = styled.span`
     flex-basis: 100%; 
     text-align: center;
     position: reative;
+    max-height: 50vh;
     & img {
         object-fit: cover;
         margin: auto
         max-width: 80%;
-        max-height: 90%;
+        max-height: 100%;
     }
     @media (min-width: ${({ theme }) => theme.tablet}) {
         flex-basis: 50%;
         max-height: 70vh;
+        & img {
+            max-height: 100%;
+            max-width: 100%;
+        }
     }
 
 `
 Description.ControlPreview = styled.span`
     flex-basis: 10%;
+    max-height: 80vh;
     text-align: center;
     overflow-y: auto;
     ::-webkit-scrollbar {
@@ -37,23 +43,30 @@ Description.ControlPreview = styled.span`
     position: reative;
     & img {
         object-fit: cover;
-        max-width: 80%;
+        max-width: 90%;
         margin: auto; 
         cursor: pointer;
     }
     @media (max-width: ${({ theme }) => theme.tablet}) {
+        ::-webkit-scrollbar {
+            height: 5px;
+        }
         flex-basis: 100%; 
-        oveflow-x: scroll;
-        margin: 0 10%; 
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        white-space: nowrap;
+        margin: 25px 10%; 
+        width: 90vw;
         & img {
-            width: 50px;
+            width: 100px;
+            height: 100px;
         }
     }
 `
 
 Description.TextSection = styled.span`
     flex-basis: 40%;  
-       max-height: min-content; 
+    max-height: min-content; 
     @media (max-width: ${({ theme }) => theme.tablet}) {
         flex-basis: 100%; 
         text-align: center;
@@ -85,7 +98,10 @@ Description.AddToCartError = styled.div`
 `
 
 Description.DescriptionText = styled.div`
-    height: 300px;
+    height: min-content;
+    @media (max-width: ${({ theme }) => theme.tablet}) {
+        height: 300px;
+    }
     font-size: medium; 
     font-weight: 600; 
 `

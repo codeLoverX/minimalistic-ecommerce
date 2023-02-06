@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Footer from '../../components/layouts/Footer/Footer'
 import Navigation from '../../components/layouts/Navigation/Navigation'
-import CartList from '../../components/product/CartList'
+import CartList from '../../components/cart/CartList'
 import { roundOffTwoDP } from '../../redux/cart/cart-utils'
 import { CartSummary } from './styles'
 

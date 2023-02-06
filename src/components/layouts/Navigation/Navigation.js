@@ -6,8 +6,8 @@ import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import DropdownIcon from './styles/DropdownIcon.styled'
 import { changeCurrencyAction } from '../../../redux/products/products-action'
-import OverlayCart from '../../product/OverlayCart'
-import Currency from '../../product/Currency'
+import OverlayCart from './OverlayCart'
+import Currency from './Currency'
 
 const initialState = {
     cartDropdown: true, currencyDropdown: true

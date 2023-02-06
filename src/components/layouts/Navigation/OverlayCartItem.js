@@ -1,45 +1,43 @@
 import React, { Component, Fragment } from 'react'
-import { CartItem, Product } from './styles'
+import { OverlayCartItem } from '../../styles'
 import { connect } from 'react-redux'
-import { editCartAttributeAction, incrementValueToCartAction } from '../../redux/cart/cart-action'
-import CartImagePreviewTab from './CartImagePreviewTab'
-import AttributeItem from './AttributeItem'
+import { editCartAttributeAction, incrementValueToCartAction } from '../../../redux/cart/cart-action'
+import AttributeItem from '../../description/AttributeItem'
 
-class CartItemComponent extends Component {
+class OverlayCartItemComponent extends Component {
+
     editForm({ attribute, index, id, value }) {
         this.props.dispatchAddProductToCartAction({ attribute, index, id, value })
     }
 
     render() {
-
         let { cart, currentCurrency, cartIndex } = this.props
-        return (
 
-            <CartItem >
+        return (
+            <OverlayCartItem>
                 <div>
-                    <Product.Brand>
+                    <OverlayCartItem.Brand>
                         {cart.brand}
-                    </Product.Brand>
-                    <Product.Title>
+                    </OverlayCartItem.Brand>
+                    <OverlayCartItem.Title>
                         {cart.name}
-                    </Product.Title>
-                    <Product.Price>
+                    </OverlayCartItem.Title>
+                    <OverlayCartItem.Price>
                         {currentCurrency.symbol} {cart.prices[currentCurrency.index].amount}
-                    </Product.Price>
-                    <br />
+                    </OverlayCartItem.Price>
                     {
                         cart.attributes.map((attribute, attributeIndex) => {
                             return (
                                 <Fragment key={`cart${attribute.name}${attributeIndex}`}>
-                                    <Product.Subtitle >
+                                    <OverlayCartItem.Subtitle>
                                         {attribute.name}
-                                    </Product.Subtitle>
+                                    </OverlayCartItem.Subtitle>
                                     {
-                                        attribute.items.map((attributeItem) => {
+                                        attribute?.items.map((attributeItem) => {
                                             return (
                                                 <AttributeItem
-                                                    colorBoxCloned={<CartItem.Colorbox />}
-                                                    sizeBoxCloned={<CartItem.Sizebox />}
+                                                    colorBoxCloned={<OverlayCartItem.Colorbox />}
+                                                    sizeBoxCloned={<OverlayCartItem.Sizebox />}
                                                     attributeName={attribute.name}
                                                     // onClick={() => this.editForm({
                                                     //             attribute: attribute.name,
@@ -57,16 +55,25 @@ class CartItemComponent extends Component {
                     }
 
                 </div>
-                <CartItem.ColumnTwo>
-                    <CartItem.QuantitySizebox>
-                        <CartItem.Sizebox onClick={() => this.props.dispatchIncrementValueToCartAction({ index: cartIndex, incrementQuantity: 1 })} paddingX={"3px"} paddingY={"3px"}>+</CartItem.Sizebox>
+                <OverlayCartItem.ColumnTwo>
+                    <OverlayCartItem.QuantitySizebox>
+                        <OverlayCartItem.Sizebox
+                            onClick={() => this.props.dispatchIncrementValueToCartAction({ index: cartIndex, incrementQuantity: 1 })}
+                            paddingX={"3px"}
+                            paddingY={"3px"}>
+                            +
+                        </OverlayCartItem.Sizebox>
                         <span>{cart.quantity}</span>
-                        <CartItem.Sizebox onClick={() => this.props.dispatchIncrementValueToCartAction({ index: cartIndex, incrementQuantity: -1 })} paddingX={"3px"} paddingY={"3px"}>-</CartItem.Sizebox>
-                    </CartItem.QuantitySizebox>
-                    <CartImagePreviewTab images={cart.gallery} />
-
-                </CartItem.ColumnTwo>
-            </CartItem>
+                        <OverlayCartItem.Sizebox
+                            onClick={() => this.props.dispatchIncrementValueToCartAction({ index: cartIndex, incrementQuantity: -1 })}
+                            paddingX={"3px"}
+                            paddingY={"3px"}>
+                            -
+                        </OverlayCartItem.Sizebox>
+                    </OverlayCartItem.QuantitySizebox>
+                    <OverlayCartItem.PreviewImg src={cart.gallery[0]} />
+                </OverlayCartItem.ColumnTwo>
+            </OverlayCartItem>
 
         )
     }
@@ -78,4 +85,4 @@ export default connect(
         dispatchAddProductToCartAction: (newAttribute) => dispatch(editCartAttributeAction(newAttribute)),
         dispatchIncrementValueToCartAction: (change) => dispatch(incrementValueToCartAction(change))
     })
-)(CartItemComponent)
+) (OverlayCartItemComponent)

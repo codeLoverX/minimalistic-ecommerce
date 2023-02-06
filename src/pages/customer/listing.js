@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import Navigation from '../../components/layouts/Navigation/Navigation'
 import Footer from '../../components/layouts/Footer/Footer'
-import CardList from '../../components/product/CardList'
+import CardList from '../../components/listing/CardList'
 
 class ListingPage extends Component {
 
