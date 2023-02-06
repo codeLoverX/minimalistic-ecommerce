@@ -9,8 +9,6 @@ import Footer from '../../components/layouts/Footer/Footer'
 import ErrorNotification from '../../components/notification/error'
 import Loading from '../../components/notification/loading'
 import { getReadMoreLessStripHTML } from '../../utils/getReadMoreLess'
-import ReadLessComponent from '../../components/readMoreLess/ReadLess'
-import { ShowReadMoreContext } from '../../context/readMore'
 // import parse from 'html-react-parser';
 
 const BLOG_WORD_LIMIT = 800
@@ -23,19 +21,12 @@ class DescriptionPage extends Component {
         this.state = {
             data: null,
             isLoading: true,
-            isError: false,
-            readMoreState: true
+            isError: false
         }
 
         this.mounted = true
 
         this.renderIfData = this.renderIfData.bind(this)
-
-        this.toggleReadMoreState = this.toggleReadMoreState.bind(this)
-    }
-
-    toggleReadMoreState() {
-        this.setState((prev) => ({ readMoreState: !prev.readMoreState }))
     }
 
     componentWillUnmount() {
@@ -86,20 +77,18 @@ class DescriptionPage extends Component {
         console.log({ begin, end, exeededWordLimit })
         return (
             <>
-                <ShowReadMoreContext.Provider value={{readMoreState: this.state.readMoreState, toggleReadMoreState: this.toggleReadMoreState}}>
-                    <Description>
-                        <ProductPreview images={this.state.data?.gallery} />
-                        <ProductDescription description={{ ...this.state.data }} {...{ begin, exeededWordLimit }} />
-                    </Description>
-                    {exeededWordLimit && <ReadLessComponent>{end}</ReadLessComponent>}
-                </ShowReadMoreContext.Provider>
+                <Description>
+                    <ProductPreview images={this.state.data?.gallery} />
+                    <ProductDescription description={{ ...this.state.data }} {...{ begin, exeededWordLimit }} />
+                </Description>
+                { exeededWordLimit && <div>{end}</div> }
             </>
         )
     }
 
     render() {
 
-
+     
         return (
             <>
                 <Navigation currentCategory={this.state.data?.category} />

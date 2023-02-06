@@ -7,46 +7,23 @@ export const getReadMoreLessStripHTML = (html, limit) => {
 
     let breakPoint = 0
 
-    console.log({ strArray })
+    strArray.forEach((elem, index) => {
+        console.log({ elem, wordCount, limit, index })
 
-    if (Array.isArray(strArray)) {
+        if (!(elem?.props?.children) || wordCount > limit) return
 
-        strArray.forEach((elem, index) => {
-            console.log({ elem, wordCount, limit, index })
+        let wordLength = elem?.props?.children?.length
 
-            if (wordCount > limit) return
+        wordCount += wordLength
 
-            let wordLength = (elem?.props?.children)? elem?.props?.children?.length : elem.length 
+        if (wordCount > limit) breakPoint = index
+    })
 
-            wordCount += wordLength
+    const exeededWordLimit = breakPoint !== 0
 
-            if (wordCount > limit) breakPoint = index
-        })
+    const begin = strArray.slice(0, breakPoint)
 
-        const exeededWordLimit = breakPoint !== 0
+    const end = strArray.slice(breakPoint)
 
-        const begin = exeededWordLimit ? strArray.slice(0, breakPoint) : strArray
-
-        const end = exeededWordLimit ? strArray.slice(breakPoint) : ""
-
-        return { begin, end, exeededWordLimit }
-    }
-
-    else if (typeof strArray === 'string' || strArray instanceof String) {
-        wordCount = strArray.length
-
-        if (wordCount > limit) breakPoint = limit
-
-        const exeededWordLimit = breakPoint !== 0
-
-        const begin = exeededWordLimit ? strArray.slice(0, breakPoint) : strArray
-
-        const end = exeededWordLimit ? strArray.slice(breakPoint) : ""
-
-        return { begin, end, exeededWordLimit }
-    }
-    
-    else {
-        return {begin: null, end: null, exceededWordLimit: null}
-    }
+    return { begin, end, exeededWordLimit }
 } 

@@ -1,24 +1,30 @@
 import React, { Component } from 'react'
-import { ShowReadMoreContext } from '../../context/readMore';
+import ShowReadMoreContext from '../../context/readMore';
 
-// context second type implementation of consumer!!
 class ReadLessComponent extends Component {
-    render() {
-        console.log({ context: this.context })
+    constructor(props) {
+        super(props);
+    }
 
+    toggleReadMore() {
+        this.setState((prev) => ({ showButton: !prev.showButton }))
+    }
+
+    render() {
         return (
-            <>
-                {this.context.readMoreState === false &&
-                    <>
-                        {this.props.children}
-                        <span className='readMore' onClick={this.context.toggleReadMoreState}> Read Less.. </span>
-                    </>
+            <ShowReadMoreContext.Provider>
+                {({readMoreState, toggleReadMoreState}) => (
+                    <> 
+                    {this.props.readMoreValues}
+                    { readMoreState &&  <span className='readMore' onClick={this.toggleReadMoreState}> Read Less.. </span> }
+                     </>
+                )
+
                 }
-            </>
+                {/* <span className='readMore' onClick={this.toggleReadMore}> Show More... </span> */}
+            </ShowReadMoreContext.Provider>
         );
     }
 }
-
-ReadLessComponent.contextType = ShowReadMoreContext
 
 export default ReadLessComponent

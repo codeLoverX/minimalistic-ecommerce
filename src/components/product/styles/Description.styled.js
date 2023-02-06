@@ -3,13 +3,14 @@ import styled from 'styled-components'
 let Description = styled.div`
     display: flex; 
     flex-wrap: wrap;
+    max-height: 80vh;
     @media (max-width: ${({ theme }) => theme.tablet}) {
         max-height: min-content;
-        justify-content: center;
     }
 `
 
-Description.Preview = styled.span` 
+Description.Preview = styled.span`
+    flex-basis: 100%; 
     text-align: center;
     position: reative;
     & img {
@@ -22,12 +23,10 @@ Description.Preview = styled.span`
         flex-basis: 50%;
         max-height: 70vh;
     }
-`
 
+`
 Description.ControlPreview = styled.span`
-    width: 150px;
-    height: 150px;
-    flex-basis: 100%;  
+    flex-basis: 10%;
     text-align: center;
     overflow-y: auto;
     ::-webkit-scrollbar {
@@ -38,7 +37,7 @@ Description.ControlPreview = styled.span`
     position: reative;
     & img {
         object-fit: cover;
-        width: 100%;
+        max-width: 80%;
         margin: auto; 
         cursor: pointer;
     }
@@ -46,12 +45,14 @@ Description.ControlPreview = styled.span`
         flex-basis: 100%; 
         oveflow-x: scroll;
         margin: 0 10%; 
-      
+        & img {
+            width: 50px;
+        }
     }
 `
 
 Description.TextSection = styled.span`
-    flex-basis: 100%;  
+    flex-basis: 40%;  
     max-height: min-content; 
     @media (max-width: ${({ theme }) => theme.tablet}) {
         flex-basis: 100%; 
