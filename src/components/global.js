@@ -40,13 +40,6 @@ const GlobalStyles = createGlobalStyle`
       text-decoration-color: ${theme.colors.primary};
   `}
   }
-
-  span.readMore {
-    cursor: pointer;
-    ${({  theme }) => `
-    color:  ${theme.colors.primary};
-    `}
-  }
 `
 
 export default GlobalStyles
