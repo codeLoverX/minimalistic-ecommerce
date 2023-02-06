@@ -53,7 +53,7 @@ Description.ControlPreview = styled.span`
 
 Description.TextSection = styled.span`
     flex-basis: 40%;  
-    max-height: min-content; 
+       max-height: min-content; 
     @media (max-width: ${({ theme }) => theme.tablet}) {
         flex-basis: 100%; 
         text-align: center;
@@ -84,10 +84,16 @@ Description.AddToCartError = styled.div`
     font-size: 12px;
 `
 
-Description.DescriptionText = styled.span`
+Description.DescriptionText = styled.div`
+    height: 300px;
     font-size: medium; 
     font-weight: 600; 
-    padding-top: 15px;
+`
+Description.SeeFull = styled.div`
+    color: red;
+    padding-top: 10px;
+    cursor: pointer;
+    text-decoration: underline; 
 `
 
 export default Description

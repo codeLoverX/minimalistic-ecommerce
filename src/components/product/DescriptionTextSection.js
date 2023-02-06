@@ -2,9 +2,9 @@ import { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import { addProductToCartAction } from '../../redux/cart/cart-action'
 import { CartItem, Description, Product } from './styles'
-import parse from 'html-react-parser';
 import React from 'react'
 import AttributeItem from './AttributeItem'
+import DescriptionText from './DescriptionText'
 
 const initialState = { attributes: {}, missingAttributes: [], quantity: 1 }
 
@@ -119,9 +119,9 @@ class ProductDescription extends Component {
                     <Description.AddToCart onClick={(event) => this.submitForm(event)}> ADD TO CART </Description.AddToCart>
                     <br />
                     <br />
-                    <Description.DescriptionText>
-                        {parse(description.description)}
-                    </Description.DescriptionText>
+                    <DescriptionText
+                        textProps={description.description}
+                    />
                 </Description.TextSection>
             </>
         )

@@ -21,7 +21,7 @@ Dropdown.ItemContainer = styled.div`
   color: black;
   top: 50px; 
   right: 20px;
-  @media (max-width: ${({ theme }) => theme.mobile}) {
+  @media (max-width: ${({ theme }) => theme.tablet}) {
     right: auto;
     left: -100px;
   }
