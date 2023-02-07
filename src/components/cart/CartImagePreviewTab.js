@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { CartItem } from '../styles'
+import { CartItem } from '../product/styles'
 
 const buttonStates = { FORWARD: 1, BACKWARD: -1 }
 

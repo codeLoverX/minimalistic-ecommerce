@@ -40,6 +40,12 @@ const GlobalStyles = createGlobalStyle`
       text-decoration-color: ${theme.colors.primary};
   `}
   }
+  
+  @media (max-width: ${({ theme }) => theme.tablet}) {
+    .text-align-center-mobile{
+      text-align: center;
+   }
+  }
 `
 
 export default GlobalStyles

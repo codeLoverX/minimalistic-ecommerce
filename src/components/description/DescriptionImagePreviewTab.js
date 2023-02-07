@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import { Description } from '../styles'
+import { Description } from '../product/styles'
 import React from 'react'
 
 class ProductPreview extends Component {

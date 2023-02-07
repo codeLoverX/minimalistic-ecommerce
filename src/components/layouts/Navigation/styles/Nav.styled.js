@@ -5,15 +5,50 @@ let Nav = styled.nav`
   vertical-align: center;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  @media (max-width: ${({ theme }) => theme.tablet}) {
-    flex-direction: column;
+  justify-content: center;
+  flex-direction: column;
+  > * {
+    margin: 12px auto;
   }
+  > :nth-child(1){
+    order: 1;
+  }
+  > :nth-child(2){
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+  }
+  > :nth-child(3){
+    order: 1;
+  }
+  > :nth-child(1){
+  }
+  @media (min-width: ${({ theme }) => theme.tablet}) {
+    justify-content: space-between;
+    flex-direction: row;
+    > :nth-child(1){
+
+     order: 0;
+    }
+    > :nth-child(3){
+      order: 0;
+    }
+    > :nth-child(2){
+      background-color: transparent;
+      width: auto;
+      display: inline;
+    }
+  }
+  
 `
 Nav.Icon = styled.img`
   height: 40px;
   width: 40px;
   margin-top: 10px;
+  @media (min-width: ${({ theme }) => theme.tablet}) {
+    
+  }
+  cursor: pointer;
 `
 
 Nav.Link = styled.span`

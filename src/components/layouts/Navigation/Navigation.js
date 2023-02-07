@@ -127,6 +127,7 @@ class Navigation extends Component {
                         this.props.categories &&
                         this.props.categories.map((value, index) => {
                             return (
+                                <>
                                 <Nav.Link
                                     active={this.props.match.params?.category === value.name || this.props.currentCategory === value.name}
                                     key={`${index} ${value.name}`}>
@@ -134,6 +135,8 @@ class Navigation extends Component {
                                         {value.name}
                                     </Link>
                                 </Nav.Link>
+                            
+                                </>
                             )
                         })
 
@@ -142,6 +145,7 @@ class Navigation extends Component {
                 <div>
                     <Nav.Icon src={CompanyLogo} />
                 </div>
+
                 <div ref={this.wrapperRef}>
                     <Dropdown>
                         <Dropdown.MenuButton onClick={() => this.toggleDropDownState('currencyDropdown')}>

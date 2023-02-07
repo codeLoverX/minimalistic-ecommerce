@@ -6,7 +6,7 @@ import EmptyNotification from '../notification/empty'
 import ErrorNotification from '../notification/error'
 import Loading from '../notification/loading'
 import CardItem from './CardItem'
-import { CardList } from '../styles'
+import { CardList } from '../product/styles'
 
 
 class CardListComponent extends Component {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import ProductPreview from '../../components/description/DescriptionImagePreviewTab'
 import ProductDescription from '../../components/description/DescriptionTextSection'
-import { Description } from '../../components/styles'
+import { Description } from '../../components/product/styles'
 import { withRouter } from 'react-router-dom'
 import { catchError, fetchProducById } from '../../services/gqlApi'
 import Navigation from '../../components/layouts/Navigation/Navigation'
