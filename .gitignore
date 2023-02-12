@@ -2,8 +2,14 @@
 
 # dependencies
 node_modules
+
+/node_modules
+junior-react-endpoint/node_modules
+junior-react-endpoint/dist
+junior-react-frontend/node_modules
 .pnp
 .pnp.js
+dist
 
 # testing
 /coverage
