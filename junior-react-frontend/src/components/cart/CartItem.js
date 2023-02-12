@@ -52,6 +52,10 @@ class CartItemComponent extends Component {
                                             )
                                         })
                                     }
+                                    <br />
+                                    <small>
+                                        Edit category, if needed.
+                                    </small>
                                 </Fragment>)
                         })
                     }
