@@ -1,0 +1,18 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "junior-react-endpoint/src/main.ts",
+        "use": "@vercel/node",
+        "config": {
+          "includeFiles": []
+        }
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "junior-react-endpoint/dist/main.js"
+      }
+    ]
+  }
