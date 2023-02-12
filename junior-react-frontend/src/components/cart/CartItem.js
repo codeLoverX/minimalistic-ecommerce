@@ -41,10 +41,10 @@ class CartItemComponent extends Component {
                                                     colorBoxCloned={<CartItem.Colorbox />}
                                                     sizeBoxCloned={<CartItem.Sizebox />}
                                                     attributeName={attribute.name}
-                                                    // onClick={() => this.editForm({
-                                                    //             attribute: attribute.name,
-                                                    //              index: cartIndex, id: attributeItem.id, value: attributeItem.value
-                                                    //          })}
+                                                    onClick={() => this.editForm({
+                                                                attribute: attribute.name,
+                                                                 index: cartIndex, id: attributeItem.id, value: attributeItem.value
+                                                             })}
                                                     displayValue={attributeItem.displayValue}
                                                     key={`cart${attributeItem.id}`}
                                                     active={attributeItem.id === cart.selectedAttributes[attribute.name]?.id}
