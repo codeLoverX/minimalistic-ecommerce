@@ -3,7 +3,7 @@
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "junior-react-endpoint/dist/main.js"
+        "dest": "dist/main.js"
       }
     ]
   }
