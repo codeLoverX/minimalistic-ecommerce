@@ -9,7 +9,7 @@ function RoutesApp() {
         <Router>
             <Route path="/">
                 <Route exact path="/">
-                    <Redirect to='category/tech' />
+                    <Redirect to='category/all' />
                 </Route> 
                 <Route
                     path="/category/:category"
