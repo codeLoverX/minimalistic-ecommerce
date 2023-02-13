@@ -10,12 +10,12 @@ import { CardList } from '../product/styles'
 
 
 class CardListComponent extends Component {
-    constructor(){
+    constructor() {
         super()
 
         this.mounted = true
     }
-    
+
     state = {
         data: [],
         isLoading: false,
@@ -32,13 +32,13 @@ class CardListComponent extends Component {
         catchError(
             fetchAllProductsByCategory(category)
                 .then(data => data.category.products))
-                .then(({data, error})=> {
-                    this.setState({
-                        data,
-                        isLoading: false,
-                        isError: error
-                    })
+            .then(({ data, error }) => {
+                this.setState({
+                    data,
+                    isLoading: false,
+                    isError: error
                 })
+            })
     }
 
     componentDidMount() {
@@ -69,12 +69,7 @@ class CardListComponent extends Component {
                                     <CardItem cardValue={value} key={nanoid()} />
                                 )
                             }
-                            {
-                                !this.state.data[0] &&
-                                <div>
-                                    <EmptyNotification message="The list is empty"/>
-                                </div>
-                            }
+
                         </>
 
                     }
@@ -89,6 +84,12 @@ class CardListComponent extends Component {
                         <>
                             <Loading />
                         </>
+                    }
+                    {
+                        !this.state.data[0] &&
+                        <div>
+                            <EmptyNotification message="The list is empty" />
+                        </div>
                     }
                 </CardList>
 
