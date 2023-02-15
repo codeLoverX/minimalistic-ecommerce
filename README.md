@@ -1,15 +1,5 @@
-# GraphQL endpoint for Junior Developer position in Scandiweb
+https://frontend-scandi-minimalistic.netlify.app/
 
-### Overview
 
-You are going to need this endpoint in order to implement the assignment given to you (minimalistic storefront).
+https://scandi-react-ecommerce-git-main-codeloverx.vercel.app/
 
-### How to start
-
-In order to start this endpoint, follow these steps
-
-1. Install dependencies
-2. Build the project - `yarn build`
-3. Start the project - `yarn start`
-
->**Note**: During the assignment, do not modify this endpoint. Also, no need to provide it along with your assessment.
