@@ -9,34 +9,47 @@ let Nav = styled.nav`
   flex-direction: column;
   > * {
     margin: 12px auto;
+    box-sizing: border-box;
   }
   > :nth-child(1){
     order: 1;
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+  }
+  > :nth-child(1) > *{
+    text-align: center;
+    margin-left: 30px;
   }
   > :nth-child(2){
-    width: 100vw;
-    display: flex;
-    justify-content: center;
+    text-align: center;
+    margin: auto;
   }
   > :nth-child(3){
     order: 1;
+    display: flex;
+    justify-content: center;
   }
   > :nth-child(1){
   }
   @media (min-width: ${({ theme }) => theme.tablet}) {
-    justify-content: space-between;
+    justify-content: center;
     flex-direction: row;
     > :nth-child(1){
-
+     display: block;
      order: 0;
+     flex-shrink: 1;
     }
+    > :nth-child(1) > *{
+      margin-left: auto;
+      margin-top: auto;
+     }
     > :nth-child(3){
       order: 0;
+      
     }
     > :nth-child(2){
       background-color: transparent;
-      width: auto;
-      display: inline;
     }
   }
   
@@ -52,20 +65,19 @@ Nav.Icon = styled.img`
 `
 
 Nav.Link = styled.span`
-  width: 65px;
   height: 20px;
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
+  text-align: center;
   line-height: 120%;
-  padding: 5px 60px 60px 0px;
+  text-align: center !important;
+  padding: 0px 60px 60px 0px;
   text-transform: uppercase;
-  margin-right: 10px;
   & > a {
     color: black;
     text-decoration: none;
     ${({ active, theme }) => active && `
-      box-sizing: border-box;
       color:  ${theme.colors.primary};
       border-bottom: 1px solid ${theme.colors.primary};
       padding-bottom: 15px;
@@ -74,6 +86,9 @@ Nav.Link = styled.span`
       // text-decoration-color: ${theme.colors.primary};
       // text-underline-offset: 10px; 
   `}
+  @media (min-width: ${({ theme }) => theme.tablet}) {
+    width: 20px;
+  }
   }
 `
 
