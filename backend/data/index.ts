@@ -44,6 +44,50 @@ const products: Product[] = [
     new Product('Nike Air Huarache Le')
         .setId('huarache-x-stussy-le')
         .setPrice(120)
+        .setDescription('<p>Great Nike Air Huarache Le sneakers for everyday use!</p><p>Great Nike Air Huarache Le sneakers for everyday use!</p><p>Great Nike Air Huarache Le sneakers for everyday use!</p><p>Great Nike Air Huarache Le sneakers for everyday use!</p><p>Great Nike Air Huarache Le sneakers for everyday use!</p><p>Great Nike Air Huarache Le sneakers for everyday use!</p><p>Great Nike Air Huarache Le sneakers for everyday use!</p><p>Great Nike Air Huarache Le sneakers for everyday use!</p><p>Great Nike Air Huarache Le sneakers for everyday use!</p><p>Great Nike Air Huarache Le sneakers for everyday use!</p><p>Great Nike Air Huarache Le sneakers for everyday use!</p><p>Great Nike Air Huarache Le sneakers for everyday use!</p><p>Great Nike Air Huarache Le sneakers for everyday use!</p><p>Great Nike Air Huarache Le sneakers for everyday use!</p>')
+        .addImages([
+            'https://cdn.shopify.com/s/files/1/0087/6193/3920/products/DD1381200_DEOA_2_720x.jpg?v=1612816087',
+            'https://cdn.shopify.com/s/files/1/0087/6193/3920/products/DD1381200_DEOA_1_720x.jpg?v=1612816087',
+            'https://cdn.shopify.com/s/files/1/0087/6193/3920/products/DD1381200_DEOA_3_720x.jpg?v=1612816087',
+            'https://cdn.shopify.com/s/files/1/0087/6193/3920/products/DD1381200_DEOA_5_720x.jpg?v=1612816087',
+            'https://cdn.shopify.com/s/files/1/0087/6193/3920/products/DD1381200_DEOA_4_720x.jpg?v=1612816087'
+        ])
+        .setCategory(Category.clothes)
+        .setBrand('Nike x Stussy')
+        .addAttributeSet(shoeSizes),
+    
+        new Product('Barker shoes')
+        .setId('barker-shoes')
+        .setPrice(120)
+        .setDescription('<p>Great barker for everyday use!</p><p>Great barker for everyday use!</p><p>Great barker for everyday use!</p><p>Great barker for everyday use!</p><p>Great barker for everyday use!</p><p>Great barker for everyday use!</p><p>Great barker for everyday use!</p><p>Great barker for everyday use!</p><p>Great barker for everyday use!</p><p>Great barker for everyday use!</p><p>Great barker for everyday use!</p><p>Great barker for everyday use!</p><p>Great barker for everyday use!</p><p>Great barker for everyday use!</p><p>Great barker for everyday use!</p><p>Great barker for everyday use!</p><p>Great barker for everyday use!</p><p>Great barker for everyday use!</p><p>Great barker for everyday use!</p>')
+        .addImages([
+            "https://cdn.shopify.com/s/files/1/0046/9139/4658/files/SS20_HOMEPAGE_MCCLEANPAIR_880x550_crop_center.jpg?v=1614334815",
+            "https://cdn.shopify.com/s/files/1/0046/9139/4658/files/SS20_HOMEPAGE_MCCLEANPAIR_880x550_crop_center.jpg?v=1614334815",
+            "https://cdn.shopify.com/s/files/1/0046/9139/4658/files/SS20_HOMEPAGE_MCCLEANPAIR_880x550_crop_center.jpg?v=1614334815",
+            "https://cdn.shopify.com/s/files/1/0046/9139/4658/files/SS20_HOMEPAGE_MCCLEANPAIR_880x550_crop_center.jpg?v=1614334815"
+        ])
+        .setCategory(Category.clothes)
+        .setBrand('Gucci')
+        .addAttributeSet(shoeSizes),
+
+        new Product('Nike Air Huarache Le')
+        .setId('huarache-x-stussy-le')
+        .setPrice(120)
+        .setDescription('<p>Great sneakers for everyday use!</p>')
+        .addImages([
+            'https://cdn.shopify.com/s/files/1/0087/6193/3920/products/DD1381200_DEOA_2_720x.jpg?v=1612816087',
+            'https://cdn.shopify.com/s/files/1/0087/6193/3920/products/DD1381200_DEOA_1_720x.jpg?v=1612816087',
+            'https://cdn.shopify.com/s/files/1/0087/6193/3920/products/DD1381200_DEOA_3_720x.jpg?v=1612816087',
+            'https://cdn.shopify.com/s/files/1/0087/6193/3920/products/DD1381200_DEOA_5_720x.jpg?v=1612816087',
+            'https://cdn.shopify.com/s/files/1/0087/6193/3920/products/DD1381200_DEOA_4_720x.jpg?v=1612816087'
+        ])
+        .setCategory(Category.clothes)
+        .setBrand('Nike x Stussy')
+        .addAttributeSet(shoeSizes),
+
+        new Product('Nike Air Huarache Le')
+        .setId('huarache-x-stussy-le')
+        .setPrice(120)
         .setDescription('<p>Great sneakers for everyday use!</p>')
         .addImages([
             'https://cdn.shopify.com/s/files/1/0087/6193/3920/products/DD1381200_DEOA_2_720x.jpg?v=1612816087',
@@ -72,6 +116,47 @@ const products: Product[] = [
         .setBrand('Canada Goose')
         .setDescription('<p>Awesome winter jacket</p>')
         .setCategory(Category.clothes),
+
+    new Product('Essential Jacket')
+        .setId('essential-jacket')
+        .setPrice(430)
+        .addImages([
+            "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/bomber-jackets-lead-1633354600.jpg",
+            "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/bomber-jackets-lead-1633354600.jpg",
+            "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/bomber-jackets-lead-1633354600.jpg",
+            "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/bomber-jackets-lead-1633354600.jpg"
+        ])
+        .addAttributeSet(clothesSizes)
+        .setBrand('Essential Jacket')
+        .setDescription('<p>Awesome essential jacket</p><p>Awesome essential jacket</p><p>Awesome essential jacket</p><p>Awesome essential jacket</p><p>Awesome essential jacket</p><p>Awesome essential jacket</p><p>Awesome essential jacket</p><p>Awesome essential jacket</p><p>Awesome essential jacket</p><p>Awesome essential jacket</p><p>Awesome essential jacket</p><p>Awesome essential jacket</p><p>Awesome essential jacket</p><p>Awesome essential jacket</p><p>Awesome essential jacket</p><p>Awesome essential jacket</p><p>Awesome essential jacket</p>')
+        .setCategory(Category.clothes),
+
+    new Product('Puffer Jacket')
+        .setId('puffer-jacket')
+        .setPrice(430)
+        .addImages([
+            "https://www.king-apparel.com/media/catalog/product/cache/acf4131f5a2ab517c9bc09e04f221b37/e/a/earlham-puffer-jacket-black-king-apparel-aw20-epjb-6.jpg",
+            "https://www.king-apparel.com/media/catalog/product/cache/acf4131f5a2ab517c9bc09e04f221b37/e/a/earlham-puffer-jacket-black-king-apparel-aw20-epjb-6.jpg",
+            "https://www.king-apparel.com/media/catalog/product/cache/acf4131f5a2ab517c9bc09e04f221b37/e/a/earlham-puffer-jacket-black-king-apparel-aw20-epjb-6.jpg",
+            "https://www.king-apparel.com/media/catalog/product/cache/acf4131f5a2ab517c9bc09e04f221b37/e/a/earlham-puffer-jacket-black-king-apparel-aw20-epjb-6.jpg",
+            "https://www.king-apparel.com/media/catalog/product/cache/acf4131f5a2ab517c9bc09e04f221b37/e/a/earlham-puffer-jacket-black-king-apparel-aw20-epjb-6.jpg"
+        ])
+        .addAttributeSet(clothesSizes)
+        .setBrand('Puffer Jacket')
+        .setDescription('<p>Awesome puffer jacket</p>')
+        .setCategory(Category.clothes),
+
+    new Product('Packet Jacket')
+        .setId('packet-jacket')
+        .setPrice(430)
+        .addImages([
+            "https://i.ytimg.com/vi/Jg0wtRQ5Wbk/maxresdefault.jpg"
+        ])
+        .addAttributeSet(clothesSizes)
+        .setBrand('Canada Goose')
+        .setDescription('<p>Awesome packet jacket</p>')
+        .setCategory(Category.clothes),
+
 
     new Product('PlayStation 5')
         .setId('ps-5')
@@ -112,6 +197,11 @@ const products: Product[] = [
         .setPrice(1400)
         .setBrand('Apple')
         .addImages([
+            'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/imac-24-blue-selection-hero-202104?wid=904&hei=840&fmt=jpeg&qlt=80&.v=1617492405000',
+            'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/imac-24-blue-selection-hero-202104?wid=904&hei=840&fmt=jpeg&qlt=80&.v=1617492405000',
+            'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/imac-24-blue-selection-hero-202104?wid=904&hei=840&fmt=jpeg&qlt=80&.v=1617492405000',
+            'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/imac-24-blue-selection-hero-202104?wid=904&hei=840&fmt=jpeg&qlt=80&.v=1617492405000',
+            'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/imac-24-blue-selection-hero-202104?wid=904&hei=840&fmt=jpeg&qlt=80&.v=1617492405000',
             'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/imac-24-blue-selection-hero-202104?wid=904&hei=840&fmt=jpeg&qlt=80&.v=1617492405000'
         ])
         .addAttributeSet(new AttributeSet('Capacity')
@@ -129,7 +219,11 @@ const products: Product[] = [
         .setBrand('Apple')
         .setDescription('This is iPhone 12. Nothing else to say.')
         .addImages([
-            'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-12-pro-family-hero?wid=940&amp;hei=1112&amp;fmt=jpeg&amp;qlt=80&amp;.v=1604021663000'
+            'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-12-pro-family-hero?wid=940&amp;hei=1112&amp;fmt=jpeg&amp;qlt=80&amp;.v=1604021663000',
+            'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-12-pro-family-hero?wid=940&amp;hei=1112&amp;fmt=jpeg&amp;qlt=80&amp;.v=1604021663000',
+            'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-12-pro-family-hero?wid=940&amp;hei=1112&amp;fmt=jpeg&amp;qlt=80&amp;.v=1604021663000',
+            'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-12-pro-family-hero?wid=940&amp;hei=1112&amp;fmt=jpeg&amp;qlt=80&amp;.v=1604021663000',
+            'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-12-pro-family-hero?wid=940&amp;hei=1112&amp;fmt=jpeg&amp;qlt=80&amp;.v=1604021663000',
         ])
         .addAttributeSet(capacity)
         .addAttributeSet(colors)
@@ -140,7 +234,13 @@ const products: Product[] = [
         .setPrice(249)
         .setBrand('Apple')
         .addImages([
-            'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MWP22?wid=572&hei=572&fmt=jpeg&qlt=95&.v=1591634795000'
+            'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MWP22?wid=572&hei=572&fmt=jpeg&qlt=95&.v=1591634795000',
+            'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MWP22?wid=572&hei=572&fmt=jpeg&qlt=95&.v=1591634795000',
+            'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MWP22?wid=572&hei=572&fmt=jpeg&qlt=95&.v=1591634795000',
+            'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MWP22?wid=572&hei=572&fmt=jpeg&qlt=95&.v=1591634795000',
+            'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MWP22?wid=572&hei=572&fmt=jpeg&qlt=95&.v=1591634795000',
+            'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MWP22?wid=572&hei=572&fmt=jpeg&qlt=95&.v=1591634795000',
+            'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MWP22?wid=572&hei=572&fmt=jpeg&qlt=95&.v=1591634795000',
         ])
         .setInStock(false)
         .setDescription(airpodsDescription)
@@ -151,6 +251,11 @@ const products: Product[] = [
         .setPrice(100)
         .setBrand('Apple')
         .addImages([
+            'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/airtag-double-select-202104?wid=445&hei=370&fmt=jpeg&qlt=95&.v=1617761672000',
+            'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/airtag-double-select-202104?wid=445&hei=370&fmt=jpeg&qlt=95&.v=1617761672000',
+            'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/airtag-double-select-202104?wid=445&hei=370&fmt=jpeg&qlt=95&.v=1617761672000',
+            'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/airtag-double-select-202104?wid=445&hei=370&fmt=jpeg&qlt=95&.v=1617761672000',
+            'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/airtag-double-select-202104?wid=445&hei=370&fmt=jpeg&qlt=95&.v=1617761672000',
             'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/airtag-double-select-202104?wid=445&hei=370&fmt=jpeg&qlt=95&.v=1617761672000'
         ])
         .setDescription(airtagDescription)
