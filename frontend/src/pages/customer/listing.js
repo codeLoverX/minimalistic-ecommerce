@@ -8,7 +8,13 @@ class ListingPage extends Component {
 
     render() {
         // props defined here but not in constructor: console.log({props: this.props})
-        let { category } = this.props.match.params
+        let category ="";
+        if (this.props.match.params.category){
+            category  = this.props.match.params.category
+        }
+        else {
+            category = "all"
+        }
 
         let categoryInUpperCase = category.charAt(0).toUpperCase() + category.slice(1)
 
