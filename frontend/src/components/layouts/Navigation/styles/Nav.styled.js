@@ -37,7 +37,8 @@ let Nav = styled.nav`
     justify-content: center;
     flex-direction: row;
     > :nth-child(1){
-     display: block;
+     display: flex;
+     flex-direction: column;
      order: 0;
      flex-shrink: 1;
     }
