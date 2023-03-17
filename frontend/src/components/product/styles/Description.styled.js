@@ -71,8 +71,9 @@ Description.TextSection = styled.span`
         flex-basis: 100%; 
         text-align: center;
         max-height: min-content; 
-
+        padding-left: 0px;
     }
+    padding-left: 40px;
 `
 
 Description.AddToCart = styled.button`
@@ -101,10 +102,9 @@ Description.AddToCartError = styled.div`
 
 Description.DescriptionText = styled.div`
     height: min-content;
-    @media (max-width: ${({ theme }) => theme.tablet}) {
-    }
     font-size: medium; 
     font-weight: 600; 
+
 `
 Description.SeeFull = styled.div`
     color: red;
