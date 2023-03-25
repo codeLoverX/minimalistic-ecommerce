@@ -3,13 +3,14 @@ import { BrowserRouter as Router, Route } from "react-router-dom"
 import CartPage from "./pages/customer/cart"
 import DescriptionPage from "./pages/customer/description"
 import ListingPage from "./pages/customer/listing"
+import Home from "./pages/home"
 
 function RoutesApp() {
     return (
         <Router>
             <Route path="/">
                 <Route exact path="/">
-                    <ListingPage />
+                    <Home />
                 </Route>
                 <Route
                     path="/category/:category"

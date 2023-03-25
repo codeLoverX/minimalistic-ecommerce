@@ -5,7 +5,6 @@ display: grid;
 width: min-content;
 margin-left: auto;
 margin-right: auto;
-
 grid-gap: 0;
 justify-content: center;
 @media (min-width: ${({ theme }) => theme.tablet}) {

@@ -16,7 +16,7 @@ class Navigation extends Component {
     state = {
         dropDownClose: { ...initialState }
     }
- 
+
     // utility1
     changeOpacity(opacity) {
         let currentElement = document.querySelector('#nav')
@@ -64,18 +64,18 @@ class Navigation extends Component {
     addClickEventListener() {
         document.addEventListener('click', this.handleClickOutside, true);
     }
-    
+
     componentWillUnmount() {
         // if eventListener exists, remove eventListener.
         // if (document.getAttribute('listener') !== 'true') {
         document.removeEventListener('click', this.handleClickOutside, true);
         // }
     }
-    
+
     handleClickOutside = event => {
 
         let currentStyle = this.navBarRef.current.style
-        
+
         if (this.wrapperRef && !this.wrapperRef.current.contains(event.target)) {
             this.changeOpacity(1)
 
@@ -86,7 +86,7 @@ class Navigation extends Component {
             document.removeEventListener('click', this.handleClickOutside, true);
         }
     }
-    
+
 
     changeCurrency(currentCurrency) {
         this.props.dispatchChangeCurrencyAction(currentCurrency)
@@ -118,23 +118,29 @@ class Navigation extends Component {
     }
 
     render() {
-        
+
         return (
             <Nav ref={this.navBarRef} id='nav'>
                 <div>
+                    <Nav.Link
+                        active={this.props.match === ""}>
+                        <Link to={`/`} replace>
+                            Home
+                        </Link>
+                    </Nav.Link>
                     {
                         this.props.categories &&
                         this.props.categories.map((value, index) => {
                             return (
                                 <>
-                                <Nav.Link
-                                    active={this.props.match.params?.category === value.name || this.props.currentCategory === value.name}
-                                    key={`${index} ${value.name}`}>
-                                    <Link to={`../category/${value.name}`} replace>
-                                        {value.name}
-                                    </Link>
-                                </Nav.Link>
-                            
+                                    <Nav.Link
+                                        active={this.props.match.params?.category === value.name || this.props.currentCategory === value.name}
+                                        key={`${index} ${value.name}`}>
+                                        <Link to={`../category/${value.name}`} replace>
+                                            {value.name}
+                                        </Link>
+                                    </Nav.Link>
+
                                 </>
                             )
                         })
@@ -153,7 +159,7 @@ class Navigation extends Component {
                                 <DropdownIcon.Arrow>⌄</DropdownIcon.Arrow></DropdownIcon>
                         </Dropdown.MenuButton>
                         <Dropdown.ItemContainer isInvisible={this.state.dropDownClose['currencyDropdown']}>
-                           <Currency changeCurrency={this.changeCurrency}/>
+                            <Currency changeCurrency={this.changeCurrency} />
                         </Dropdown.ItemContainer>
                     </Dropdown>
                     <Dropdown>

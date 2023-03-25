@@ -103,8 +103,14 @@ class CardItemComponent extends Component {
         return (
             <>
                 <CardItem
-                    onMouseEnter={() => this.changeProperty(controlQuickShop.Button, true)}
-                    onMouseLeave={() => this.changeProperty(controlQuickShop.Button, false)}
+                    onMouseEnter={() => {
+                        this.changeProperty(controlQuickShop.Button, true);
+                        this.setUpQuickShopState();
+                    }}
+                    onMouseLeave={() => {
+                        this.changeProperty(controlQuickShop.Button, false)
+                        this.changeProperty(controlQuickShop.Options, false)
+                    }}
                 >
                     <CardItem.ImageContainer>
                         <Link

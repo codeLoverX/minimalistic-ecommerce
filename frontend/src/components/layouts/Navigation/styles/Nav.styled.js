@@ -34,7 +34,7 @@ let Nav = styled.nav`
     justify-content: center;
     flex-direction: row;
     > :nth-child(1){
-      width: 200px;
+      width: 300px;
       display: flex;
       flex-direction:row;
       justify-content: space-between;
