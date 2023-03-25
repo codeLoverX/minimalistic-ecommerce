@@ -1,13 +1,12 @@
-import { Component,  Fragment } from 'react'
+import { Component, Fragment } from 'react'
 import OverlayCartItemComponent from './OverlayCartItem'
 import { connect } from 'react-redux'
-import { OverlayCartItem } from '../../product/styles'
 import { nanoid } from '@reduxjs/toolkit'
 import { roundOffTwoDP } from '../../../redux/cart/cart-utils'
 import React from 'react'
-
+import { OverlayCartItem } from '../../../styles'
 class OverLayCart extends Component {
-   
+
     render() {
         return (
             <>
@@ -40,7 +39,7 @@ class OverLayCart extends Component {
                         }
                     </OverlayCartItem.TotalQuantity>
                     <OverlayCartItem.ButtonContainer>
-                        <OverlayCartItem.ButtonViewCart onClick={()=> this.props.routerDirectToCartPage()}>
+                        <OverlayCartItem.ButtonViewCart onClick={() => this.props.routerDirectToCartPage()}>
                             View bag
                         </OverlayCartItem.ButtonViewCart>
                         <OverlayCartItem.ButtonCheckoutCart>
@@ -55,7 +54,7 @@ class OverLayCart extends Component {
 }
 
 export default connect(
-    (state)=> ({
+    (state) => ({
         cart: state.cartReducer.cart,
         totalQuantity: state.cartReducer.totalQuantity,
         total: state.cartReducer.total,

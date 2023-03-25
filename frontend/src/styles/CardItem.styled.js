@@ -3,9 +3,17 @@ import CartItem from "./CartItem.styled"
 
 let CardItem = styled.div`
   cursor: pointer;
-  // text-align: center;
   position: relative;
-  padding: 40px 0;
+  padding: 0 0 20px;
+  margin: 10px;
+  border: 2px solid ${({ theme }) => `${theme.colors.hoverBg}`};
+  // prevent border-collapse
+  :nth-child(n+2) {
+    margin-left: -1px;
+  }
+  :hover{
+    border: 2px solid black;
+  }
   & a {
     color: black;
     text-decoration: none;
@@ -15,6 +23,7 @@ CardItem.ImageContainer = styled.div`
   position: relative;
   height: 300px;
   width: 300px;
+  margin: 0 auto;
 `
 
 CardItem.Image = styled.img`  
@@ -25,6 +34,7 @@ CardItem.Image = styled.img`
 
 CardItem.Title = styled.div`
   margin-top: 25px;
+  text-align: center;
   font-weight: 300;
   color: #1D1F22;
   font-size: 18px;
@@ -36,6 +46,9 @@ CardItem.Title = styled.div`
 
 CardItem.Subtitle = styled.div`
   margin-top: 10px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
   font-weight: 500;
   ${({ inStock }) => !inStock && `
     color: #8D8F9A;
@@ -113,7 +126,7 @@ CardItem.QuickShopSizebox = styled(CartItem.Sizebox)`
     cursor: pointer;
     display: inline-block;
     padding: ${({ paddingX, paddingY }) =>
-        `${paddingX} ${paddingY}`} ;
+    `${paddingX} ${paddingY}`} ;
     font-size: small;
     margin-bottom: 20px;
     margin-right: 5px;

@@ -1,7 +1,6 @@
 import React, { Component, createRef } from 'react'
 import { Link } from 'react-router-dom'
 import { Nav, Dropdown } from './styles'
-import CompanyLogo from '../../../images/company.png'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import DropdownIcon from './styles/DropdownIcon.styled'
@@ -143,7 +142,7 @@ class Navigation extends Component {
                     }
                 </div>
                 <div>
-                    <Nav.Icon src={CompanyLogo} />
+                    <Nav.Icon src='/company.png' />
                 </div>
 
                 <div ref={this.wrapperRef}>

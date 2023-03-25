@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { CardItem, CartItem, Product } from '../product/styles'
+import { CardItem, CartItem, Product } from '../../styles'
 import { connect } from 'react-redux'
 import React from 'react'
 import { Fragment } from 'react'

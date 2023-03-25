@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import Logo from '../../images/company.png';
 import {NotificationContainer, NotificationMessage} from './Container.styled';
 
 const LoadingSpinnerImg = styled.img`
     height: 50px;
     pointer-events: none;
-    background-color: red;
     cursor: pointer;
     @media (prefers-reduced-motion: no-preference) {
-        animation: App-logo-spin infinite 5s linear;
+        animation: App-logo-spin infinite 2s linear;
     }
 
     @media (max-width: ${({ theme }) => theme.tablet}) {
@@ -32,7 +30,7 @@ class Loading extends Component {
         return (
             <NotificationContainer>
                 <div>
-                    <LoadingSpinnerImg src={Logo} className="App-logo" alt="logo" />
+                    <LoadingSpinnerImg src='/company.png' className="App-logo" alt="logo" />
                     <NotificationMessage>Loading...</NotificationMessage>
                 </div>
             </NotificationContainer>

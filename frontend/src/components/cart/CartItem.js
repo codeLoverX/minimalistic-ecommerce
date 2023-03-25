@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import { CartItem, Product } from '../product/styles'
+import { CartItem, Product } from '../../styles'
 import { connect } from 'react-redux'
 import { editCartAttributeAction, incrementValueToCartAction } from '../../redux/cart/cart-action'
 import CartImagePreviewTab from './CartImagePreviewTab'

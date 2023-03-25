@@ -16,7 +16,7 @@ const theme = {
     primary: '#54DA7D',
     light: 'white',
     activeBg: 'rgb(217, 215, 215)',
-    hoverBg: 'rgb(200, 200, 200, 0.3)',
+    hoverBg: 'rgb(200, 200, 200, 0.5)',
   },
   tablet: '1000px',
   desktop: '992px',

@@ -1,7 +1,7 @@
 import { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import { addProductToCartAction } from '../../redux/cart/cart-action'
-import { CartItem, Description, Product } from '../product/styles'
+import { CartItem, Description, Product } from '../../styles'
 import React from 'react'
 import AttributeItem from './AttributeItem'
 import DescriptionText from './DescriptionText'

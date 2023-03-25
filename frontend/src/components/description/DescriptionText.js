@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
-import { Description } from '../product/styles'
+import { Description } from '../../styles'
 import parse from 'html-react-parser';
 import React from 'react'
 import { addReadMoreAction, removeReadMoreAction, setReadMoreAction } from '../../redux/readmore/readmore-action';
