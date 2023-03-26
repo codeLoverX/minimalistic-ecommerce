@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const FourOverlaysContainer = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    margin: 0 10vw;
+    margin: 5vh 10vw;
     padding: 0;
     gap: 10px;
     @media (min-width: ${({ theme }) => theme.desktop}) {
@@ -45,7 +45,7 @@ FourOverlaysItem.Image = styled.img`
     height: 100%;
     object-ft: center;
     z-index: -1;
-    filter: brightness(0.8);
+    filter: brightness(0.6);
     cursor: pointer;
     :hover{
         filter: brightness(1);
@@ -54,14 +54,17 @@ FourOverlaysItem.Image = styled.img`
 
 class FourOverlaysItemComponent extends Component {
     render() {
-        const { text, imageString } = this.props;
+        const { text, imageString, href } = this.props;
         return (
             <>
                 <FourOverlaysItem>
-                    <FourOverlaysItem.Image src={imageString} alt={text} />
-                    <FourOverlaysItem.Text>
-                        {text}
-                    </FourOverlaysItem.Text>
+                    <a href={href}>
+
+                        <FourOverlaysItem.Image src={imageString} alt={text} />
+                        <FourOverlaysItem.Text>
+                            {text}
+                        </FourOverlaysItem.Text>
+                    </a>
                 </FourOverlaysItem>
             </>
         );
@@ -69,10 +72,10 @@ class FourOverlaysItemComponent extends Component {
 }
 
 const array = [
-    { imageString: "/comfortable.jpg", text: "Live comfortably" },
-    { imageString: "/harmonious.jpeg", text: "& harmoniously..." },
-    { imageString: "/technology.jpeg", text: "fashion" },
-    { imageString: "/fashion.jpg", text: "technology" },
+    { imageString: "/comfortable.jpg", text: "Live comfortably", href: "#comfortable" },
+    { imageString: "/harmonious.jpeg", text: "& harmoniously...", href: "#harmonious" },
+    { imageString: "/technology.jpeg", text: "fashion", href: "/category/clothes" },
+    { imageString: "/fashion.jpg", text: "technology", href: "/category/technology" },
 ];
 
 class FourOverlaysComponent extends Component {
@@ -81,7 +84,7 @@ class FourOverlaysComponent extends Component {
             <FourOverlaysContainer>
                 {
                     array.map((value, index) => (
-                        <FourOverlaysItemComponent text={value.text} imageString={value.imageString} key={`${value}${index}`}/>
+                        <FourOverlaysItemComponent text={value.text} href={value.href} imageString={value.imageString} key={`${value}${index}`} />
                     ))
                 }
             </FourOverlaysContainer>

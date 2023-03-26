@@ -6,7 +6,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   main{
-    min-height: 70vh;
+    min-height: 50vh;
   }
 
   a{
@@ -46,6 +46,8 @@ const GlobalStyles = createGlobalStyle`
       text-align: center;
    }
   }
+
+  
   
 `
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import HeroStyled from '../../styles/Hero.styled';
-class HeroOneComponent extends Component {
+class Newsletter extends Component {
     render() {
         return (
             <HeroStyled id="comfortable">
@@ -20,4 +20,4 @@ class HeroOneComponent extends Component {
     }
 }
 
-export default HeroOneComponent;
+export default Newsletter;

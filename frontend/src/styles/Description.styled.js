@@ -36,6 +36,9 @@ Description.ControlPreview = styled.span`
     overflow-y: auto;
     cursor-pointer;
     position: reative;
+    ::-webkit-scrollbar {
+        height: 8px;
+    }
     & img {
         object-fit: cover;
         width: 90%;
@@ -44,7 +47,10 @@ Description.ControlPreview = styled.span`
         cursor: pointer;
     }
     @media (max-width: ${({ theme }) => theme.desktop}) {
-      
+        ::-webkit-scrollbar {
+            height: 5px;
+        }
+        margin-bottom: 4px;
         flex-basis: 100%; 
         flex-wrap: nowrap;
         overflow-x: auto;
@@ -59,6 +65,7 @@ Description.ControlPreview = styled.span`
 Description.TextSection = styled.span`
     flex-basis: 40%;  
     max-height: min-content;
+    margin-top: -5px;
     padding: 20px 30px; 
     background-color: ${({ theme }) => `${theme.colors.hoverBg}`};
     @media (max-width: ${({ theme }) => theme.desktop}) {
@@ -83,7 +90,7 @@ Description.AddToCart = styled.button`
     &:hover{
         background-color: transparent;
         color: black;
-        border: ${({ theme }) => `2px solid ${theme.colors.primary}`};
+        border: ${({ theme }) => `3px solid ${theme.colors.primary}`};
     }  
 `
 Description.AddToCartError = styled.div`
