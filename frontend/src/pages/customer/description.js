@@ -70,7 +70,7 @@ class DescriptionPage extends Component {
     render() {
         console.log({
             props: this.props,
-        
+
         })
         return (
             <>
@@ -85,9 +85,16 @@ class DescriptionPage extends Component {
                             </Description>
 
                             {this.props.readMoreText &&
-                                <Description.DescriptionText id="readmore">
-                                    {parse(this.props.readMoreText)}
-                                </Description.DescriptionText>
+                                <>
+                                    <Description.SeeFullHeading>
+                                        <hr />
+                                        <h3>See more...</h3>
+                                    </Description.SeeFullHeading>
+                                    <Description.SeeFullText id="readmore">
+                                        {parse(this.props.readMoreText)}
+                                    </Description.SeeFullText>
+                                </>
+
                             }
                         </>
                     }
@@ -110,7 +117,7 @@ class DescriptionPage extends Component {
     }
 }
 export default connect(
-    (state) => ({ 
+    (state) => ({
         isReadMore: state.readmoreReducer.isReadMore,
         isReadMoreWarning: state.readmoreReducer.isReadMoreWarning,
         readMoreText: state.readmoreReducer.readMoreText

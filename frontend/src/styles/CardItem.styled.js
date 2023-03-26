@@ -152,10 +152,12 @@ CardItem.QuickShopAddToCart = styled.button`
   margin-top: 5px;
   border: 0px solid black;
   background-color: ${({ theme }) => `${theme.colors.primary}`};
+  border:  ${({ theme }) => `3px solid ${theme.colors.primary}`}
   color: ${({ theme }) => `${theme.colors.light}`};
   &:hover{
-      background-color:  ${({ theme }) => `${theme.colors.hoverBg}`};
+      background-color: transparent;
       color: black;
+      border:  ${({ theme }) => `3px solid ${theme.colors.primary}`}
   }  
 `
 

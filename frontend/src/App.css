@@ -1,5 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700');
 
-body{
+body {
     font-family: 'Raleway', sans-serif;
+}
+
+@keyframes flickerAnimation {
+    from {
+        box-shadow: 0 0 1px -1px rgb(9, 240, 9);
+    }
+
+    to {
+        box-shadow: 0 0 1px 1px rgb(9, 240, 9);
+    }
+}
+
+.animate-flicker {
+    border-radius: 200px;
+    -webkit-animation: flickerAnimation .5s infinite;
+    -moz-animation: flickerAnimation .5s infinite;
+    -o-animation: flickerAnimation .5s infinite;
+    animation: flickerAnimation .5s infinite;
 }

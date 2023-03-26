@@ -16,13 +16,14 @@ HeroOneStyled.Text = styled.div`
     background: ${({ theme }) => `${theme.colors.hoverBg}`};
     button{
         font-size: 18px;
-        background-color: black;
-        color: white;
+        background-color: ${({ theme }) => `${theme.colors.primary}`};
+        border: 0px solid white;
+        color: black;
         padding: 10px;
         :hover{
             background-color: transparent;
             color: black;
-            border: 3px solid black;
+            border: ${({ theme }) => `3px solid ${theme.colors.primary}`};
         }
     }
 `

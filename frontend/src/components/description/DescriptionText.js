@@ -24,20 +24,14 @@ class DescriptionText extends Component {
         if (this.props.isReadMore) {
             this.props.dispatchSetReadMoreWarning()
 
-
-
             // this.props.dispatchAddReadmore({ readMoreText: this.props.textProps })
             readMoreElement.scrollIntoView()
-
-
         }
         else {
             this.props.dispatchAddReadmore({ readMoreText: this.props.textProps })
 
             // this.props.dispatchSetReadMoreWarning()
             descriptionElement.scrollIntoView()
-          
-
         }
     }
 
@@ -47,32 +41,30 @@ class DescriptionText extends Component {
 
     componentDidMount() {
 
-
         const child = document.getElementById("description")
 
-
         const isExceeded = child.firstChild.clientHeight > 300
+
+        console.log({firstChild: child.firstChild.clientHeight, child: child.clientHeight})
 
         if (isExceeded) {
             this.props.dispatchSetReadMoreWarning()
 
             child.firstChild.style.cssText = `
                 whitespace: no-wrap;
-                max-height: ${Number(child.clientHeight) - 50}px !important;
+                max-height: 10vh !important;
                 margin-bottom: 30px;
                 overflow: hidden;
                 line-height: 20px;
                 text-overflow: ellipsis;
                 display: -webkit-box;
-                -webkit-line-clamp: 7;
+                -webkit-line-clamp: 4;
                 -webkit-box-orient: vertical;
             `
         }
-
         else {
             this.props.dispatchRemoveReadmore()
         }
-
 
     }
     render() {
@@ -87,9 +79,9 @@ class DescriptionText extends Component {
                 <div>{parse(textProps)}</div>
                 {
                     this.props.isReadMoreWarning &&
-                    <Description.SeeFull onClick={this.scrollToReadmoreView}>
+                    <Description.SeeFullButton onClick={this.scrollToReadmoreView}>
                         {this.props.isReadMore ? <>See less description</> : <>See full description</>}
-                    </Description.SeeFull>
+                    </Description.SeeFullButton>
                 }
             </Description.DescriptionText>
         )

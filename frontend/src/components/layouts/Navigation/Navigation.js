@@ -123,29 +123,32 @@ class Navigation extends Component {
             <Nav ref={this.navBarRef} id='nav'>
                 <div>
                     <Nav.Link
+                        key={`0{1}`}
                         active={this.props.match === ""}>
                         <Link to={`/`} replace>
                             Home
                         </Link>
                     </Nav.Link>
-                    {
-                        this.props.categories &&
-                        this.props.categories.map((value, index) => {
-                            return (
-                                <>
-                                    <Nav.Link
-                                        active={this.props.match.params?.category === value.name || this.props.currentCategory === value.name}
-                                        key={`${index} ${value.name}`}>
-                                        <Link to={`../category/${value.name}`} replace>
-                                            {value.name}
-                                        </Link>
-                                    </Nav.Link>
+                    <>
+                        {
+                            this.props.categories &&
+                            this.props.categories.map((value, index) => {
+                                return (
+                                    <>
+                                        <Nav.Link
+                                            active={this.props.match.params?.category === value.name || this.props.currentCategory === value.name}
+                                            key={`${index} ${value.name}`}>
+                                            <Link to={`../category/${value.name}`} replace>
+                                                {value.name}
+                                            </Link>
+                                        </Nav.Link>
 
-                                </>
-                            )
-                        })
+                                    </>
+                                )
+                            })
 
-                    }
+                        }
+                    </>
                 </div>
                 <div>
                     <Nav.Icon src='/company.png' />

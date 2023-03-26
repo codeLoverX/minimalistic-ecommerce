@@ -105,11 +105,9 @@ class CardItemComponent extends Component {
                 <CardItem
                     onMouseEnter={() => {
                         this.changeProperty(controlQuickShop.Button, true);
-                        this.setUpQuickShopState();
                     }}
                     onMouseLeave={() => {
                         this.changeProperty(controlQuickShop.Button, false)
-                        this.changeProperty(controlQuickShop.Options, false)
                     }}
                 >
                     <CardItem.ImageContainer>
@@ -175,7 +173,7 @@ class CardItemComponent extends Component {
                         {
                             this.state.showQuickShopButton &&
                             <Fragment>
-                                <CardItem.QuickShopIcon onClick={this.setUpQuickShopState}>
+                                <CardItem.QuickShopIcon className="animate-flicker" onClick={this.setUpQuickShopState}>
                                     <span role="img" aria-label='cart'>🛒 </span>
                                 </CardItem.QuickShopIcon>
                             </Fragment>

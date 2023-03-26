@@ -46,6 +46,7 @@ const GlobalStyles = createGlobalStyle`
       text-align: center;
    }
   }
+  
 `
 
 export default GlobalStyles
