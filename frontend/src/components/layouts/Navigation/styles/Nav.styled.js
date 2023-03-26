@@ -30,7 +30,7 @@ let Nav = styled.nav`
     justify-content: center;
   }
   
-  @media (min-width: ${({ theme }) => theme.tablet}) {
+  @media (min-width: ${({ theme }) => theme.desktop}) {
     justify-content: center;
     flex-direction: row;
     > :nth-child(1){
@@ -71,7 +71,7 @@ Nav.Link = styled.span`
       border-bottom: 1px solid ${theme.colors.primary};
     `}
   }
-  @media (min-width: ${({ theme }) => theme.tablet}) {
+  @media (min-width: ${({ theme }) => theme.desktop}) {
     padding-top: 20px;
     padding-bottom: 20px;
     & > a {

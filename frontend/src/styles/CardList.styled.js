@@ -7,7 +7,7 @@ margin-left: auto;
 margin-right: auto;
 grid-gap: 0;
 justify-content: center;
-@media (min-width: ${({ theme }) => theme.tablet}) {
+@media (min-width: ${({ theme }) => theme.desktop}) {
     grid-template-columns: 1fr 1fr;
 }
 @media (min-width: ${({ theme }) => theme.desktop}) {

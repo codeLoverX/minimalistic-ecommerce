@@ -44,7 +44,7 @@ const products: Product[] = [
     new Product('Nike Air Huarache Le')
         .setId('huarache-x-stussy-le')
         .setPrice(120)
-        .setDescription('<span>Great Nike Air Huarache Le sneakers for everyday use!</span><span>Great Nike Air Huarache Le sneakers for everyday use!</span><span>Great Nike Air Huarache Le sneakers for everyday use!</span><span>Great Nike Air Huarache Le sneakers for everyday use!</span><span>Great Nike Air Huarache Le sneakers for everyday use!</span><span>Great Nike Air Huarache Le sneakers for everyday use!</span><span>Great Nike Air Huarache Le sneakers for everyday use!</span><span>Great Nike Air Huarache Le sneakers for everyday use!</span><span>Great Nike Air Huarache Le sneakers for everyday use!</span><span>Great Nike Air Huarache Le sneakers for everyday use!</span><span>Great Nike Air Huarache Le sneakers for everyday use!</span><span>Great Nike Air Huarache Le sneakers for everyday use!</span><span>Great Nike Air Huarache Le sneakers for everyday use!</span><span>Great Nike Air Huarache Le sneakers for everyday use!</span>')
+        .setDescription('<p>Great Nike Air Huarache Le sneakers for everyday use!</p><span>Great Nike Air Huarache Le sneakers for everyday use!</span><span>Great Nike Air Huarache Le sneakers for everyday use!</span><p>Great Nike Air Huarache Le sneakers for everyday use!</p><span>Great Nike Air Huarache Le sneakers for everyday use!</span><span>Great Nike Air Huarache Le sneakers for everyday use!</span><p>Great Nike Air Huarache Le sneakers for everyday use!</p><span>Great Nike Air Huarache Le sneakers for everyday use!</span><span>Great Nike Air Huarache Le sneakers for everyday use!</span><span>Great Nike Air Huarache Le sneakers for everyday use!</span><p>Great Nike Air Huarache Le sneakers for everyday use!</p><span>Great Nike Air Huarache Le sneakers for everyday use!</span><span>Great Nike Air Huarache Le sneakers for everyday use!</span><p>Great Nike Air Huarache Le sneakers for everyday use!</p>')
         .addImages([
             'https://cdn.shopify.com/s/files/1/0087/6193/3920/products/DD1381200_DEOA_2_720x.jpg?v=1612816087',
             "https://cdn.shopify.com/s/files/1/0210/2968/3222/articles/trending_products_to_sell_in_India_ad8fc9e0-5052-44bf-bd93-7bec4335f5ee.jpg?v=1647462399",
@@ -59,7 +59,7 @@ const products: Product[] = [
     new Product('Barker shoes')
         .setId('barker-shoes')
         .setPrice(120)
-        .setDescription('<span>Great barker for everyday use!</span><span>Great barker for everyday use!</span><span>Great barker for everyday use!</span><span>Great barker for everyday use!</span><span>Great barker for everyday use!</span><span>Great barker for everyday use!</span><span>Great barker for everyday use!</span><span>Great barker for everyday use!</span><span>Great barker for everyday use!</span><span>Great barker for everyday use!</span><span>Great barker for everyday use!</span><span>Great barker for everyday use!</span><span>Great barker for everyday use!</span><span>Great barker for everyday use!</span><span>Great barker for everyday use!</span><span>Great barker for everyday use!</span><span>Great barker for everyday use!</span><span>Great barker for everyday use!</span><span>Great barker for everyday use!</span>')
+        .setDescription('<p>Great barker for everyday use!</p><span>Great barker for everyday use!</span><span>Great barker for everyday use!</span><p>Great barker for everyday use!</p><span>Great barker for everyday use!</span><span>Great barker for everyday use!</span><p>Great barker for everyday use!</p><span>Great barker for everyday use!</span><span>Great barker for everyday use!</span><p>Great barker for everyday use!</p><span>Great barker for everyday use!</span><span>Great barker for everyday use!</span><p>Great barker for everyday use!</p><span>Great barker for everyday use!</span><span>Great barker for everyday use!</span><p>Great barker for everyday use!</p><span>Great barker for everyday use!</span><span>Great barker for everyday use!</span><span>Great barker for everyday use!</span>')
         .addImages([
             "https://cdn.shopify.com/s/files/1/0046/9139/4658/files/SS20_HOMEPAGE_MCCLEANPAIR_880x550_crop_center.jpg?v=1614334815",
             "https://cdn.shopify.com/s/files/1/0210/2968/3222/articles/trending_products_to_sell_in_India_ad8fc9e0-5052-44bf-bd93-7bec4335f5ee.jpg?v=1647462399", 
@@ -86,7 +86,7 @@ const products: Product[] = [
         ])
         .addAttributeSet(clothesSizes)
         .setBrand('Canada Goose')
-        .setDescription('<span>Awesome winter jacket</span>')
+        .setDescription('<p>Awesome winter jacket</p>')
         .setCategory(Category.clothes),
 
     new Product('Essential Jacket')
@@ -100,7 +100,7 @@ const products: Product[] = [
         ])
         .addAttributeSet(clothesSizes)
         .setBrand('Essential Jacket')
-        .setDescription('<span>Awesome essential jacket</span><span>Awesome essential jacket</span><span>Awesome essential jacket</span><span>Awesome essential jacket</span><span>Awesome essential jacket</span><span>Awesome essential jacket</span><span>Awesome essential jacket</span><span>Awesome essential jacket</span><span>Awesome essential jacket</span><span>Awesome essential jacket</span><span>Awesome essential jacket</span><span>Awesome essential jacket</span><span>Awesome essential jacket</span><span>Awesome essential jacket</span><span>Awesome essential jacket</span><span>Awesome essential jacket</span><span>Awesome essential jacket</span>')
+        .setDescription('<span>Awesome essential jacket</span><span>Awesome essential jacket</span><p>Awesome essential jacket</p><span>Awesome essential jacket</span><span>Awesome essential jacket</span><p>Awesome essential jacket</p><span>Awesome essential jacket</span><span>Awesome essential jacket</span><span>Awesome essential jacket</span><span>Awesome essential jacket</span><p>Awesome essential jacket</p><span>Awesome essential jacket</span><span>Awesome essential jacket</span><p>Awesome essential jacket</p><span>Awesome essential jacket</span><span>Awesome essential jacket</span><span>Awesome essential jacket</span>')
         .setCategory(Category.clothes),
 
     new Product('Puffer Jacket')
@@ -114,7 +114,7 @@ const products: Product[] = [
         ])
         .addAttributeSet(clothesSizes)
         .setBrand('Puffer Jacket')
-        .setDescription('<span>Awesome puffer jacket</span>')
+        .setDescription('<p>Awesome puffer jacket</p>')
         .setCategory(Category.clothes),
 
     new Product('Packet Jacket')
@@ -142,7 +142,7 @@ const products: Product[] = [
         .addAttributeSet(capacity)
         .setBrand('Sony')
         .setInStock(false)
-        .setDescription('<span>A good gaming console. Plays games of PS4! Enjoy if you can buy it mwahahahaha</span>')
+        .setDescription('<p>A good gaming console. Plays games of PS4! Enjoy if you can buy it mwahahahaha</p>')
         .setCategory(Category.tech),
 
     new Product('Xbox Series S 512GB')

@@ -10,7 +10,7 @@ const LoadingSpinnerImg = styled.img`
         animation: App-logo-spin infinite 2s linear;
     }
 
-    @media (max-width: ${({ theme }) => theme.tablet}) {
+    @media (max-width: ${({ theme }) => theme.desktop}) {
         animation: App-logo-spin infinite 10s linear;
     }
 

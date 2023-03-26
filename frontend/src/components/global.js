@@ -19,7 +19,7 @@ const GlobalStyles = createGlobalStyle`
     font-size: 1.15em;
     margin: 0;
     padding: 0 5em;
-    @media (max-width: ${({ theme }) => theme.tablet}) {
+    @media (max-width: ${({ theme }) => theme.desktop}) {
       padding: 0.5em;
     }
   }
@@ -41,7 +41,7 @@ const GlobalStyles = createGlobalStyle`
   `}
   }
   
-  @media (max-width: ${({ theme }) => theme.tablet}) {
+  @media (max-width: ${({ theme }) => theme.desktop}) {
     .text-align-center-mobile{
       text-align: center;
    }

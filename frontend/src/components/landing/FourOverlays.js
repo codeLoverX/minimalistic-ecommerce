@@ -7,14 +7,14 @@ const FourOverlaysContainer = styled.div`
     margin: 0 10vw;
     padding: 0;
     gap: 10px;
-    @media (min-width: ${({ theme }) => theme.tablet}) {
+    @media (min-width: ${({ theme }) => theme.desktop}) {
         grid-template-columns: repeat(4, 1fr);
     }
 `
 
 const FourOverlaysItem = styled.div`
     position: relative;
-    @media (min-width: ${({ theme }) => theme.tablet}) {
+    @media (min-width: ${({ theme }) => theme.desktop}) {
         :nth-child(1){
             grid-row: 1 / span 2;
             grid-column: 1 / span 2;
@@ -33,7 +33,7 @@ FourOverlaysItem.Text = styled.div`
     font-weight: 900;
     font-size: 20px;
     padding: 10px;
-    @media (min-width: ${({ theme }) => theme.tablet}) {
+    @media (min-width: ${({ theme }) => theme.desktop}) {
     }
     @media (min-width: ${({ theme }) => theme.xl}) {
         font-size: 30px;

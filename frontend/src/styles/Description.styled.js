@@ -4,7 +4,7 @@ let Description = styled.div`
     display: flex; 
     flex-wrap: wrap;
     max-height: 50vh;
-    @media (max-width: ${({ theme }) => theme.tablet}) {
+    @media (max-width: ${({ theme }) => theme.desktop}) {
         max-height: min-content;
         min-width: 400px;
         max-width: 600px;
@@ -20,12 +20,11 @@ Description.Preview = styled.span`
         margin: auto
         max-width: 80%;
     }
-    @media (min-width: ${({ theme }) => theme.tablet}) {
+    @media (min-width: ${({ theme }) => theme.desktop}) {
         flex-basis: 50%;
         & img {
             padding: 0 30px;
             height: 50vh;
-
         }
     }
 
@@ -44,13 +43,12 @@ Description.ControlPreview = styled.span`
         margin: auto; 
         cursor: pointer;
     }
-    @media (max-width: ${({ theme }) => theme.tablet}) {
+    @media (max-width: ${({ theme }) => theme.desktop}) {
       
         flex-basis: 100%; 
         flex-wrap: nowrap;
         overflow-x: auto;
         white-space: nowrap;
-        margin: 25px 10%; 
         width: 90vw;
         & img {
             width: 100px;
@@ -62,9 +60,8 @@ Description.TextSection = styled.span`
     flex-basis: 40%;  
     max-height: min-content;
     padding: 20px 30px; 
-    margin: 25px 0; 
     background-color: ${({ theme }) => `${theme.colors.hoverBg}`};
-    @media (max-width: ${({ theme }) => theme.tablet}) {
+    @media (max-width: ${({ theme }) => theme.desktop}) {
         flex-basis: 100%; 
         text-align: center;
         max-height: min-content; 
@@ -105,7 +102,7 @@ Description.SeeFullButton = styled.div`
     padding-top: 10px;
     cursor: pointer;
     text-decoration: underline; 
-    @media (min-width: ${({ theme }) => theme.tablet}) {
+    @media (min-width: ${({ theme }) => theme.desktop}) {
     }
 `
 Description.SeeFullHeading = styled.div`
@@ -118,7 +115,7 @@ Description.SeeFullHeading = styled.div`
     hr{
         display: none;
     }
-    @media (min-width: ${({ theme }) => theme.tablet}) {
+    @media (min-width: ${({ theme }) => theme.desktop}) {
         hr{
             display: block;
         }

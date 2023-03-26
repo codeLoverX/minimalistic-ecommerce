@@ -18,8 +18,7 @@ const theme = {
     activeBg: 'rgb(217, 215, 215)',
     hoverBg: 'rgb(200, 200, 200, 0.5)',
   },
-  tablet: '1000px',
-  desktop: '992px',
+  desktop: '1000px',
   xl: '1300px'
 }
 
