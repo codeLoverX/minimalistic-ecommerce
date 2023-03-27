@@ -57,3 +57,10 @@ main {
 ::-webkit-scrollbar-thumb:hover {
   background: lightgray;
 }
+
+.container-node {
+  white-space: pre-wrap;
+  word-break: break-all;
+  word-wrap: break-word;
+  width: 400px;
+}

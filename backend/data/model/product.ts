@@ -9,6 +9,7 @@ class Product {
     protected prices: Price[] = [];
     protected category: Category;
     protected description: string;
+    protected shortDescription: string;
     protected gallery: string[] = [];
     protected attributes: AttributeSet[] = [];
     protected inStock: boolean = true;
@@ -55,6 +56,12 @@ class Product {
     }
 
     setDescription(description: string) {
+        this.description = description;
+
+        return this;
+    }
+
+    setShortDescription(description: string) {
         this.description = description;
 
         return this;

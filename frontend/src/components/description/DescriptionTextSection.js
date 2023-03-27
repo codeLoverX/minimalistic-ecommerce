@@ -119,10 +119,13 @@ class ProductDescription extends Component {
                     <Description.AddToCart onClick={(event) => this.submitForm(event)}> ADD TO CART </Description.AddToCart>
                     <br />
                     <br />
-                    <DescriptionText
+                    {/* <DescriptionText
                         textProps={description.description}
-                    />
+                    /> */}
                 </Description.TextSection>
+                <DescriptionText
+                    textProps={description.description}
+                />
             </>
         )
     }
