@@ -11,6 +11,7 @@ import Loading from '../../components/notification/loading'
 import { connect } from 'react-redux'
 import parse from 'html-react-parser';
 import Trending from '../../components/landing/Trending'
+import Newsletter from '../../components/landing/Newsletter'
 
 class DescriptionPage extends Component {
 
@@ -97,6 +98,7 @@ class DescriptionPage extends Component {
                                 </>
                             }
                                 <Trending />
+                                <Newsletter />
 
                         </>
                     }

@@ -17,17 +17,13 @@ class CardListComponent extends Component {
     }
 
     state = {
-        data: [],
+        data: null,
         isLoading: false,
         isError: false
     }
 
     fetchAndSetComponentData() {
         let { category } = this.props
-
-        this.setState((prev) => {
-            return { ...prev, loading: true }
-        })
 
         catchError(
             fetchAllProductsByCategory(category)
@@ -42,6 +38,10 @@ class CardListComponent extends Component {
     }
 
     componentDidMount() {
+        this.setState((prev) => {
+            return { ...prev, loading: true }
+        })
+        
         if (this.mounted) this.fetchAndSetComponentData()
     }
 
@@ -86,7 +86,7 @@ class CardListComponent extends Component {
                         </>
                     }
                     {
-                        !this.state.data[0] &&
+                        this.state.data !== null && !this.state.data[0] &&
                         <div>
                             <EmptyNotification message="The list is empty" />
                         </div>

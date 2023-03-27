@@ -6,18 +6,22 @@ import FourOverlaysComponent from '../components/landing/FourOverlays'
 import HeroOneComponent from '../components/landing/HeroOne'
 import HeroTwoComponent from '../components/landing/HeroTwo'
 import Trending from '../components/landing/Trending'
+import Newsletter from '../components/landing/Newsletter'
 
 class Home extends Component {
 
     render() {
-       
+
         return (
             <>
                 <Navigation />
-                <FourOverlaysComponent />
-                <Trending />
-                <HeroOneComponent />
-                <HeroTwoComponent />
+                <main>
+                    <FourOverlaysComponent />
+                    <HeroOneComponent />
+                    <Trending />
+                    <HeroTwoComponent />
+                </main>
+                <Newsletter />
                 <Footer />
             </>
         )

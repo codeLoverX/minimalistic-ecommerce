@@ -6,6 +6,8 @@ let Nav = styled.nav`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  border-bottom: ${({ theme }) => `2px solid ${theme.colors.hoverBg}`};
+
   > * {
     box-sizing: border-box;
   }
@@ -15,8 +17,10 @@ let Nav = styled.nav`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    height: 150px;
+    height: 180px;
+    width: 300px;
     padding: 15px;
+   
   }
  
   > :nth-child(2){
@@ -34,7 +38,8 @@ let Nav = styled.nav`
     justify-content: center;
     flex-direction: row;
     > :nth-child(1){
-      width: 300px;
+      width: 400px;
+      height: 100px;
       display: flex;
       flex-direction:row;
       justify-content: space-between;
@@ -68,7 +73,7 @@ Nav.Link = styled.span`
       color:  ${theme.colors.primary};
       padding-bottom: 10px;
       margin-bottom: 20px;
-      border-bottom: 1px solid ${theme.colors.primary};
+      border-bottom: 3px solid ${theme.colors.primary};
     `}
   }
   @media (min-width: ${({ theme }) => theme.desktop}) {

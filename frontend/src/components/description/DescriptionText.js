@@ -51,15 +51,24 @@ class DescriptionText extends Component {
             this.props.dispatchSetReadMoreWarning()
 
             child.firstChild.style.cssText = `
-                whitespace: no-wrap;
-                max-height: 10vh !important;
-                margin-bottom: 30px;
-                overflow: hidden;
-                line-height: 20px;
+                // display: block;/* or inline-block */
+                // whitespace: no-wrap;
+                // max-height: 10vh !important;
+                // margin-bottom: 30px;
+                // overflow: hidden;
+                // line-height: 20px;
+                // word-wrap: break-word;
+                // text-overflow: clip;
+                // display: -webkit-box;
+                // -webkit-line-clamp: 4;
+                // -webkit-box-orient: vertical;
+
+                display: block;/* or inline-block */
                 text-overflow: ellipsis;
-                display: -webkit-box;
-                -webkit-line-clamp: 4;
-                -webkit-box-orient: vertical;
+                word-wrap: break-word;
+                overflow: hidden;
+                max-height: 10vh;
+                line-height: 1.8em;
             `
         }
         else {

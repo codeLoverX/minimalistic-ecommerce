@@ -72,6 +72,14 @@ class Navigation extends Component {
         // }
     }
 
+    componentDidMount() {
+        const isMobile = window.matchMedia("(max-width: 1000px)").matches
+
+        const logoContainer = document.querySelector("#navlinks")
+
+        if (isMobile) logoContainer.style.display = "none"
+    }
+
     handleClickOutside = event => {
 
         let currentStyle = this.navBarRef.current.style
@@ -120,11 +128,11 @@ class Navigation extends Component {
     render() {
 
         return (
-            <Nav ref={this.navBarRef} id='nav'>
-                <div>
+            <Nav ref={this.navBarRef} id='nav' >
+                <div id="navlinks">
                     <Nav.Link
                         key={`0{1}`}
-                        active={this.props.match === ""}>
+                        active={this.props.location.pathname === "/"}>
                         <Link to={`/`} replace>
                             Home
                         </Link>
@@ -150,7 +158,16 @@ class Navigation extends Component {
                         }
                     </>
                 </div>
-                <div>
+                <div onClick={
+                    (event) => {
+                        const navlinks = event.currentTarget.parentElement.children[0];
+                        const isMobile = window.matchMedia("(max-width: 1000px)").matches
+                        if (isMobile) {
+                            if (navlinks.style.display === "none") navlinks.style.display = "flex"
+                            else navlinks.style.display = "none"
+                        }
+                    }
+                }>
                     <Nav.Icon src='/company.png' />
                 </div>
 

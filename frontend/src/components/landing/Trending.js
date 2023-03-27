@@ -29,7 +29,6 @@ TrendingStyled.Button = styled.button`
         background: transparent;
         border: ${({ theme }) => `3px solid ${theme.colors.primary}`};
     }
-   
 `
 
 TrendingStyled.ButtonRight = styled(TrendingStyled.Button)`
@@ -39,6 +38,23 @@ TrendingStyled.ButtonRight = styled(TrendingStyled.Button)`
 TrendingStyled.ButtonLeft = styled(TrendingStyled.Button)`
     left: 0;
 `
+TrendingStyled.CardList = styled(CardList)`
+`
+
+TrendingStyled.CardItem = styled(CardItem)`
+`
+
+TrendingStyled.ImageContainer = styled(CardItem.ImageContainer)`
+  height: 250px;
+  width: 250px;
+`
+
+TrendingStyled.Image = styled(CardItem.Image)`
+`
+
+TrendingStyled.Title = styled(CardItem.Title)`
+`
+
 
 
 export default class Trending extends Component {
@@ -107,7 +123,7 @@ export default class Trending extends Component {
                 }>
                     <Right width={25} height={25} fill="lightgreen"/>
                 </TrendingStyled.ButtonRight>
-                <CardList>
+                <TrendingStyled.CardList>
                     {
                         this.state.data !== null &&
                         <>
@@ -118,24 +134,24 @@ export default class Trending extends Component {
                                     }
                                     return (
                                         <>
-                                            <CardItem
+                                            <TrendingStyled.CardItem
                                             >
-                                                <CardItem.ImageContainer>
+                                                <TrendingStyled.ImageContainer>
                                                     <Link
                                                         // {...this.generateLinkIfOutOfStock(cardValue.inStock)} 
                                                         to={`../product/${cardValue.id}`} replace>
-                                                        <CardItem.Image src={cardValue.gallery[0]} />
+                                                        <TrendingStyled.Image src={cardValue.gallery[0]} />
                                                     </Link>
-                                                </CardItem.ImageContainer>
+                                                </TrendingStyled.ImageContainer>
                                                 <Link
                                                     // {...this.generateLinkIfOutOfStock(cardValue.inStock)} 
                                                     to={`../product/${cardValue.id}`} replace>
 
-                                                    <CardItem.Title inStock={cardValue.inStock}>
+                                                    <TrendingStyled.Title inStock={cardValue.inStock}>
                                                         {cardValue.brand} {cardValue.name}
-                                                    </CardItem.Title>
+                                                    </TrendingStyled.Title>
                                                 </Link>
-                                            </CardItem>
+                                            </TrendingStyled.CardItem>
 
                                         </>
                                     )
@@ -158,12 +174,12 @@ export default class Trending extends Component {
                         </>
                     }
                     {
-                        !this.state.data[0] &&
+                         this.state.data !== null && !this.state.data[0] &&
                         <div>
                             <EmptyNotification message="The list is empty" />
                         </div>
                     }
-                </CardList>
+                </TrendingStyled.CardList>
 
             </TrendingStyled>
         )

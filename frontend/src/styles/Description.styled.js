@@ -3,6 +3,7 @@ import styled from 'styled-components'
 let Description = styled.div`
     display: flex; 
     flex-wrap: wrap;
+    margin: 5em 5em 0;
     max-height: 50vh;
     @media (max-width: ${({ theme }) => theme.desktop}) {
         max-height: min-content;

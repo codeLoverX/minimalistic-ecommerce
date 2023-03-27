@@ -1,21 +1,58 @@
 import React, { Component } from 'react';
-import HeroStyled from '../../styles/Hero.styled';
+import styled from 'styled-components';
+const NewsletterContainer = styled.div`
+    margin: 0 0 -20px;
+    background-color: ${({ theme }) => `${theme.colors.hoverBg}`};
+    padding: 5em 20vw;
+    p{
+        font-family: 'Raleway', sans-serif;
+        *{
+            font-size: 18px;
+            padding: 15px;
+        }
+        input{
+            font-size: 18px;
+            width: 50%;
+        }
+        textarea{
+            width: 100%;
+        }
+        input[type="submit"]{
+            width: 200px;
+            font-size: 18px;
+            background-color: ${({ theme }) => `${theme.colors.primary}`};
+            border: 0px solid white;
+            color: black;
+            padding: 10px;
+            :hover{
+                background-color: transparent;
+                color: black;
+                border: ${({ theme }) => `3px solid ${theme.colors.primary}`};
+            }
+        }
+    }
+`
+
 class Newsletter extends Component {
     render() {
         return (
-            <HeroStyled id="comfortable">
-                <HeroStyled.Text>
-                    <div>
-                        <h3>Comfortable & Elegante Living</h3>
-                        <p>Products are all made to standard sizes so that you can mix and match them freely.</p>
-                        <button>Shop now</button>
-                    </div>
-                </HeroStyled.Text>
-                <HeroStyled.ImageContainer>
-                <img src="/comfortable.jpg" alt="Comfortable living"/>
-                </HeroStyled.ImageContainer>
+            <NewsletterContainer>
+                <form name="contact" method="post">
+                    <input type="hidden" name="form-name" value="contact" />
+                    <p>
+                        <input type="text" id="name" name="name" required placeholder='Enter your name...' />
+                        <input type="email" id="email" name="email" required placeholder='Enter your email...' />
+                    </p>
+                   
+                    <p>
+                        <textarea id="message" name="message" required placeholder='Enter your message...'></textarea>
+                    </p>
+                    <p>
+                        <input type="submit" value="Submit message" />
+                    </p>
+                </form>
 
-            </HeroStyled>
+            </NewsletterContainer>
         )
     }
 }
