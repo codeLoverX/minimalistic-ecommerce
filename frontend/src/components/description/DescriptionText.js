@@ -4,7 +4,6 @@ import { Description } from '../../styles'
 import parse from 'html-react-parser';
 import React from 'react'
 import { addReadMoreAction, removeReadMoreAction, setReadMoreAction } from '../../redux/readmore/readmore-action';
-import TextClamp from 'react-string-clamp';
 
 class DescriptionText extends Component {
     constructor() {
@@ -80,13 +79,11 @@ class DescriptionText extends Component {
     }
     render() {
 
-        let { textProps } = this.props
-
         return (
             <Description.DescriptionText
                 id="description"
             >
-                <div><TextClamp text={this.props.textProps}/></div>
+                <div>{this.props.textProps}</div>
                 {
                     this.props.isReadMoreWarning &&
                     <Description.SeeFullButton onClick={this.scrollToReadmoreView}>

@@ -124,7 +124,7 @@ class ProductDescription extends Component {
                     /> */}
                 </Description.TextSection>
                 <DescriptionText
-                    textProps={description.description}
+                    textProps={description.shortDescription}
                 />
             </>
         )

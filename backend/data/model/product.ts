@@ -61,8 +61,8 @@ class Product {
         return this;
     }
 
-    setShortDescription(description: string) {
-        this.description = description;
+    setShortDescription(shortDescription: string) {
+        this.shortDescription = shortDescription;
 
         return this;
     }
