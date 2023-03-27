@@ -9,17 +9,19 @@ let Description = styled.div`
         max-height: min-content;
         min-width: 400px;
         max-width: 600px;
-        margin: 0 auto;
+        margin: 20px auto;
     }
 `
 Description.Preview = styled.span`
     flex-basis: 100%; 
     text-align: center;
     position: reative;
-    & img {
+    img {
         object-fit: cover;
         margin: auto
         max-width: 80%;
+        height: 50vh;
+        margin: 20px auto;
     }
     @media (min-width: ${({ theme }) => theme.desktop}) {
         flex-basis: 50%;
@@ -40,12 +42,13 @@ Description.ControlPreview = styled.span`
     ::-webkit-scrollbar {
         height: 8px;
     }
-    & img {
+    img {
         object-fit: cover;
-        width: 90%;
-        height: 100px;
-        margin: auto; 
+        width: 100%;
+        max-height: 100px;
+        margin: 5px auto; 
         cursor: pointer;
+        border: ${({ theme }) => `3px solid ${theme.colors.hoverBg}`};
     }
     @media (max-width: ${({ theme }) => theme.desktop}) {
         ::-webkit-scrollbar {
@@ -57,7 +60,8 @@ Description.ControlPreview = styled.span`
         overflow-x: auto;
         white-space: nowrap;
         width: 90vw;
-        & img {
+        img {
+            margin: auto 5px; 
             width: 100px;
             height: 100px;
         }

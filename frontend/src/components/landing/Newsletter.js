@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const NewsletterContainer = styled.div`
     margin: 0 0 -20px;
     background-color: ${({ theme }) => `${theme.colors.hoverBg}`};
-    padding: 5em 20vw;
+    padding: 5em 30vw;
     p{
         font-family: 'Raleway', sans-serif;
         *{
@@ -16,6 +16,7 @@ const NewsletterContainer = styled.div`
         }
         textarea{
             width: 100%;
+            height: 20vh;
         }
         input[type="submit"]{
             width: 200px;
@@ -28,6 +29,17 @@ const NewsletterContainer = styled.div`
                 background-color: transparent;
                 color: black;
                 border: ${({ theme }) => `3px solid ${theme.colors.primary}`};
+            }
+        }
+    }
+    @media (min-width: ${({ theme }) => theme.desktop}) {
+        padding: 5em 30vw;
+        *{
+            padding: 1-px;
+        }
+        p{
+            textarea{
+                height: 13vh;
             }
         }
     }

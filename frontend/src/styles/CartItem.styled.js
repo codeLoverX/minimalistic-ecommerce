@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 let CartItem = styled.div`
     display: flex;
-    border-top: 1px solid rgb(217, 215, 215);
+    border-bottom: 1px solid rgb(217, 215, 215);
     justify-content: space-between;
     padding-top: 10px;
     padding-left: 10px;
@@ -13,7 +13,7 @@ CartItem.ItemContainer = styled.div`
    height: 100vh;
    overflow-y: auto; 
    overflow-x: visible;
-`
+   `
 
 CartItem.Colorbox = styled.label`
     cursor: pointer;
@@ -42,7 +42,7 @@ CartItem.Sizebox = styled.label`
     display: inline-block;
     padding: ${({ paddingX, paddingY }) =>
         `${paddingX} ${paddingY}`} ;
-    font-size: small;
+    font-size: medium;
     margin-bottom: 20px;
     margin-right: 5px;
     border: 1px solid black;
@@ -53,7 +53,8 @@ CartItem.Sizebox = styled.label`
         margin-bottom: 0px;
     ` }
     &:hover{
-        background-color:  ${({ theme }) => `${theme.colors.hoverBg}`};
+        background-color:  ${({ theme }) => `${theme.colors.primary}`};
+        color: black;
     }
 `
 
@@ -81,8 +82,12 @@ CartItem.PreviewTabController = styled.div`
    width: 20px;
    text-align: center;
    background-color: black;
+    &:hover{
+        background-color:  ${({ theme }) => `${theme.colors.primary}`};
+        color: black;
+    }
    color: white;
-   bottom: 10px;
+   bottom: 20px;
    z-index: 999;
 `
 

@@ -4,8 +4,7 @@ import Footer from '../../components/layouts/Footer/Footer'
 import Navigation from '../../components/layouts/Navigation/Navigation'
 import CartList from '../../components/cart/CartList'
 import { roundOffTwoDP } from '../../redux/cart/cart-utils'
-import { CartSummary } from './styles'
-
+import { CartSummary } from '../../styles'
 class CartPage extends Component {
 
     render() {
@@ -13,10 +12,12 @@ class CartPage extends Component {
             <>
                 <Navigation />
                 <main>
+                    <h3 className='page-heading'> Cart </h3>
+                    <CartSummary>
                     <CartList />
                     {
                         this.props.totalQuantity !== 0 &&
-                        <CartSummary>
+                        <div id="summary">
                             <p>Tax 21%:
                                 &nbsp;
                                 {this.props.currentCurrency.symbol}
@@ -29,8 +30,9 @@ class CartPage extends Component {
                                     roundOffTwoDP(Number(this.props.total[this.props.currentCurrency.index]) + Number(this.props.total[this.props.currentCurrency.index]) * this.props.tax)
                                 }
                             </p>
-                        </CartSummary>
+                        </div>
                     }
+                    </CartSummary>
                 </main >
                 <Footer />
             </>

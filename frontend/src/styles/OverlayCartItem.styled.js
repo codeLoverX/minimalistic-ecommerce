@@ -89,7 +89,8 @@ OverlayCartItem.ButtonBase = styled.button`
     margin-right: 5px;
     margin-top: 10px;
     &:hover{
-        background-color:  ${({ theme }) => `${theme.colors.hoverBg}`};
+        border:  ${({ theme }) => `2px solid ${theme.colors.primary}`};
+        background-color:  transparent;
         color: black;
     }    
 `
@@ -97,11 +98,15 @@ OverlayCartItem.ButtonBase = styled.button`
 OverlayCartItem.ButtonViewCart = styled(OverlayCartItem.ButtonBase)`
     background-color: ${({ theme }) => `${theme.colors.light}`};
     border: 1px solid black;
+    &:hover{
+        border: 2px solid black;
+        background-color:  transparent;
+        color: black;
+    }   
 `
 
 OverlayCartItem.ButtonCheckoutCart = styled(OverlayCartItem.ButtonBase)`
     background-color: ${({ theme }) => `${theme.colors.primary}`};
-    color: ${({ theme }) => `${theme.colors.light}`};
     border: 0px solid black;
 `
     

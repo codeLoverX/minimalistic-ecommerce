@@ -22,8 +22,9 @@ class ListingPage extends Component {
             <>
                 <Navigation />
                 <main>
-                    <h3 className='text-align-center-mobile'> {categoryInUpperCase} </h3>
+                    <h3 className='page-heading'> {categoryInUpperCase} </h3>
                     <CardList category={category} />
+                    <br/>
                 </main>
                 <Footer />
             </>

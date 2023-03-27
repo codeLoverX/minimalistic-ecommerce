@@ -42,7 +42,7 @@ const GlobalStyles = createGlobalStyle`
   }
   
   @media (max-width: ${({ theme }) => theme.desktop}) {
-    .text-align-center-mobile{
+    .page-heading-mobile{
       text-align: center;
    }
   }
