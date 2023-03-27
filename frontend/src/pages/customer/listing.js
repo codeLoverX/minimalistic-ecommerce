@@ -5,7 +5,9 @@ import Footer from '../../components/layouts/Footer/Footer'
 import CardList from '../../components/listing/CardList'
 
 class ListingPage extends Component {
-
+    componentDidMount(){
+        window.scrollTo(0, 0);
+    }
     render() {
         // props defined here but not in constructor: console.log({props: this.props})
         let category ="";
@@ -17,7 +19,7 @@ class ListingPage extends Component {
         }
 
         let categoryInUpperCase = category.charAt(0).toUpperCase() + category.slice(1)
-
+        
         return (
             <>
                 <Navigation />

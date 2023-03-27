@@ -9,9 +9,10 @@ import Trending from '../components/landing/Trending'
 import Newsletter from '../components/landing/Newsletter'
 
 class Home extends Component {
-
+    componentDidMount(){
+        window.scrollTo(0, 0);
+    }
     render() {
-
         return (
             <>
                 <Navigation />

@@ -6,7 +6,9 @@ import CartList from '../../components/cart/CartList'
 import { roundOffTwoDP } from '../../redux/cart/cart-utils'
 import { CartSummary } from '../../styles'
 class CartPage extends Component {
-
+    componentDidMount(){
+        window.scrollTo(0, 0);
+    }
     render() {
         return (
             <>

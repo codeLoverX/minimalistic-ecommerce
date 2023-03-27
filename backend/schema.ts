@@ -25,6 +25,7 @@ const typeDefs = gql`
         inStock: Boolean,
         gallery: [String],
         description: String!,
+        shortDescription: String!,
         category: String!,
         attributes: [AttributeSet]
         prices: [Price!]!,

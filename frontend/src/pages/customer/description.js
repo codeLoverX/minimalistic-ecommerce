@@ -14,7 +14,9 @@ import Trending from '../../components/landing/Trending'
 import Newsletter from '../../components/landing/Newsletter'
 
 class DescriptionPage extends Component {
-
+    componentDidMount(){
+        window.scrollTo(0, 0);
+    }
     constructor() {
         super()
 

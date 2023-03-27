@@ -50,6 +50,7 @@ const PRODUCT_BY_ID = (productId) => gql`
       inStock
       gallery
       description
+      shortDescription
       category
       attributes {
         name
