@@ -8,13 +8,11 @@ import Navigation from '../../components/layouts/Navigation/Navigation'
 import Footer from '../../components/layouts/Footer/Footer'
 import ErrorNotification from '../../components/notification/error'
 import Loading from '../../components/notification/loading'
-import { connect } from 'react-redux'
-import parse from 'html-react-parser';
 import Trending from '../../components/landing/Trending'
 import Newsletter from '../../components/landing/Newsletter'
 
 class DescriptionPage extends Component {
- 
+
     constructor() {
         super()
 
@@ -54,21 +52,6 @@ class DescriptionPage extends Component {
                 })
             })
 
-
-        // let { data, error } = await catchError(
-        //     fetchProducById(productId)
-        //         .then((data) => {
-        //             return data.product
-        //         })
-        // )
-
-        // console.log( { state: this.state } )
-
-        // await this.setState({
-        //     data,
-        //     isLoading: false,                
-        //     isError: error
-        // })
     }
 
     render() {
@@ -87,21 +70,10 @@ class DescriptionPage extends Component {
                                 <ProductPreview images={this.state.data?.gallery} />
                                 <ProductDescription description={{ ...this.state.data }} />
                             </Description>
-
-                            {this.props.readMoreText &&
-                                <>
-                                    <Description.SeeFullHeading>
-                                        <hr />
-                                        <h3>See more...</h3>
-                                    </Description.SeeFullHeading>
-                                    <Description.SeeFullText id="readmore">
-                                        {parse(this.props.readMoreText)}
-                                    </Description.SeeFullText>
-                                </>
-                            }
+                            <div>
                                 <Trending />
                                 <Newsletter />
-
+                            </div>
                         </>
                     }
                     {
@@ -122,10 +94,4 @@ class DescriptionPage extends Component {
         )
     }
 }
-export default connect(
-    (state) => ({
-        isReadMore: state.readmoreReducer.isReadMore,
-        isReadMoreWarning: state.readmoreReducer.isReadMoreWarning,
-        readMoreText: state.readmoreReducer.readMoreText
-    }),
-)(withRouter(DescriptionPage))
+export default (withRouter(DescriptionPage))

@@ -2,8 +2,6 @@
 
 body {
   font-family: 'Raleway', sans-serif;
-  display: flex;
-  flex-direction: column;
 }
 
 main {
@@ -25,7 +23,6 @@ main {
   text-align: center;
   margin-top: 30px ;
   margin-bottom: 25px ; 
-
 }
 
 .animate-flicker {

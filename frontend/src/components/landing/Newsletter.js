@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const NewsletterContainer = styled.div`
     margin: 0 0 -20px;
     background-color: ${({ theme }) => `${theme.colors.hoverBg}`};
-    padding: 5em 30vw;
+    padding: 3vh 5vw;
     p{
         font-family: 'Raleway', sans-serif;
         *{
@@ -33,9 +33,9 @@ const NewsletterContainer = styled.div`
         }
     }
     @media (min-width: ${({ theme }) => theme.desktop}) {
-        padding: 5em 30vw;
+        padding: 2em 30vw;
         *{
-            padding: 1-px;
+            padding: 15px;
         }
         p{
             textarea{
@@ -46,10 +46,40 @@ const NewsletterContainer = styled.div`
 `
 
 class Newsletter extends Component {
+    
+    constructor(){
+        super()
+
+        this.handleSubmit = this.handleSubmit.bind(this)
+
+        this.state = {
+            isSubmit: false, error: false
+        }
+    }
+    handleSubmit = (event) => {
+        event.preventDefault();
+    
+        const myForm = event.target;
+        const formData = new FormData(myForm);
+    
+        fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams(formData).toString(),
+        })
+          .then(() => {
+            this.setState({isSubmit: true, error: false})
+          })
+          .catch((error) => {
+            this.setState({isSubmit: false, error: true})
+          });
+      };
     render() {
         return (
             <NewsletterContainer>
-                <form name="contact" method="post">
+                {
+                !this.state.isSubmit && !this.state.error && 
+                <form name="contact" method="post" onSubmit={this.handleSubmit}>
                     <input type="hidden" name="form-name" value="contact" />
                     <p>
                         <input type="text" id="name" name="name" required placeholder='Enter your name...' />
@@ -63,7 +93,15 @@ class Newsletter extends Component {
                         <input type="submit" value="Submit message" />
                     </p>
                 </form>
-
+                }
+                {
+                    this.state.isSubmit &&
+                    <p>Successfully submitted your response</p>
+                }
+                 {
+                    this.state.error &&
+                    <p>Failed to submit your response</p>
+                }
             </NewsletterContainer>
         )
     }

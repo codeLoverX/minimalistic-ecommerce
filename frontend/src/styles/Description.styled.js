@@ -21,7 +21,7 @@ Description.Preview = styled.span`
         margin: auto
         max-width: 80%;
         height: 50vh;
-        margin: 20px auto;
+        margin: 0px auto 10px;
     }
     @media (min-width: ${({ theme }) => theme.desktop}) {
         flex-basis: 50%;
@@ -46,7 +46,7 @@ Description.ControlPreview = styled.span`
         object-fit: cover;
         width: 100%;
         max-height: 100px;
-        margin: 5px auto; 
+        margin: 0px auto 10px; 
         cursor: pointer;
         border: ${({ theme }) => `3px solid ${theme.colors.hoverBg}`};
     }
@@ -69,8 +69,7 @@ Description.ControlPreview = styled.span`
 `
 Description.TextSection = styled.span`
     flex-basis: 40%;  
-    max-height: min-content;
-    margin-top: -5px;
+    max-height: 50vh;
     padding: 20px 30px; 
     background-color: ${({ theme }) => `${theme.colors.hoverBg}`};
     @media (max-width: ${({ theme }) => theme.desktop}) {
@@ -78,6 +77,7 @@ Description.TextSection = styled.span`
         text-align: center;
         max-height: min-content; 
         padding-left: 0px;
+        margin-top: -5px;
     }
 `
 Description.AddToCart = styled.button`
@@ -104,7 +104,7 @@ Description.AddToCartError = styled.div`
     font-size: 12px;
 `
 Description.DescriptionText = styled.div`
-    height: min-content;
+    height: 10vh;
     font-size: medium; 
     font-weight: 600; 
 `
@@ -117,25 +117,29 @@ Description.SeeFullButton = styled.div`
     @media (min-width: ${({ theme }) => theme.desktop}) {
     }
 `
+Description.SeeFullHeadingText = styled.div`
+    flex-basis: 40%;  
+    max-height: 50vh;
+`
 Description.SeeFullHeading = styled.div`
     color: red;
     display: block;
-    margin-top: 20px;
     padding-top: 0px;
     cursor: pointer;
     text-align: center;
-    hr{
-        display: none;
-    }
+    
     @media (min-width: ${({ theme }) => theme.desktop}) {
-        hr{
-            display: block;
-        }
-        margin-top: 20px;
-        padding-top: 20px;
     }
 `
 Description.SeeFullText = styled(Description.DescriptionText)`
-   text-align: center;
+    text-align: center;
+    padding: 20px 30px; 
+    background-color: ${({ theme }) => `${theme.colors.hoverBg}`};
+    @media (max-width: ${({ theme }) => theme.desktop}) {
+        flex-basis: 100%; 
+        text-align: center;
+        padding-left: 0px;
+    }
+    margin: 0 5em 20px;
 `
 export default Description

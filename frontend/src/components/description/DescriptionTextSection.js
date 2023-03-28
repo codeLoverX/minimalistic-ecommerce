@@ -5,6 +5,7 @@ import { CartItem, Description, Product } from '../../styles'
 import React from 'react'
 import AttributeItem from './AttributeItem'
 import DescriptionText from './DescriptionText'
+import toast, { Toaster } from 'react-hot-toast';
 
 const initialState = { attributes: {}, missingAttributes: [], quantity: 1 }
 
@@ -49,11 +50,15 @@ class ProductDescription extends Component {
             this.props.dispatchAddProductToCartAction({
                 ...this.props.description, selectedAttributes: { ...this.state.attributes }, quantity: this.state.quantity
             })
-
+            toast.success("Successfully added to the cart")
             this.setState((prev) => { return { ...prev, missingAttributes: [] } })
         }
 
-        else this.setState((prev) => { return { ...prev, missingAttributes } })
+        else {
+            let text ="You have not selected the required attributes. "
+            toast.error(text)
+            this.setState((prev) => { return { ...prev, missingAttributes } })
+        }
     }
 
     render() {
@@ -62,7 +67,9 @@ class ProductDescription extends Component {
 
         return (
             <>
-                <Description.TextSection>
+                <Toaster />
+                <Description.TextSection
+                >
                     <Product.Brand fontSize={"35px"}>
                         {description.brand}
                     </Product.Brand>
@@ -118,14 +125,10 @@ class ProductDescription extends Component {
                     }
                     <Description.AddToCart onClick={(event) => this.submitForm(event)}> ADD TO CART </Description.AddToCart>
                     <br />
-                    <br />
-                    {/* <DescriptionText
-                        textProps={description.description}
-                    /> */}
+                    <DescriptionText
+                        textProps={description.shortDescription}
+                    />
                 </Description.TextSection>
-                <DescriptionText
-                    textProps={description.shortDescription}
-                />
             </>
         )
     }

@@ -60,12 +60,15 @@ CardItem.Subtitle = styled.div`
 
 CardItem.OutOfStock = styled.div`
   position: absolute;
-  color: grey;
-  top: 40%;
-  left: 20%;
+  top: 50%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  color: gray;
+  z-index: 99;
   text-transform: uppercase;
   font-size: 24px;
   text-decoration: none;
+  width: 100%;
 `
 
 CardItem.QuickShopIcon = styled.button`

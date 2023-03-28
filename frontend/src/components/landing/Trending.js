@@ -15,9 +15,6 @@ const NUMTRENDS = 4;
 const TrendingStyled = styled.div`
     margin: 5vh 10vw;
     position: relative;
-    > div{
-        margin-top: 80px;
-    }
 `
 TrendingStyled.Button = styled.button`
     position: absolute;
@@ -53,6 +50,10 @@ TrendingStyled.Image = styled(CardItem.Image)`
 `
 
 TrendingStyled.Title = styled(CardItem.Title)`
+`
+
+TrendingStyled.OutOfStock = styled(CardItem.OutOfStock)`
+    left: 70%;
 `
 
 
@@ -102,7 +103,8 @@ export default class Trending extends Component {
     render() {
         return (
             <TrendingStyled>
-                <h3>Trending</h3>
+                <h3 className=''>Trending</h3>
+                <div>
                 <TrendingStyled.ButtonLeft onClick={
                     () => {
                         this.setState((prev) => {
@@ -123,6 +125,7 @@ export default class Trending extends Component {
                 }>
                     <Right width={25} height={25} fill="lightgreen"/>
                 </TrendingStyled.ButtonRight>
+                </div>
                 <TrendingStyled.CardList>
                     {
                         this.state.data !== null &&
@@ -141,6 +144,7 @@ export default class Trending extends Component {
                                                         // {...this.generateLinkIfOutOfStock(cardValue.inStock)} 
                                                         to={`../product/${cardValue.id}`} replace>
                                                         <TrendingStyled.Image src={cardValue.gallery[0]} />
+                                                        {cardValue.inStock ? <></> : <TrendingStyled.OutOfStock>Out of Stock</TrendingStyled.OutOfStock>}
                                                     </Link>
                                                 </TrendingStyled.ImageContainer>
                                                 <Link
