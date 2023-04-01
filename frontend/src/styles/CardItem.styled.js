@@ -11,6 +11,9 @@ let CardItem = styled.div`
   :nth-child(n+2) {
     margin-left: -1px;
   }
+  :nth-child(1){
+    margin-left: 0px
+  }
   :hover{
     border: 2px solid black;
   }

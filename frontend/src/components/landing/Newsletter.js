@@ -12,7 +12,7 @@ const NewsletterContainer = styled.div`
         }
         input{
             font-size: 18px;
-            width: 50%;
+            width: 100%;
         }
         textarea{
             width: 100%;
@@ -41,6 +41,9 @@ const NewsletterContainer = styled.div`
             textarea{
                 height: 13vh;
             }
+        }
+        input{
+            width: 50% !important;
         }
     }
 `

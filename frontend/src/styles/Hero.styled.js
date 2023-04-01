@@ -3,16 +3,19 @@ import styled from 'styled-components'
 const HeroStyled = styled.div`
     display: grid;
     margin: 0 10vw;
-    grid-template-columns: 1fr 1fr;
-    max-height: 400px;
-    overflow: hidden;
-    justify-content: center;
-    padding: 0;
+    grid-template-columns: 1fr;
     grid-auto-rows: 1fr;
+    justify-content: center;
     margin-bottom: 5vh;
+    @media (min-width: ${({ theme }) => theme.desktop}) {
+        grid-template-columns: repeat(2, 1fr);
+        max-height: 400px;
+        overflow: hidden;
+        padding: 0;
+    }
 `
 HeroStyled.Text = styled.div`
-    padding: 100px 60px;
+    padding: 20px;
     background: ${({ theme }) => `${theme.colors.hoverBg}`};
     button{
         font-size: 18px;
@@ -25,6 +28,9 @@ HeroStyled.Text = styled.div`
             color: black;
             border: ${({ theme }) => `3px solid ${theme.colors.primary}`};
         }
+    }
+    @media (min-width: ${({ theme }) => theme.desktop}) {
+        padding: 100px 60px;
     }
 `
 HeroStyled.ImageContainer = styled.div`

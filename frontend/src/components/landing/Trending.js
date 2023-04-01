@@ -15,6 +15,7 @@ const NUMTRENDS = 4;
 const TrendingStyled = styled.div`
     margin: 5vh 10vw;
     position: relative;
+
 `
 TrendingStyled.Button = styled.button`
     position: absolute;
@@ -36,6 +37,10 @@ TrendingStyled.ButtonLeft = styled(TrendingStyled.Button)`
     left: 0;
 `
 TrendingStyled.CardList = styled(CardList)`
+  margin-top: 80px;
+  @media (min-width: ${({ theme }) => theme.desktop}) {
+    margin-top: 0px;
+  }
 `
 
 TrendingStyled.CardItem = styled(CardItem)`
@@ -44,6 +49,7 @@ TrendingStyled.CardItem = styled(CardItem)`
 TrendingStyled.ImageContainer = styled(CardItem.ImageContainer)`
   height: 250px;
   width: 250px;
+
 `
 
 TrendingStyled.Image = styled(CardItem.Image)`
@@ -104,7 +110,7 @@ export default class Trending extends Component {
         return (
             <TrendingStyled>
                 <h3 className=''>Trending</h3>
-                <div>
+                <>
                 <TrendingStyled.ButtonLeft onClick={
                     () => {
                         this.setState((prev) => {
@@ -125,7 +131,7 @@ export default class Trending extends Component {
                 }>
                     <Right width={25} height={25} fill="lightgreen"/>
                 </TrendingStyled.ButtonRight>
-                </div>
+                </>
                 <TrendingStyled.CardList>
                     {
                         this.state.data !== null &&

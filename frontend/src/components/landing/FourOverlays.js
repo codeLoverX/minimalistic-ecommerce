@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const FourOverlaysContainer = styled.div`
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     margin: 5vh 10vw;
     padding: 0;
     gap: 10px;
