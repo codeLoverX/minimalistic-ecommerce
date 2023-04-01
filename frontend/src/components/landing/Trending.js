@@ -27,6 +27,7 @@ TrendingStyled.Button = styled.button`
         background: transparent;
         border: ${({ theme }) => `3px solid ${theme.colors.primary}`};
     }
+    z-index: 99;
 `
 
 TrendingStyled.ButtonRight = styled(TrendingStyled.Button)`

@@ -15,7 +15,6 @@ const HeroStyled = styled.div`
     }
 `
 HeroStyled.Text = styled.div`
-    padding: 20px;
     background: ${({ theme }) => `${theme.colors.hoverBg}`};
     button{
         font-size: 18px;
@@ -30,7 +29,9 @@ HeroStyled.Text = styled.div`
         }
     }
     @media (min-width: ${({ theme }) => theme.desktop}) {
-        padding: 100px 60px;
+        padding-left: 60px;
+        padding-right: 60px;
+        padding-top: 10%;
     }
 `
 HeroStyled.ImageContainer = styled.div`
