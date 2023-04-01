@@ -12,6 +12,7 @@ let Nav = styled.nav`
     box-sizing: border-box;
   }
   > :nth-child(1){
+    z-index: 99;
     display: flex;
     order: 1;
     flex-direction: column;
@@ -24,8 +25,7 @@ let Nav = styled.nav`
   }
  
   > :nth-child(2){
-    display: flex;
-    justify-content: center;
+    // background: red;
     margin: auto;
   }
   > :nth-child(3){
@@ -35,19 +35,29 @@ let Nav = styled.nav`
   }
   
   @media (min-width: ${({ theme }) => theme.desktop}) {
-    justify-content: center;
+    width: 100vw;
+    justify-content: space-between;
     flex-direction: row;
     > :nth-child(1){
       width: 400px;
       height: 100px;
       display: flex;
-      flex-direction:row;
+      flex-direction: row;
       justify-content: space-between;
       align-items: center;
+      // background: blue;
     }
     > :nth-child(2){
-      background-color: transparent;
       order: 1;
+    }
+    div#logo{
+      // z-index: -1
+      // background: red;
+      position: absolute;
+      left: 0;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
     }
   }
   

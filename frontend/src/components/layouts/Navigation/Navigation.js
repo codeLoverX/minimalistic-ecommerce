@@ -32,6 +32,13 @@ class Navigation extends Component {
     }
 
     toggleDropDownState(key) {
+        const isMobile = window.matchMedia("(max-width: 1000px)").matches
+        
+        if (isMobile) {
+            this.routerDirectToCartPage();
+
+            return null;
+        }
         this.setState(prevState => {
             let newDropDownClose = { ...initialState }
 
@@ -52,7 +59,7 @@ class Navigation extends Component {
                 currentStyle.zIndex = "1"
 
                 document.removeEventListener('click', this.handleClickOutside, true);
-            }
+            }       
 
             return {
                 ...prevState,
@@ -158,7 +165,7 @@ class Navigation extends Component {
                         }
                     </>
                 </div>
-                <div onClick={
+                <div id="logo" onClick={
                     (event) => {
                         const navlinks = event.currentTarget.parentElement.children[0];
                         const isMobile = window.matchMedia("(max-width: 1000px)").matches
