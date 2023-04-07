@@ -16,6 +16,9 @@ const HeroStyled = styled.div`
 `
 HeroStyled.Text = styled.div`
     background: ${({ theme }) => `${theme.colors.hoverBg}`};
+    padding-top: 10%;
+    padding-right: 5%;
+    padding-left: 5%;
     button{
         font-size: 18px;
         background-color: ${({ theme }) => `${theme.colors.primary}`};
